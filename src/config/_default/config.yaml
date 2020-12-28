@@ -1,0 +1,11 @@
+baseURL: http://localhost:1313
+languageCode: fr-fr
+title: Registre de preuve de covoiturage
+theme:
+  - 2021
+
+params:
+  baseline: Développer le covoiturage
+  description: le Registre de preuve de covoiturage est une plateforme, un label et une boite à outils pour développer le covoiturage
+
+publishDir: /public
