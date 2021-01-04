@@ -17,7 +17,7 @@ jobs:
 
       - name: Build 🔧
         run: |
-          hugo -s src -e production
+          hugo -s src -d public -e production
 
       - name: Install SSH Client 🔑
         uses: webfactory/ssh-agent@v0.4.1
