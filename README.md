@@ -2,17 +2,24 @@
 
 Site vitrine du Registre. https://covoiturage.beta.gouv.fr
 
+-
+
 ## Mises à jour
 
 ### Ajouter un opérateur ou un territoire
 
 1. Dans le dossier `content/operateurs` ou `content/territoires`, dupliquer un fichier `.md` existant et modifier sa date de création dans l'en-tête du fichier.
-2. Uploader le logo dans `static/operateurs` et `static/territoires` et configurer le nom dans le fichier `.md` précédemment créé.
+2. Uploader le logo dans `static/operateurs` et `static/territoires` et configurer le nom dans le fichier `.md` précédemment créé. Une taille de 480x480 est suffisante.
+3. Commiter les modifications
 
 #### Opérateur
 
 ```markdown
-
+---
+title: "Maxicovoit"
+date: 2020-12-28T15:46:34Z
+logo: maxicovoit.png
+---
 ```
 
 #### Territoire
@@ -21,8 +28,8 @@ Site vitrine du Registre. https://covoiturage.beta.gouv.fr
 ---
 title: "Communauté d'Agglomération des dieux de l'Olympe"
 date: 2020-12-28T15:46:34Z
-showTitle: true
-logo: olympus.webp
+showTitle: true # option nécessaire pour afficher le nom du territoire
+logo: olympus.png
 ---
 ```
 
