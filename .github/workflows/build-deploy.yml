@@ -17,7 +17,7 @@ jobs:
 
       - name: Build 🔧
         run: |
-          hugo -s src -d public -e production
+          hugo -s src -d ../public -e production
           pwd
           ls -R
 
