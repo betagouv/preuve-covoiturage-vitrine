@@ -1,6 +1,6 @@
 ---
-title: "Communauté d’agglomération de l’Ouest Rhodanien"
+title: "Privas Centre Ardèche"
 date: 2020-12-28T15:46:34Z
 showTitle: true
-logo: cor.webp
+logo: privas.png
 ---
