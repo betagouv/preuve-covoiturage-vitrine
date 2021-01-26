@@ -25,6 +25,8 @@ link: https://example.com/
 4. Commiter les modifications directement sur la branche `main` (en bas de page).
 5. Vérifier le bon déroulement du déploiement dans les [Actions](https://github.com/betagouv/preuve-covoiturage-vitrine/actions)
 
+> Github ne permet pas de renommer les fichiers dans son interface. Il est nécessaire d'envoyer le fichier image avec le bon nom directement.
+
 ### Ajouter un territoire
 
 > Pour cet exemple, utilisons _Olympus_.
