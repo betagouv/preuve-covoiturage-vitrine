@@ -13,9 +13,9 @@ Site vitrine du Registre. https://covoiturage.beta.gouv.fr
 ```markdown
 ---
 title: "Maxicovoit"
-date: 2020-12-28T15:46:34Z
-linked: false
-logo: maxicovoit.png
+date: YYYY-MM-DDTHH:mm:ssZ   // mettre la date du moment
+linked: false                // ou true si l'opérateur est connecté
+logo: maxicovoit.png         // pas d'espaces et de majuscules dans le nom
 link: https://example.com/
 ---
 ```
@@ -36,7 +36,7 @@ link: https://example.com/
 ```markdown
 ---
 title: "Communauté d'Agglomération des dieux de l'Olympe"
-date: 2020-12-28T15:46:34Z
+date: YYYY-MM-DDTHH:mm:ssZ
 showTitle: true
 logo: olympus.png
 ---
