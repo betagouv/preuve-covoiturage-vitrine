@@ -1,0 +1,77 @@
+# Failed to persist entry: API_ERROR: Although you appear to have the correct authorization credentials, the `betagouv` organization has enabled OAuth App access restrictions, meaning that data access to third-parties is limited. For more information on these restrictions, including how to enable this app, visit https://docs.github.com/articles/restricting-access-to-your-organization-s-data/
+local_backend:
+  url: http://localhost:1315/api/v1
+
+backend:
+  name: github
+  repo: betagouv/preuve-covoiturage-vitrine
+  branch: beta
+  base_url: http://localhost:1314
+
+media_folder: static/images
+public_folder: images
+
+locale: fr
+
+slug:
+  clean_accents: true
+
+collections:
+  - name: "operateurs"
+    label: "Opérateurs"
+    label_singular: "Opérateur"
+    folder: content/operateurs
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Nom", name: "title", widget: "string" }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          date_format: "DD/MM/YYYY",
+          time_format: "HH:mm",
+          picker_utc: false,
+        }
+      - { label: "Connecté au RPC", name: "linked", widget: "boolean", default: false }
+      - {
+          label: "Logo",
+          name: "logo",
+          widget: "image",
+          required: false,
+          allow_multiple: false,
+          media_folder: "/static/images/operateurs",
+          public_folder: "/images/operateurs",
+        }
+      - { label: "Site web", name: "link", widget: "string", required: false }
+
+  - name: "territoires"
+    label: "Territoires"
+    label_singular: "Territoire"
+    folder: "content/territoires"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Nom", name: "title", widget: "string" }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          date_format: "DD/MM/YYYY",
+          time_format: "HH:mm",
+          picker_utc: false,
+        }
+      - { label: "Afficher le nom", name: "showTitle", widget: "boolean", default: true }
+      - {
+          label: "Logo",
+          name: "logo",
+          widget: "image",
+          required: false,
+          allow_multiple: false,
+          media_folder: "/static/images/territoires",
+          public_folder: "/images/territoires",
+        }

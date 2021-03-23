@@ -1,14 +1,91 @@
 version: "3"
 services:
   hugo:
-    image: klakegg/hugo:0.79.1-ext
+    image: klakegg/hugo:0.82.0-ext
+    user: 1000:1000
     volumes:
       - "./src:/src"
       - "./public:/public"
+
+  # proxy:
+  #   image: traefik:v2.4
+  #   command:
+  #     - --api.insecure=true
+  #     - --providers.docker
+  #     - --providers.docker.exposedbydefault=false
+  #     - --entrypoints.web.address=:80
+  #   ports:
+  #     - 80:80
+  #     - 8080:8080
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   networks:
+  #     - proxy
+  #   depends_on:
+  #     - server
+  #     - auth
+  #     - local_backend
+
+  # localhost:1313
   server:
-    image: klakegg/hugo:0.79.1-ext
-    command: server
+    image: klakegg/hugo:0.82.0-ext
+    command:
+      - server
+      # - --baseUrl=http://rpc.localhost
+      # - --appendPort=false
+      # - --liveReloadPort=80
+    user: 1000:1000
     volumes:
       - "./src:/src"
     ports:
-      - "1313:1313"
+      - 1313:1313
+    depends_on:
+      - auth
+      - local_backend
+    # networks:
+    #   - proxy
+    #   - backend
+    # labels:
+    #   - "traefik.enable=true"
+    #   # - "traefik.http.routers.web.entrypoints=web"
+    #   - "traefik.http.routers.web.rule=Host(`rpc.localhost`)"
+    #   - "traefik.http.services.web.loadbalancer.server.port=1313"
+    #   - "traefik.docker.network=proxy"
+
+  # localhost:1314
+  auth:
+    build: ./docker/auth
+    env_file: .env
+    environment:
+      - ORIGIN=http://localhost:1313
+    ports:
+      - 1314:3000
+    # networks:
+    #   - proxy
+    # labels:
+    #   - "traefik.enable=true"
+    #   # - "traefik.http.routers.auth.entrypoints=web"
+    #   - "traefik.http.routers.auth.rule=Host(`auth.rpc.localhost`)"
+    #   - "traefik.http.services.auth.loadbalancer.server.port=3000"
+    #   - "traefik.docker.network=proxy"
+
+  # localhost:1315
+  local_backend:
+    build: ./docker/local_backend
+    user: 1000:1000
+    volumes:
+      - ./src:/code
+    ports:
+      - 1315:8081
+    # networks:
+    #   - proxy
+    #   - backend
+    # labels:
+    #   - "traefik.enable=true"
+    #   # - "traefik.http.routers.git.entrypoints=web"
+    #   - "traefik.http.routers.git.rule=Host(`git.rpc.localhost`)"
+    #   - "traefik.http.services.git.loadbalancer.server.port=8081"
+    #   - "traefik.docker.network=proxy"
+# networks:
+#   proxy:
+#   backend:

@@ -5,7 +5,7 @@
     target="_blank"
     rel="noopener noreferrer"
     class="partner-logo--img"
-    style="background-image:url('/images/{{ .Type }}/{{ .Params.logo }}')"
+    style="background-image:url('{{ replace .Params.logo "/static" "" }}')"
   >
   </a>
 
