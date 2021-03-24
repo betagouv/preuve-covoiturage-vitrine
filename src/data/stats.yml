@@ -1,0 +1,15 @@
+global:
+  - title: "%d territoires sensibilisés"
+    value: 150
+  - title: "%d territoires sensibilisés"
+    value: 63
+  - title: "%d services de covoiturage référencés"
+    value: 13
+  - title: "%d trajets envoyés dans le Registre"
+    value: 883081
+    link_title: Voir toutes les données
+    link_href: https://app.covoiturage.beta.gouv.fr/stats
+  - title: "%d kg de CO₂ économisés"
+    value: 4681870
+  - title: "%d classes de preuve de covoiturage définies"
+    value: 3

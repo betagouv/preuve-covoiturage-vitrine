@@ -16,21 +16,10 @@
         <div class="rf-shortcuts">
           <ul class="rf-shortcuts__list">
             <li class="rf-shortcuts__item">
-              <!-- <a href="#comment" class="rf-link" target="_self">Comment&nbsp;?</a>
+              <a href="/territoires" class="rf-link" target="_self">Territoires</a>
             </li>
             <li class="rf-shortcuts__item">
-              <a href="#pourquoi" class="rf-link" target="_self">Pourquoi&nbsp;?</a>
-            </li>
-            <li class="rf-shortcuts__item">
-              <a href="#pourqui" class="rf-link" target="_self">Pour&nbsp;qui&nbsp;?</a>
-            </li> -->
-            </li>
-
-            <li class="rf-shortcuts__item">
-              <a href="#territoires" class="rf-link" target="_self">Territoires</a>
-            </li>
-            <li class="rf-shortcuts__item">
-              <a href="#operateurs" class="rf-link" target="_self">Opérateurs</a>
+              <a href="/operateurs" class="rf-link" target="_self">Opérateurs</a>
             </li>
             <li class="rf-shortcuts__item">
               <a
@@ -55,3 +44,24 @@
     </div>
   </div>
 </header>
+
+<section class="rf-section rf-section--bf500 h-text-center">
+  <div class="rf-container">
+    <div class="rf-grid-row">
+      <div class="rf-col-8 rf-col-offset-2">
+        <h1 class="title">{{ .Params.title }}</h1>
+        <p class="subtitle">{{ .Params.subtitle }}</p>
+        <p class="actions">
+          {{ range .Params.actions }}
+            {{ $class := `` }} {{ $target := `_self` }}
+            {{ if hasPrefix .href "http" }}{{ $target = `_blank` }}{{ end }}
+            {{ with .style }}{{ $class = printf `rf-btn--%s` . }}{{ end }}
+            <a href="{{ .href }}" class="rf-btn {{ $class }}" target="{{ $target }}" rel="noopener noreferrer">
+              {{- .title -}}
+            </a>
+          {{ end }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

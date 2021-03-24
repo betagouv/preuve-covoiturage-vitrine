@@ -1,4 +1,7 @@
+node_modules
 .env
+notes.md
+_gen
 
 # Hugo default output directory
 public

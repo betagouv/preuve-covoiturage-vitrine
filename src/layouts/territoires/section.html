@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <!-- Opérateurs -->
+  {{ $operators := where .Site.RegularPages.ByTitle "Type" "operateurs" }}
+
+  <section class="rf-section">
+    <div class="rf-container">
+      <div class="rf-grid-row">
+        <div class="rf-col-8 rf-col-offset-2">
+          <h2>{{- .Params.content.title -}}</h2>
+          <ol class="ol-huge">
+            {{ range .Params.content.list }}
+              <li>{{- . | markdownify -}}</li>
+            {{ end }}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

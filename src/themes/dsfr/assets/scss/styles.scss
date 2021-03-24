@@ -1,9 +1,6 @@
 @import "./dsfr";
+@import "./_partials/helpers.scss";
 @import "./_partials/footer.scss";
-
-.padding-1em {
-  padding: 1em;
-}
 
 .rf-section {
   padding-top: 2em;
@@ -43,15 +40,6 @@
   padding-top: 2em;
   padding-bottom: 5em;
   background-color: var(--g700);
-}
-
-.h-text-center {
-  text-align: center;
-}
-
-.img-responsive {
-  display: block;
-  max-width: 100%;
 }
 
 .partner-logo--item {

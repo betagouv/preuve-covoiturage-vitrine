@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <!-- Opérateurs -->
+  {{ $operators := where .Site.RegularPages.ByTitle "Type" "operateurs" }}
+
+  {{ range .Params.sections }}
+    <section class="rf-section">
+      <div class="rf-container">
+        <div class="rf-grid-row">
+          <div class="rf-col-12">
+            <h2>{{- .title -}}</h2>
+            <div class="rf-grid-row partner-logo">
+              {{ range where $operators "Params.linked" .linked }} {{ partial "listlogo.html" . }} {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}
