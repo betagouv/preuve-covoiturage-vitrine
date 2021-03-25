@@ -1,7 +1,7 @@
 # Failed to persist entry: API_ERROR: Although you appear to have the correct authorization credentials, the `betagouv` organization has enabled OAuth App access restrictions, meaning that data access to third-parties is limited. For more information on these restrictions, including how to enable this app, visit https://docs.github.com/articles/restricting-access-to-your-organization-s-data/
 backend:
   name: github
-  repo: betagouv/preuve-covoiturage-vitrine
+  repo: jonathanfallon/preuve-covoiturage-vitrine
   branch: beta
 
 media_folder: static/images
