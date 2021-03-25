@@ -2,7 +2,6 @@ backend:
   name: github
   repo: betagouv/preuve-covoiturage-vitrine
   branch: beta
-  site_domain: distracted-turing-4b85e9.netlify.app
 
 media_folder: src/static/images
 public_folder: images
