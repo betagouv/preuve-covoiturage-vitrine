@@ -76,7 +76,7 @@ services:
     build: ./docker/local_backend
     user: 1000:1000
     volumes:
-      - ./src:/code
+      - .:/code
     ports:
       - 1315:8081
     # networks:

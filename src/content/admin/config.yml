@@ -5,7 +5,7 @@ backend:
   branch: beta
   base_url: ???
 
-media_folder: static/images
+media_folder: src/static/images
 public_folder: images
 
 locale: fr
@@ -17,7 +17,7 @@ collections:
   - name: "operateurs"
     label: "Opérateurs"
     label_singular: "Opérateur"
-    folder: content/operateurs
+    folder: src/content/operateurs
     create: true
     slug: "{{slug}}"
     editor:
@@ -39,7 +39,7 @@ collections:
           widget: "image",
           required: false,
           allow_multiple: false,
-          media_folder: "/static/images/operateurs",
+          media_folder: "/src/static/images/operateurs",
           public_folder: "/images/operateurs",
         }
       - { label: "Site web", name: "link", widget: "string", required: false }
@@ -47,7 +47,7 @@ collections:
   - name: "territoires"
     label: "Territoires"
     label_singular: "Territoire"
-    folder: "content/territoires"
+    folder: src/content/territoires
     create: true
     slug: "{{slug}}"
     editor:
@@ -69,6 +69,6 @@ collections:
           widget: "image",
           required: false,
           allow_multiple: false,
-          media_folder: "/static/images/territoires",
+          media_folder: "/src/static/images/territoires",
           public_folder: "/images/territoires",
         }
