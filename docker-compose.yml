@@ -35,6 +35,8 @@ services:
       # - --appendPort=false
       # - --liveReloadPort=80
     user: 1000:1000
+    environment:
+      - HUGO_PARAMS_ENV=local
     volumes:
       - "./src:/src"
     ports:
