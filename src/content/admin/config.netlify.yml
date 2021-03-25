@@ -3,7 +3,6 @@ backend:
   name: github
   repo: betagouv/preuve-covoiturage-vitrine
   branch: beta
-  base_url: ???
 
 media_folder: static/images
 public_folder: images

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{ if eq .Site.Params.env `local` }}
-      <link href="config.local.yml" type="text/yaml" rel="cms-config-url" />
+    {{ if isset .Site.Params "env" }}
+      <link href="config.{{- .Site.Params.env -}}.yml" type="text/yaml" rel="cms-config-url" />
     {{ end }}
     <title>CMS</title>
   </head>
