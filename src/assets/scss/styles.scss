@@ -56,3 +56,14 @@ a[target="_blank"].rf-btn {
     flex-grow: 1;
   }
 }
+
+.rf-section--stats {
+  .rf-card__desc {
+    flex-grow: 1;
+  }
+  .rf-link {
+    &::before {
+      content: none;
+    }
+  }
+}

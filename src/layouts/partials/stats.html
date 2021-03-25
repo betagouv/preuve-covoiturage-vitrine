@@ -1,0 +1,28 @@
+<div class="rf-section rf-section--stats">
+  <div class="rf-container">
+    <div class="rf-grid-row">
+      <div class="rf-col-12">
+        <h3>{{ .Site.Data.stats.title }}</h3>
+
+        <div class="rf-grid-row rf-grid-row--gutters">
+          {{ range .Site.Data.stats.cards }}
+            <div class="rf-col-4">
+              <div class="rf-card rf-card--no-arrow">
+                <div class="rf-card__body">
+                  <p class="rf-card__desc">{{ .description | markdownify }}</p>
+                  <p>
+                    {{ $class := `` }} {{ $target := `_self` }}
+                    {{ if hasPrefix .link_href "http" }}{{ $target = `_blank` }}{{ end }}
+                    <a href="{{- .link_href -}}" class="rf-link" target="{{ $target }}" rel="noopener noreferrer">
+                      {{- .link_title -}}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

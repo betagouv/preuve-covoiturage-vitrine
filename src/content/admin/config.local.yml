@@ -19,7 +19,7 @@ collections:
   - label: Pages
     name: pages
     files:
-      - label: "Qui sommes-nous ?"
+      - label: "📄 Qui sommes-nous ?"
         name: qui-sommes-nous
         file: src/content/qui-sommes-nous/_index.md
         editor:
@@ -54,7 +54,7 @@ collections:
             name: body
             widget: markdown
 
-      - label: Opérateurs
+      - label: "📄 Opérateurs"
         name: operateurs
         file: src/content/operateurs/_index.md
         editor:
@@ -92,7 +92,7 @@ collections:
             name: section_notlinked_title
             widget: string
 
-      - label: Territoires
+      - label: "📄 Territoires"
         name: territoires
         file: src/content/territoires/_index.md
         editor:
@@ -127,7 +127,7 @@ collections:
             name: body
             widget: markdown
 
-      - label: "Vous êtes..."
+      - label: "📝 Vous êtes..."
         name: vousetes
         file: src/data/vousetes.yml
         editor:
@@ -153,6 +153,63 @@ collections:
               - label: Lien
                 name: link_href
                 widget: string
+
+      - label: "📝 Témoignages"
+        name: testimonials
+        label_singular: Témoignage
+        file: src/data/testimonials.yml
+        editor:
+          preview: false
+        fields:
+          - label: Titre
+            name: title
+            widget: string
+          - label: Témoignages
+            label_singular: Témoignage
+            name: cards
+            widget: list
+            fields:
+              - label: Aute·ur·rice
+                name: title
+                widget: string
+              - label: Témoignage
+                name: description
+                widget: text
+              - label: Logo
+                name: logo
+                widget: image
+                required: false
+
+      - label: "📝 Statistiques"
+        name: stats
+        label_singular: Statistique
+        file: src/data/stats.yml
+        editor:
+          preview: false
+        fields:
+          - label: Titre
+            name: title
+            widget: string
+          - label: Statistiques
+            label_singular: Statistique
+            name: cards
+            widget: list
+            fields:
+              - label: Description
+                name: description
+                widget: markdown
+              - label: Image
+                name: image
+                widget: image
+                required: false
+              - label: Titre du lien
+                name: link_title
+                widget: string
+                required: false
+              - label: Lien
+                name: link_href
+                widget: string
+                required: false
 
   - name: operateurs
     label: Opérateurs

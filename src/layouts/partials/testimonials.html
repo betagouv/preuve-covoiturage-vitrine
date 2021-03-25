@@ -1,0 +1,20 @@
+<div class="rf-section rf-section--testimonials">
+  <div class="rf-container">
+    <div class="rf-grid-row">
+      <div class="rf-col-8 rf-col-offset-2">
+        <h3>{{ .Site.Data.testimonials.title }}</h3>
+
+        {{ range .Site.Data.testimonials.cards }}
+          <div class="rf-card rf-card--no-arrow">
+            <div class="rf-card__body">
+              <p class="rf-card__desc">{{ .description }}</p>
+              <h4 class="rf-card__title">
+                {{ .title }}
+              </h4>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
