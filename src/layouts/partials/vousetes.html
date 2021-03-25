@@ -1,0 +1,31 @@
+<div class="rf-section rf-section--vousetes">
+  <div class="rf-container">
+    <div class="rf-grid-row">
+      <div class="rf-col-8 rf-col-offset-2">
+        <h3>{{ .Site.Data.vousetes.title }}</h3>
+
+        <div class="rf-grid-row rf-grid-row--gutters">
+          {{ range .Site.Data.vousetes.cards }}
+            <div class="rf-col-4">
+              <div class="rf-card rf-card--no-arrow">
+                <div class="rf-card__body">
+                  <h4 class="rf-card__title">
+                    <a href="{{- .link_href -}}" class="rf-card__link">{{ .title }}</a>
+                  </h4>
+                  <p class="rf-card__desc">{{ .description }}</p>
+                  <p>
+                    {{ $class := `` }} {{ $target := `_self` }}
+                    {{ if hasPrefix .link_href "http" }}{{ $target = `_blank` }}{{ end }}
+                    <a href="{{- .link_href -}}" class="rf-btn" target="{{ $target }}" rel="noopener noreferrer">
+                      {{- .link_title -}}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -26,25 +26,33 @@ a[target="_blank"].rf-btn {
   }
 }
 
-.ol-huge {
-  li {
-    position: relative;
-    margin-top: 2em;
-    margin-bottom: 4em;
-    &::before {
-      content: counters(list-number, ".");
-      position: absolute;
-      display: block;
-      top: -0.5em;
-      left: -3em;
-      width: 2em;
-      height: 2em;
-      line-height: 2em;
-      font-size: 2em;
-      text-align: center;
-      border-radius: 50%;
-      color: var(--w-bf500);
-      background-color: var(--bf500);
+.rf-section--territories-single {
+  ol {
+    li {
+      position: relative;
+      margin-top: 2em;
+      margin-bottom: 4em;
+      &::before {
+        content: counters(list-number, ".");
+        position: absolute;
+        display: block;
+        top: -0.5em;
+        left: -3em;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+        font-size: 2em;
+        text-align: center;
+        border-radius: 50%;
+        color: var(--w-bf500);
+        background-color: var(--bf500);
+      }
     }
+  }
+}
+
+.rf-section--vousetes {
+  .rf-card__desc {
+    flex-grow: 1;
   }
 }

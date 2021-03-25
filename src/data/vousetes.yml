@@ -1,0 +1,16 @@
+title: "Vous êtes"
+cards:
+  - title: Élu·e ou agent public au sein d’une AOM
+    description: "“Je veux un accès au Registre de preuve de covoiturage et voir
+      comment fonctionne la plateforme” "
+    link_title: Demander une démo
+    link_href: mailto:contact@covoiturage.beta.gouv.fr
+  - title: Opérateur de covoiturage courte distance
+    description: Opérateur de covoiturage courte distance
+    link_title: Devenir partenaire
+    link_href: https://doc.covoiturage.beta.gouv.fr/operateurs/partenaireoperateur
+  - title: Journaliste, influenceur·se
+    description: "“J’aimerais parler de votre service à mes lecteurs·rices / ma
+      communauté”  "
+    link_title: Contacter l’équipe
+    link_href: mailto:contact@covoiturage.beta.gouv.fr

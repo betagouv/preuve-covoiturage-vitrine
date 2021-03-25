@@ -16,6 +16,9 @@
         <div class="rf-shortcuts">
           <ul class="rf-shortcuts__list">
             <li class="rf-shortcuts__item">
+              <a href="/qui-sommes-nous" class="rf-link" target="_self">Qui sommes-nous&nbsp;?</a>
+            </li>
+            <li class="rf-shortcuts__item">
               <a href="/territoires" class="rf-link" target="_self">Territoires</a>
             </li>
             <li class="rf-shortcuts__item">
@@ -27,7 +30,7 @@
                 class="rf-link"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Stats</a
+                >Statistiques</a
               >
             </li>
 
@@ -56,7 +59,7 @@
             {{ $class := `` }} {{ $target := `_self` }}
             {{ if hasPrefix .href "http" }}{{ $target = `_blank` }}{{ end }}
             {{ with .style }}{{ $class = printf `rf-btn--%s` . }}{{ end }}
-            <a href="{{ .href }}" class="rf-btn {{ $class }}" target="{{ $target }}" rel="noopener noreferrer">
+            <a href="{{- .href -}}" class="rf-btn {{ $class }}" target="{{ $target }}" rel="noopener noreferrer">
               {{- .title -}}
             </a>
           {{ end }}
