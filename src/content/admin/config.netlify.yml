@@ -3,7 +3,7 @@ backend:
   name: github
   repo: jonathanfallon/preuve-covoiturage-vitrine
   branch: beta
-  site_domain: distracted-turing-4b85e9
+  site_domain: distracted-turing-4b85e9.netlify.app
 
 media_folder: static/images
 public_folder: images
