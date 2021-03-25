@@ -2,3 +2,8 @@
 base = "src"
 publish = "public-netlify"
 command = "hugo --gc --minify -d public-netlify"
+
+[context.production.environment]
+HUGO_VERSION = "0.82.0"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
