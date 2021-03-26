@@ -14,11 +14,8 @@
                   </h4>
                   <p class="rf-card__desc">{{ .description }}</p>
                   <p>
-                    {{ $class := `` }} {{ $target := `_self` }}
-                    {{ if hasPrefix .link_href "http" }}{{ $target = `_blank` }}{{ end }}
-                    <a href="{{- .link_href -}}" class="rf-btn" target="{{ $target }}" rel="noopener noreferrer">
-                      {{- .link_title -}}
-                    </a>
+                    {{ $params := dict "title" .link_title "href" .link_href }}
+                    {{ partial "button.html" $params }}
                   </p>
                 </div>
               </div>

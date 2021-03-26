@@ -1,0 +1,17 @@
+{{ $title := .title }}
+{{ $href := .href }}
+{{ $style := or .style "primary" }}
+{{ $class := `` }}
+{{ if ne $style "primary" }}{{ $class = printf "rf-btn--%s" $style }}{{ end }}
+
+{{ $target := `_self` }}
+{{ if hasPrefix $href "http" }}{{ $target = `_blank` }}{{ end }}
+
+<a
+    href="{{- $href -}}"
+    title="{{- $title -}}"
+    class="rf-btn {{ $class }}"
+    target="{{ $target }}"
+    rel="noopener noreferrer">
+    {{- $title -}}
+</a>

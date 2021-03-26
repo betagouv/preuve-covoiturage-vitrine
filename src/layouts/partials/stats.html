@@ -1,11 +1,17 @@
+{{ $title := .Site.Data.stats.title }}
+{{ $cards := .Site.Data.stats.cards }}
+{{ if .IsHome }}
+  {{ $cards = where $cards "pinned" true }}
+{{ end }}
+
 <div class="rf-section rf-section--stats">
   <div class="rf-container">
     <div class="rf-grid-row">
       <div class="rf-col-12">
-        <h3>{{ .Site.Data.stats.title }}</h3>
+        <h3>{{ $title }}</h3>
 
         <div class="rf-grid-row rf-grid-row--gutters">
-          {{ range .Site.Data.stats.cards }}
+          {{ range $cards }}
             <div class="rf-col-4">
               <div class="rf-card rf-card--no-arrow">
                 <div class="rf-card__body">

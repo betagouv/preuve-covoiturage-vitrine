@@ -25,10 +25,11 @@ Les décrets de la Loi d’orientation des mobilités (LOM) offrent aux autorit�
 
 En rejoignant le Registre de preuve de covoiturage, les AOM ont toutes les clés en main pour mettre en place une politique incitative de covoiturage courte distance efficace. Concrètement, elles accèdent gratuitement à des données spécifiques dans leurs territoires, envoyées par les services de covoiturage partenaires (nombre de trajets, kilomètres parcourus, CO2 économisés...) ainsi qu’ à la préfiguration et à la visualisation de sa campagne d’incitations.
 
-\[statistiques]
+{{< partial "stats" >}}
 
 ## D’autres outils au service du covoiturage au quotidien
 
 Nous développons d’autres services en faveur du covoiturage au quotidien comme le générateur d’attestation sur l’honneur de covoiturage pour faciliter l’obtention du forfaits mobilités durables ou encore un prototype d’Observatoire national au covoiturage s’inscrivant dans le plan France Relance.
 
-[Voir les autres outils](/)
+{{< button title="Voir les autres outils" link="/" >}}
+

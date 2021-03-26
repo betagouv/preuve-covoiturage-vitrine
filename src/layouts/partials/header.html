@@ -56,12 +56,7 @@
         <p class="subtitle">{{ .Params.subtitle }}</p>
         <p class="actions">
           {{ range .Params.actions }}
-            {{ $class := `` }} {{ $target := `_self` }}
-            {{ if hasPrefix .href "http" }}{{ $target = `_blank` }}{{ end }}
-            {{ with .style }}{{ $class = printf `rf-btn--%s` . }}{{ end }}
-            <a href="{{- .href -}}" class="rf-btn {{ $class }}" target="{{ $target }}" rel="noopener noreferrer">
-              {{- .title -}}
-            </a>
+            {{ partial "button.html" . }}
           {{ end }}
         </p>
       </div>

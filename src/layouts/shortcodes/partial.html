@@ -1,0 +1,6 @@
+{{ $file := .Get 0 }}
+{{ if (not (strings.HasSuffix $file ".html")) }}
+    {{ $file = printf "%s.html" $file }}
+{{ end }}
+
+{{ partial $file $.Page }}
