@@ -9,24 +9,38 @@
     padding: 1em;
   }
   .title {
+    margin-top: 0.5em;
     margin-bottom: 0.2em;
   }
   .description {
     margin-top: 0.2em;
+    line-height: 1.6;
   }
   .image {
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 25%;
-    padding: 1em;
+    padding: 0.5em;
     img {
       display: flex;
-      max-width: 60%;
+      width: 256px;
+      max-width: 100%;
     }
+  }
+}
+
+.card.vertical {
+  flex-direction: column-reverse;
+  .image img {
+    max-height: 150px;
   }
 }
 
 .card.reverse {
   flex-direction: row-reverse;
+}
+
+.card.stand-out {
+  background: var(--g100);
 }

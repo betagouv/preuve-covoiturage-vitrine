@@ -7,7 +7,7 @@ actions:
     title: Demander une démo
     href: mailto:contact@covoiturage.beta.gouv.fr
   - style: secondary
-    title: Voir la vidéo
+    title: ▶ Voir la vidéo
     href: https://www.youtube.com/watch/CV79xayKAfo
 expertise_title: Découvrir le Registre de preuve de covoiturage
 expertise_list:
@@ -15,22 +15,22 @@ expertise_list:
     description: "Grâce aux données envoyées dans le Registre par les opérateurs de
       covoiturage partenaires, les territoires peuvent prendre des décisions
       plus éclairées en faveur du covoiturage. "
-    image: images/attestation.webp
+    image: images/bulb.svg
   - title: Un tiers de confiance
     description: Les territoires peuvent distribuer des incitations en toute
       confiance grâce aux trajets certifiés envoyés dans le Registre par les
       services de covoiturage partenaires.
-    image: images/attestation.webp
+    image: images/hands.svg
   - title: Une boîte à outils
     description: Le Registre de preuve de covoiturage propose un panel d’outils pour
       aider les territoires à inciter le covoiturage courte distance dans leur
       territoire en toute confiance.
-    image: images/attestation.webp
+    image: images/tools.svg
 doc_title: Consulter notre documentation
 doc_description: Notre espace documentation comprend un ensemble d’informations
   sur lesquelles vous pouvez vous appuyer (juridique, foire aux questions, guide
   des incitations, etc.).
-doc_image: images/doc.svg
+doc_image: images/icons/doc.svg
 doc_link_title: Voir la documentation
 doc_link_href: https://doc.covoiturage.beta.gouv.fr
 tools_title: Nos autres outils en faveur du covoiturage au quotidien
@@ -39,7 +39,7 @@ tools:
       à partir des informations communiquées par les opérateurs de covoiturage
       partenaires.
     title: Statistiques en open data
-    image: images/attestation.webp
+    image: images/icons/opendata.svg
     link_title: Voir toutes les statistiques
     link_href: https://www.data.gouv.fr/fr/datasets/trajets-realises-en-covoiturage-registre-de-preuve-de-covoiturage/
   - description: >-
@@ -47,7 +47,7 @@ tools:
 
       Cet outil permettra de suivre l’évolution des pratiques du covoiturage courte distance et d'évaluer l'impact des mesures prises afin d’adapter de façon agile les politiques publiques. Son lancement est prévu fin 2021.
     title: Observatoire national du covoiturage
-    image: images/attestation.webp
+    image: images/icons/phare.svg
     link_title: En savoir plus
     link_href: "#"
   - description: Notre générateur d’attestation de covoiturage sur l’honneur, à
@@ -58,7 +58,7 @@ tools:
     link_href: https://attestation.covoiturage.beta.gouv.fr/
     title: Attestation de covoiturage sur l’honneur pour bénéficier du forfait
       mobilités durables
-    image: images/attestation.webp
+    image: images/icons/attestation.svg
   - description: Les signataires de cette charte, conscients des enjeux portés par
       le covoiturage, tant sur le thème de la santé publique, de l’économie que
       de la solidarité, s’engagent en vue de favoriser l’essor du covoiturage
@@ -68,4 +68,4 @@ tools:
     link_title: Signer la charte
     link_href: "#"
     title: Charte d'engagement
-    image: images/attestation.webp
+    image: images/icons/charte.svg

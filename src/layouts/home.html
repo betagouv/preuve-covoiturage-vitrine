@@ -6,23 +6,21 @@
   {{ $data := .Site.Data.home }}
 
   {{/*  Expertise  */}}
-  <section class="rf-section h-text-center">
+  <section class="rf-section">
     <div class="rf-container">
       <div class="rf-grid-row">
-        <div class="rf-col-8 rf-col-offset-2">
-          <h1 class="title">{{ $data.expertise_title }}</h1>
+        <div class="rf-col-12">
+          <h2 class="title h-text-center">{{ $data.expertise_title }}</h2>
 
           <div class="rf-grid-row rf-grid-row--gutters">
           {{ range $data.expertise_list }}
             <div class="rf-col-4">
-              <div class="rf-card rf-card--no-arrow">
-                <div class="rf-card__body">
-                  <h4 class="rf-card__title">{{- .title -}}</h4>
-                  <p class="rf-card__desc">{{ .description | markdownify }}</p>
+              <div class="card vertical">
+                <div class="content">
+                  <h4 class="title">{{- .title -}}</h4>
+                  <div class="description">{{ .description | markdownify }}</div>
                 </div>
-                <div class="rf-card__img">
-                  <img src="{{- .image -}}" alt="{{- .title -}}">
-              </div>
+                <div class="image"><img src="{{- .image -}}" alt="{{- .title -}}"></div>
               </div>
             </div> 
           {{ end }}
@@ -40,7 +38,7 @@
     <div class="rf-container">
       <div class="rf-grid-row">
         <div class="rf-col-8 rf-col-offset-2">
-          <h3 class="h-text-center">{{ .Site.Data.testimonials.title }}</h3>
+          <h2 class="h-text-center">{{ .Site.Data.testimonials.title }}</h2>
   
           {{ range .Site.Data.testimonials.cards }}
             <div class="testimonial">

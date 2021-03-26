@@ -8,15 +8,18 @@
   <div class="rf-container">
     <div class="rf-grid-row">
       <div class="rf-col-12">
-        <h3 class="h-text-center">{{ $title }}</h3>
+        <h2 class="h-text-center">{{ $title }}</h2>
 
         <div class="rf-grid-row rf-grid-row--gutters">
           {{ range $cards }}
             <div class="rf-col-4">
-              <div class="rf-card rf-card--no-arrow">
-                <div class="rf-card__body">
-                  <p class="rf-card__desc">{{ .description | markdownify }}</p>
+              <div class="card reverse stand-out">
+                <div class="content">
+                  <div class="description">{{ .description | markdownify }}</div>
                   <p>{{ partial "link.html" (dict "title" .link_title "href" .link_href) }}</p>
+                </div>
+                <div class="image">
+                  <img src="{{- .image -}}">
                 </div>
               </div>
             </div>
