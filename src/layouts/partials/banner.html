@@ -1,0 +1,16 @@
+<section class="rf-section rf-section--bf500 h-text-center">
+    <div class="rf-container">
+      <div class="rf-grid-row">
+        <div class="rf-col-8 rf-col-offset-2">
+          <h1 class="title">{{ .title }}</h1>
+          <p class="subtitle">{{ .subtitle }}</p>
+          <p class="actions">
+            {{ range .actions }}
+              {{ partial "button.html" . }}
+            {{ end }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  

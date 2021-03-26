@@ -1,4 +1,11 @@
 @import "../../themes/dsfr/assets/scss/styles.scss";
+@import "./card.scss";
+@import "./testimonials.scss";
+
+.rf-btn {
+  border-radius: 20px;
+  box-shadow: none;
+}
 
 // remove 'external-link' icon from buttons
 a[target="_blank"].rf-btn {
@@ -13,16 +20,13 @@ a[target="_blank"].rf-btn {
   .title {
     color: var(--w-bf500);
   }
-  .actions {
-    .rf-btn {
-      box-shadow: none;
-      background-color: var(--focus);
-    }
-    .rf-btn--secondary {
-      background-color: var(--transparent);
-      color: var(--w-bf500);
-      box-shadow: inset 0 0 0 1px var(--w-bf500);
-    }
+  .rf-btn {
+    background-color: var(--focus);
+  }
+  .rf-btn--secondary {
+    background-color: var(--transparent);
+    color: var(--w-bf500);
+    box-shadow: inset 0 0 0 1px var(--w-bf500);
   }
 }
 
@@ -66,4 +70,18 @@ a[target="_blank"].rf-btn {
       content: none;
     }
   }
+}
+
+.rf-section--documentation {
+  .card .image {
+    min-width: 50%;
+  }
+}
+
+.rf-section--tools {
+  background-color: var(--w);
+}
+
+.rf-section--tools.reverse {
+  background-color: var(--g300);
 }

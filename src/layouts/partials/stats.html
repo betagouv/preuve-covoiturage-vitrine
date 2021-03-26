@@ -8,7 +8,7 @@
   <div class="rf-container">
     <div class="rf-grid-row">
       <div class="rf-col-12">
-        <h3>{{ $title }}</h3>
+        <h3 class="h-text-center">{{ $title }}</h3>
 
         <div class="rf-grid-row rf-grid-row--gutters">
           {{ range $cards }}
@@ -16,13 +16,7 @@
               <div class="rf-card rf-card--no-arrow">
                 <div class="rf-card__body">
                   <p class="rf-card__desc">{{ .description | markdownify }}</p>
-                  <p>
-                    {{ $class := `` }} {{ $target := `_self` }}
-                    {{ if hasPrefix .link_href "http" }}{{ $target = `_blank` }}{{ end }}
-                    <a href="{{- .link_href -}}" class="rf-link" target="{{ $target }}" rel="noopener noreferrer">
-                      {{- .link_title -}}
-                    </a>
-                  </p>
+                  <p>{{ partial "link.html" (dict "title" .link_title "href" .link_href) }}</p>
                 </div>
               </div>
             </div>

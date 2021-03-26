@@ -33,33 +33,9 @@
                 >Statistiques</a
               >
             </li>
-
-            <!-- dark mode toggle -->
-            <!-- <li class="rf-shortcuts__item">
-              <div class="rf-checkbox-group">
-                <input type="checkbox" id="rf-dark-mode-toggle-switch" name="rf-dark-mode-toggle-switch" />
-                <label class="rf-label" for="rf-dark-mode-toggle-switch"></label>
-              </div>
-            </li> -->
           </ul>
         </div>
       </div>
     </div>
   </div>
 </header>
-
-<section class="rf-section rf-section--bf500 h-text-center">
-  <div class="rf-container">
-    <div class="rf-grid-row">
-      <div class="rf-col-8 rf-col-offset-2">
-        <h1 class="title">{{ .Params.title }}</h1>
-        <p class="subtitle">{{ .Params.subtitle }}</p>
-        <p class="actions">
-          {{ range .Params.actions }}
-            {{ partial "button.html" . }}
-          {{ end }}
-        </p>
-      </div>
-    </div>
-  </div>
-</section>

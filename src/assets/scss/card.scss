@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 1em;
+  }
+  .title {
+    margin-bottom: 0.2em;
+  }
+  .description {
+    margin-top: 0.2em;
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 25%;
+    padding: 1em;
+    img {
+      display: flex;
+      max-width: 60%;
+    }
+  }
+}
+
+.card.reverse {
+  flex-direction: row-reverse;
+}
