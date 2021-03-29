@@ -13,10 +13,10 @@
         <div class="rf-grid-row rf-grid-row--gutters">
           {{ range $cards }}
             <div class="rf-col-4">
-              <div class="card reverse stand-out">
+              <div class="card reverse shadow">
                 <div class="content">
                   <div class="description">{{ .description | markdownify }}</div>
-                  <p>{{ partial "link.html" (dict "title" .link_title "href" .link_href) }}</p>
+                  <p class="link">{{ partial "link.html" (dict "title" .link_title "href" .link_href) }}</p>
                 </div>
                 <div class="image">
                   <img src="{{- .image -}}">

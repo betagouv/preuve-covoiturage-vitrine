@@ -44,3 +44,8 @@
 .card.stand-out {
   background: var(--g100);
 }
+
+.card.shadow {
+  box-shadow: 0 5px 13px 0px #0000001f, 0 3px 4px 0px #0000002b;
+  border-radius: 3px;
+}

@@ -62,12 +62,23 @@ a[target="_blank"].rf-btn {
 }
 
 .rf-section--stats {
-  .rf-card__desc {
-    flex-grow: 1;
-  }
-  .rf-link {
-    &::before {
-      content: none;
+  .card {
+    height: 100%;
+    .content {
+      width: 180%;
+      height: 170px;
+      color: var(--bf500);
+    }
+    .link {
+      margin: 0.5em 0 0;
+      .rf-link {
+        font-size: 80%;
+        text-decoration: underline;
+        &::before,
+        &::after {
+          content: none;
+        }
+      }
     }
   }
 }
