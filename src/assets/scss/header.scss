@@ -1,0 +1,22 @@
+.rf-header {
+  overflow: hidden;
+}
+
+.rf-header__logo {
+  min-width: 160px;
+}
+
+.rf-header__service {
+  overflow: hidden;
+  width: 100%;
+  img {
+    display: block;
+    float: left;
+    max-width: 50px;
+    margin-right: 1em;
+  }
+}
+
+.rf-nav__list {
+  justify-content: center;
+}

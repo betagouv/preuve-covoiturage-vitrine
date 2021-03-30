@@ -1,8 +1,6 @@
 baseURL: http://localhost:1313
 languageCode: fr-fr
 title: Registre de preuve de covoiturage
-theme:
-  - dsfr
 
 params:
   baseline: Développer le covoiturage
