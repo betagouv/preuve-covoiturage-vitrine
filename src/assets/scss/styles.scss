@@ -41,6 +41,12 @@ a.rf-link--outline {
   }
 }
 
+.rf-section--banner {
+  @extend .rf-section--bf500;
+  padding-top: 6em;
+  padding-bottom: 3em;
+}
+
 .rf-section--territories-single {
   ol {
     li {
@@ -55,6 +61,8 @@ a.rf-link--outline {
         left: -3em;
         width: 2em;
         height: 2em;
+        margin: 0;
+        padding: 0;
         line-height: 2em;
         font-size: 2em;
         text-align: center;
@@ -106,4 +114,8 @@ a.rf-link--outline {
 
 .rf-section--tools.reverse {
   background-color: var(--g300);
+}
+
+.rf-card__action {
+  margin-bottom: 0;
 }

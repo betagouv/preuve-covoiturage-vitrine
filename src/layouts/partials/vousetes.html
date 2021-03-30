@@ -13,7 +13,7 @@
                     <a href="{{- .link_href -}}" class="rf-card__link">{{ .title }}</a>
                   </h4>
                   <p class="rf-card__desc">{{ .description }}</p>
-                  <p>
+                  <p class=rf-card__action>
                     {{ $params := dict "title" .link_title "href" .link_href }}
                     {{ partial "button.html" $params }}
                   </p>

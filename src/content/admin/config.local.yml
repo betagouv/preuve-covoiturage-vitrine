@@ -372,3 +372,20 @@ collections:
         allow_multiple: false
         media_folder: /src/static/images/operateurs
         public_folder: /images/operateurs
+
+  - name: settings
+    label: "⚙️ Paramètres"
+    files:
+      - label: "Services"
+        name: services
+        file: src/data/services.yml
+        editor:
+          preview: false
+        fields:
+          - { label: Application, name: app, widget: string }
+          - { label: API, name: api, widget: string }
+          - { label: Statistiques, name: stats, widget: string }
+          - { label: Doc, name: doc, widget: string }
+          - { label: Doc technique, name: tech, widget: string }
+          - { label: Attestations, name: cert, widget: string }
+          - { label: Statut, name: status, widget: string }

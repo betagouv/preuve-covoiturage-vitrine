@@ -15,6 +15,91 @@ collections:
   - label: "📄 Pages"
     name: pages
     files:
+      - label: "🏡 Accueil"
+        name: home
+        file: src/data/home.yml
+        editor:
+          preview: false
+        fields:
+          - label: Titre
+            name: title
+            widget: string
+          - label: Sous-titre
+            name: subtitle
+            widget: text
+          - label: Actions
+            name: actions
+            widget: list
+            fields:
+              - label: Titre
+                name: title
+                widget: string
+              - label: Lien
+                name: href
+                widget: string
+              - label: Style
+                name: style
+                widget: select
+                multiple: false
+                options:
+                  - primary
+                  - secondary
+                default: primary
+                required: false
+          - label: "Compétences : titre"
+            name: expertise_title
+            widget: string
+          - label: Compétences
+            name: expertise_list
+            widget: list
+            fields:
+              - label: Titre
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Image
+                name: image
+                widget: image
+          - label: "Documentation : titre"
+            name: doc_title
+            widget: string
+          - label: "Documentation : description"
+            name: doc_description
+            widget: markdown
+          - label: "Documentation : image"
+            name: doc_image
+            widget: image
+          - label: "Documentation : titre du lien"
+            name: doc_link_title
+            widget: string
+          - label: "Documentation : lien"
+            name: doc_link_href
+            widget: string
+          - label: "Outils : titre"
+            name: tools_title
+            widget: string
+          - label: Outils
+            name: tools
+            widget: list
+            fields:
+              - label: Titre
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: markdown
+              - label: Image
+                name: image
+                widget: image
+              - label: "Titre du lien"
+                name: link_title
+                widget: string
+              - label: Lien
+                name: link_href
+                widget: string
+
       - label: "👥 Qui sommes-nous ?"
         name: qui-sommes-nous
         file: src/content/qui-sommes-nous/_index.md
@@ -283,3 +368,20 @@ collections:
         allow_multiple: false
         media_folder: /src/static/images/operateurs
         public_folder: /images/operateurs
+
+  - name: settings
+    label: "⚙️ Paramètres"
+    files:
+      - label: "Services"
+        name: services
+        file: src/data/services.yml
+        editor:
+          preview: false
+        fields:
+          - { label: Application, name: app, widget: string }
+          - { label: API, name: api, widget: string }
+          - { label: Statistiques, name: stats, widget: string }
+          - { label: Doc, name: doc, widget: string }
+          - { label: Doc technique, name: tech, widget: string }
+          - { label: Attestations, name: cert, widget: string }
+          - { label: Statut, name: status, widget: string }
