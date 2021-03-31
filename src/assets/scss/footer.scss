@@ -25,10 +25,32 @@
       a {
         display: block;
         max-width: 30px;
+        padding: 2px;
+        border-radius: 0;
+        transition: border-radius 0.1s linear;
+        &:hover {
+          padding: 0;
+          border-radius: 16px;
+        }
         img {
           display: block;
           max-width: 100%;
         }
+      }
+      &.twitter a {
+        background: #55acee;
+      }
+      &.youtube a {
+        background: #d42428;
+      }
+      &.linkedin a {
+        background: #007ab9;
+      }
+      &.github a {
+        background: #455a64;
+      }
+      &.rss a {
+        background: #f4b459;
       }
     }
   }
