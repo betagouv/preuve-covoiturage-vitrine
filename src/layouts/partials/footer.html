@@ -1,57 +1,90 @@
 <footer class="rf-footer" role="contentinfo" id="footer">
   <div class="rf-container">
-      <div class="rf-footer__body">
-          <div class="rf-footer__brand rf-enlarge-link">
-              <a href="/" title="Retour à l’accueil">
-                  <p class="rf-logo" title="république française">
-                      république
-                      <br>française
-                  </p>
+    <div class="rf-footer__body">
+      <div class="rf-footer__brand rf-enlarge-link">
+        <p class="rf-logo" title="république française">
+          république
+          <br />française
+        </p>
+        <a class="rf-footer__brand-link" href="/" title="Retour à l’accueil">
+          <img class="rf-footer__logo" src="images/logo-rpc.png" alt="{{ .Site.Title }}" />
+        </a>
+      </div>
+
+      <div class="rf-footer__content">
+        <div class="rf-footer__social">
+          <h6>Restons connectés</h6>
+          <ul class="rf-footer__social-list">
+            <li class="rf-footer__social-item">
+              <a href="{{ .Site.Data.social.twitter }}" target="_blank">
+                <img src="images/social/twitter.svg" alt="Twitter" />
               </a>
-          </div>
-          <div class="rf-footer__content">
-              {{/*  <p class="rf-footer__content-desc">Lorem [...] elit ut.</p>
-              <ul class="rf-footer__content-list">
-                  <li class="rf-footer__content-item">
-                      <a class="rf-footer__content-link" href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
-                  </li>
-                  <li class="rf-footer__content-item">
-                      <a class="rf-footer__content-link" href="https://gouvernement.fr">gouvernement.fr</a>
-                  </li>
-                  <li class="rf-footer__content-item">
-                      <a class="rf-footer__content-link" href="https://service-public.fr">service-public.fr</a>
-                  </li>
-                  <li class="rf-footer__content-item">
-                      <a class="rf-footer__content-link" href="https://data.gouv.fr">data.gouv.fr</a>
-                  </li>
-              </ul>  */}}
-          </div>
+            </li>
+            <li class="rf-footer__social-item">
+              <a href="{{ .Site.Data.social.youtube }}" target="_blank">
+                <img src="images/social/youtube.svg" alt="Youtube" />
+              </a>
+            </li>
+            <li class="rf-footer__social-item">
+              <a href="{{ .Site.Data.social.linkedin }}" target="_blank">
+                <img src="images/social/linkedin.svg" alt="Linkedin" />
+              </a>
+            </li>
+            <li class="rf-footer__social-item">
+              <a href="{{ .Site.Data.social.github }}" target="_blank">
+                <img src="images/social/github.svg" alt="Github" />
+              </a>
+            </li>
+            <li class="rf-footer__social-item">
+              <a href="{{ .Site.Data.social.rss }}" target="_blank">
+                <img src="images/social/rss.svg" alt="RSS" />
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {{ if .Site.Data.newsletter.enabled }}
+        <div class="rf-footer__newsletter">
+          <h6>Recevoir les actualités</h6>
+          {{ partial "newsletter.html" . }}
+          <p class="rf-footer__newsletter-desc">
+            Le Registre de preuve de covoiturage traite les données recueillies afin d'envoyer des communications e-mail
+            aux personnes inscrites.
+          </p>
+        </div>
+        {{ end }}
       </div>
-      <div class="rf-footer__bottom">
-          <ul class="rf-footer__bottom-list">
-            <li class="rf-footer__bottom-item">
-                <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.betagouv }}" target="_blank">beta.gouv.fr</a>
-            </li>
-            <li class="rf-footer__bottom-item">
-                <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.legal }}" target="_blank">Mentions légales</a>
-            </li>
-            <li class="rf-footer__bottom-item">
-              <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.doc }}" target="_blank">Documentation</a>
-            </li>
-            <li class="rf-footer__bottom-item">
-              <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.tech }}" target="_blank">Doc technique</a>
-            </li>
-            <li class="rf-footer__bottom-item">
-              <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.ministry }}" target="_blank">Ministère de la transition écologique</a>
-            </li>
-            <li class="rf-footer__bottom-item">
-              <a class="rf-footer__bottom-link" href="#">Accessibilité: non conforme</a>
-            </li>
-        </ul>
-          <div class="rf-footer__bottom-copy">
-              <p>Sauf mention contraire, tous les textes de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank">licence etalab-2.0</a>
-              </p>
-          </div>
+    </div>
+
+    <div class="rf-footer__bottom">
+      <ul class="rf-footer__bottom-list">
+        <li class="rf-footer__bottom-item">
+          <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.betagouv }}" target="_blank">beta.gouv.fr</a>
+        </li>
+        <li class="rf-footer__bottom-item">
+          <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.legal }}" target="_blank">Mentions légales</a>
+        </li>
+        <li class="rf-footer__bottom-item">
+          <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.doc }}" target="_blank">Documentation</a>
+        </li>
+        <li class="rf-footer__bottom-item">
+          <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.tech }}" target="_blank">Doc technique</a>
+        </li>
+        <li class="rf-footer__bottom-item">
+          <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.ministry }}" target="_blank"
+            >Ministère de la transition écologique</a
+          >
+        </li>
+        <li class="rf-footer__bottom-item">
+          <a class="rf-footer__bottom-link" href="#">Accessibilité: non conforme</a>
+        </li>
+      </ul>
+      <div class="rf-footer__bottom-copy">
+        <p>
+          Sauf mention contraire, tous les textes de ce site sont sous
+          <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank">licence etalab-2.0</a>
+        </p>
       </div>
+    </div>
   </div>
 </footer>

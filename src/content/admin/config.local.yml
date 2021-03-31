@@ -394,8 +394,8 @@ collections:
           - { label: "Code source", name: sourcecode, widget: string }
           - { label: "beta.gouv", name: betagouv, widget: string }
       - label: "Réseaux sociaux"
-        name: networks
-        file: src/data/networks.yml
+        name: social
+        file: src/data/social.yml
         editor:
           preview: false
         fields:
@@ -404,3 +404,11 @@ collections:
           - { label: LinkedIn, name: linkedin, widget: string }
           - { label: Github, name: github, widget: string }
           - { label: RSS, name: rss, widget: string }
+      - label: "Newsletter"
+        name: newsletter
+        file: src/data/newsletter.yml
+        editor:
+          preview: false
+        fields:
+          - { label: Activée, name: enabled, widget: boolean, default: false }
+          - { label: "Form action (URL)", name: action, widget: string }
