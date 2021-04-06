@@ -6,6 +6,22 @@
   text-align: center;
 }
 
+.h-text-right {
+  text-align: right;
+}
+
+.h-text-left {
+  text-align: left;
+}
+
+.h-text-error {
+  color: var(--error);
+}
+
+.h-text-success {
+  color: var(--success);
+}
+
 .img-responsive {
   display: block;
   max-width: 100%;

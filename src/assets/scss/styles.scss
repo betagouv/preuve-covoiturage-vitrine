@@ -120,3 +120,10 @@ a.rf-link--outline {
 .rf-card__action {
   margin-bottom: 0;
 }
+
+.rf-section--contactform {
+  textarea {
+    resize: vertical;
+    min-height: 229px;
+  }
+}

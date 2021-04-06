@@ -412,3 +412,17 @@ collections:
         fields:
           - { label: Activée, name: enabled, widget: boolean, default: false }
           - { label: "Form action (URL)", name: action, widget: string }
+      - label: "Formulaire de contact"
+        name: contactform
+        file: src/data/contactform.yml
+        editor:
+          preview: false
+        fields:
+          - { label: "Form action (URL)", name: action, widget: string }
+      - label: "Matomo"
+        name: analytics
+        file: src/data/analytics.yml
+        editor:
+          preview: false
+        fields:
+          - { label: "id", name: id, widget: string }
