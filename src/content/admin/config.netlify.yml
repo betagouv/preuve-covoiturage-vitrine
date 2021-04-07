@@ -381,7 +381,44 @@ collections:
           - { label: Application, name: app, widget: string }
           - { label: API, name: api, widget: string }
           - { label: Statistiques, name: stats, widget: string }
+          - { label: "Mentions légales", name: legal, widget: string }
+          - { label: "Ministère de la transition écologique", name: ministry, widget: string }
           - { label: Doc, name: doc, widget: string }
           - { label: Doc technique, name: tech, widget: string }
           - { label: Attestations, name: cert, widget: string }
           - { label: Statut, name: status, widget: string }
+          - { label: "Code source", name: sourcecode, widget: string }
+          - { label: "beta.gouv", name: betagouv, widget: string }
+      - label: "Réseaux sociaux"
+        name: social
+        file: src/data/social.yml
+        editor:
+          preview: false
+        fields:
+          - { label: Twitter, name: twitter, widget: string }
+          - { label: Youtube, name: api, widget: string }
+          - { label: LinkedIn, name: linkedin, widget: string }
+          - { label: Github, name: github, widget: string }
+          - { label: RSS, name: rss, widget: string }
+      - label: "Newsletter"
+        name: newsletter
+        file: src/data/newsletter.yml
+        editor:
+          preview: false
+        fields:
+          - { label: Activée, name: enabled, widget: boolean, default: false }
+          - { label: "Form action (URL)", name: action, widget: string }
+      - label: "Formulaire de contact"
+        name: contactform
+        file: src/data/contactform.yml
+        editor:
+          preview: false
+        fields:
+          - { label: "Form action (URL)", name: action, widget: string }
+      - label: "Matomo"
+        name: analytics
+        file: src/data/analytics.yml
+        editor:
+          preview: false
+        fields:
+          - { label: "id", name: id, widget: string }
