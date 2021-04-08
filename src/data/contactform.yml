@@ -1,2 +1,2 @@
 enabled: true
-action: http://localhost:8080/contactform
+action: https://api.dev.covoiturage.beta.gouv.fr/contactform
