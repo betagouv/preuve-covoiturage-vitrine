@@ -3,6 +3,8 @@ services:
   hugo:
     image: klakegg/hugo:0.82.0-ext
     user: 1000:1000
+    command:
+      - "-s /src -d /public -e production"
     volumes:
       - "./src:/src"
       - "./public:/public"
