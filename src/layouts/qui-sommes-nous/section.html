@@ -1,0 +1,17 @@
+{{ define "banner" }}  
+  {{ partial "banner.html" .Params }}
+{{ end }}
+
+{{ define "main" }}
+  <section class="rf-section rf-section--territories-single">
+    <div class="rf-container">
+      <div class="rf-grid-row">
+        <div class="rf-col-8 rf-col-offset-2">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "vousetes.html" . }}
+{{ end }}

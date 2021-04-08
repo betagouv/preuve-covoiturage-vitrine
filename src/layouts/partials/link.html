@@ -1,0 +1,14 @@
+{{ $title := .title }}
+{{ $href := .href }}
+
+{{ $target := `_self` }}
+{{ if hasPrefix $href "http" }}{{ $target = `_blank` }}{{ end }}
+
+<a
+    href="{{- $href -}}"
+    title="{{- $title -}}"
+    class="rf-link"
+    target="{{ $target }}"
+    rel="noopener noreferrer">
+    {{- $title -}}
+</a>

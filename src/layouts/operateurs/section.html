@@ -1,0 +1,35 @@
+{{ define "banner" }}  
+  {{ partial "banner.html" .Params }}
+{{ end }}
+
+{{ define "main" }}
+  {{/*  linked operators  */}}
+  <section class="rf-section">
+    <div class="rf-container">
+      <div class="rf-grid-row">
+        <div class="rf-col-12">
+          <h2>{{- .Params.section_linked_title -}}</h2>
+          <div class="rf-grid-row partner-logo">
+            {{ range where .Pages "Params.linked" true }} {{ partial "listlogo.html" . }} {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{/*  not linked operators  */}}
+  <section class="rf-section">
+    <div class="rf-container">
+      <div class="rf-grid-row">
+        <div class="rf-col-12">
+          <h2>{{- .Params.section_notlinked_title -}}</h2>
+          <div class="rf-grid-row partner-logo">
+            {{ range where .Pages "Params.linked" false }} {{ partial "listlogo.html" . }} {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "vousetes.html" . }}
+{{ end }}

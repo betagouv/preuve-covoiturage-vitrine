@@ -1,0 +1,17 @@
+<div class="rf-col-md-3 rf-col-4 partner-logo--item">
+  <a
+    href="{{ .Params.link }}"
+    alt=".Title"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="partner-logo--img"
+    style="background-image:url('{{ replace .Params.logo "/static" "" }}')"
+  >
+  </a>
+
+  {{ if .Params.showTitle }}
+  <a href="{{ .Params.link }}" alt=".Title" target="_blank" rel="noopener noreferrer" class="partner-logo--title">
+    {{ .Title }}
+  </a>
+  {{ end }}
+</div>

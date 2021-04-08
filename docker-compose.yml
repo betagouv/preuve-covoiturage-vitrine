@@ -1,14 +1,42 @@
 version: "3"
 services:
   hugo:
-    image: klakegg/hugo:0.79.1-ext
+    image: klakegg/hugo:0.82.0-ext
+    user: 1000:1000
     volumes:
       - "./src:/src"
       - "./public:/public"
+
+  # localhost:1313
   server:
-    image: klakegg/hugo:0.79.1-ext
-    command: server
+    image: klakegg/hugo:0.82.0-ext
+    command:
+      - server
+    user: 1000:1000
+    environment:
+      - HUGO_PARAMS_ENV=local
     volumes:
       - "./src:/src"
     ports:
-      - "1313:1313"
+      - 1313:1313
+    depends_on:
+      - auth
+      - local_backend
+
+  # localhost:1314
+  auth:
+    build: ./docker/auth
+    env_file: .env
+    environment:
+      - ORIGIN=http://localhost:1313
+    ports:
+      - 1314:3000
+
+  # localhost:1315
+  local_backend:
+    build: ./docker/local_backend
+    user: 1000:1000
+    volumes:
+      - .:/code
+    ports:
+      - 1315:8081

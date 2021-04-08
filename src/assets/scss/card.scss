@@ -1,0 +1,72 @@
+@import "variables";
+
+.card {
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: $bp-md) {
+    flex-direction: row;
+  }
+  @media screen and (max-width: $bp-sm) {
+    flex-direction: column-reverse;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 1em;
+  }
+  .title {
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+  }
+  .description {
+    margin-top: 0.2em;
+    line-height: 1.6;
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 25%;
+    padding: 0.5em;
+    img {
+      display: flex;
+      width: 256px;
+      max-width: 100%;
+    }
+  }
+}
+
+.card.vertical {
+  flex-direction: column-reverse;
+  @media screen and (max-width: $bp-md) {
+    flex-direction: row-reverse;
+  }
+  @media screen and (max-width: $bp-sm) {
+    flex-direction: column-reverse;
+  }
+  .image img {
+    max-height: 150px;
+  }
+}
+
+.card.reverse {
+  flex-direction: row-reverse;
+  @media screen and (max-width: $bp-md) {
+    flex-direction: row-reverse;
+  }
+  @media screen and (max-width: $bp-sm) {
+    flex-direction: column-reverse;
+  }
+}
+
+.card.stand-out {
+  background: var(--g100);
+}
+
+.card.shadow {
+  box-shadow: 0 5px 13px 0px #0000001f, 0 3px 4px 0px #0000002b;
+  border-radius: 3px;
+}

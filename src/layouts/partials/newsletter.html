@@ -1,0 +1,87 @@
+<form
+  id="nl-form"
+  method="POST"
+  action="{{ .Site.Data.newsletter.action }}"
+  data-type="subscription"
+  class="rf-footer__newsletter"
+>
+  <div class="rf-search-bar">
+    <label class="rf-label" for="EMAIL">S'abonner à la newsletter</label>
+    <input
+      class="rf-input"
+      type="search"
+      id="EMAIL"
+      name="EMAIL"
+      autocomplete="off"
+      placeholder="e-mail"
+      data-required="true"
+      required
+    />
+    <button class="rf-btn" title="S'abonner à la newsletter"></button>
+  </div>
+</form>
+
+<div id="nl-success" class="rf-footer__newsletter-success hidden">
+  <div>
+    <span class="rf-fi-checkbox-line" aria-hidden="true"></span>
+    <span id="nl-success-text">Some very long text here because the status is cool to read</span>
+  </div>
+</div>
+
+<div id="nl-error" class="rf-footer__newsletter-error hidden">
+  <div>
+    <span class="rf-fi-close-circle-line" aria-hidden="true"></span>
+    <span id="nl-error-text">Some very long text here because the status is cool to read</span>
+  </div>
+</div>
+
+<script src="js/axios.min.js"></script>
+<script>
+  var nlf = document.getElementById("nl-form");
+  nlf.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var url = nlf.getAttribute("action") + "?isAjax=1";
+    var fd = new FormData();
+    fd.append("EMAIL", nlf.EMAIL.value);
+    fd.append("email_address_check", undefined);
+    fd.append("locale", "fr");
+
+    var successEl = document.getElementById("nl-success-text");
+    var errorEl = document.getElementById("nl-error-text");
+    var hideDelay = 4000;
+
+    function show(id, message) {
+      document.getElementById(id + "-text").innerText = message;
+      document.getElementById(id).classList.remove("hidden");
+    }
+
+    function hideEl(id) {
+      return function () {
+        document.getElementById(id).classList.add("hidden");
+      };
+    }
+
+    axios({
+      url: url,
+      method: "POST",
+      data: fd,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "multipart/form-data",
+      },
+    })
+      .then(function (response) {
+        show("nl-success", response.data.message);
+        setTimeout(hideEl("nl-success"), hideDelay);
+      })
+      .catch(function (error) {
+        let message = "Une erreur est survenue";
+        if ("data" in error && "message" in error.data) {
+          message = response.data.message;
+        }
+
+        show("nl-error", message);
+        setTimeout(hideEl("nl-error"), hideDelay);
+      });
+  });
+</script>

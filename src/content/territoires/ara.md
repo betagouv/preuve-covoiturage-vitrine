@@ -1,6 +1,7 @@
 ---
+filter: territoire
 title: "Région Auvergne-Rhône-Alpes"
 date: 2020-12-28T15:46:34Z
 showTitle: true
-logo: ara.webp
+logo: /images/territoires/ara.webp
 ---

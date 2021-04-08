@@ -1,0 +1,8 @@
+{{
+    $params := dict
+        "title" (.Get "title")
+        "href" (.Get "href")
+        "style" (or (.Get "style") "primary")
+}}
+
+{{ partial "button.html" $params }}

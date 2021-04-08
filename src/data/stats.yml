@@ -1,0 +1,26 @@
+title: Le Registre en chiffres
+cards:
+  - description: "**13 opérateurs** de covoiturage référencés dans le Registre de preuve de covoiturage"
+    image: images/stats/operateurs.png
+    link_title: Voir la liste
+    link_href: /operateurs
+    pinned: true
+  - description: "**63 territoires** utilisent le Registre de preuve de covoiturage"
+    image: images/stats/aom.svg
+    link_title: Voir la liste
+    link_href: /territoires
+    pinned: true
+  - description: "**883 081** trajets en covoiturage communiqués et validés dans le Registre"
+    image: images/stats/trajet.png
+    link_title: Voir toutes les données
+    link_href: https://app.covoiturage.beta.gouv.fr/stats
+    pinned: true
+  - description: 150 territoires sensibilisés
+    image: images/stats/aom.svg
+    pinned: false
+  - description: 4 681 870 kg de CO₂ économisés
+    image: images/stats/co2.png
+    pinned: false
+  - description: 3 classes de preuve de covoiturage définies
+    image: images/stats/check.svg
+    pinned: false

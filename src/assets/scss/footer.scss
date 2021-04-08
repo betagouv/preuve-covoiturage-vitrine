@@ -1,0 +1,100 @@
+.rf-footer__logo {
+  max-width: 80px;
+}
+
+.rf-footer__body {
+  align-items: flex-start;
+}
+
+.rf-footer__content {
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: $bp-md) {
+    flex-direction: column;
+  }
+  & > div {
+    flex-basis: 50%;
+  }
+}
+
+.rf-footer__social {
+  .rf-footer__social-list {
+    list-style: none;
+    margin: 0;
+    .rf-footer__social-item {
+      display: inline-block;
+      width: 30px;
+      margin: 0;
+      margin-right: 5px;
+      a {
+        display: block;
+        max-width: 30px;
+        padding: 2px;
+        border-radius: 0;
+        transition: border-radius 0.1s linear;
+        &:hover {
+          padding: 0;
+          border-radius: 16px;
+        }
+        img {
+          display: block;
+          max-width: 100%;
+        }
+      }
+      &.twitter a {
+        background: #55acee;
+      }
+      &.youtube a {
+        background: #d42428;
+      }
+      &.linkedin a {
+        background: #007ab9;
+      }
+      &.github a {
+        background: #455a64;
+      }
+      &.rss a {
+        background: #f4b459;
+      }
+    }
+  }
+}
+
+.rf-footer__newsletter {
+  .rf-search-bar {
+    .rf-btn {
+      &::before {
+        content: "";
+      }
+    }
+  }
+  .rf-footer__newsletter-desc {
+    margin-top: 1em;
+    padding: 0.2em 0.6em 1em;
+    font-size: 80%;
+    line-height: 1.4;
+  }
+}
+
+.rf-footer__newsletter-success,
+.rf-footer__newsletter-error {
+  overflow: hidden;
+  max-height: 100px;
+  transition: max-height 0.5s ease;
+  &.hidden {
+    max-height: 0;
+  }
+  div {
+    margin: 0.5em 0.2em 1em;
+    padding: 0.3em 0.4em;
+    font-size: 90%;
+    border: 2px solid currentColor;
+    color: var(--success);
+    border-radius: 4px;
+    background: transparent;
+  }
+}
+
+.rf-footer__newsletter-error {
+  color: var(--error);
+}

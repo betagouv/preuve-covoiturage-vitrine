@@ -1,0 +1,28 @@
+<div class="rf-section rf-section--vousetes">
+  <div class="rf-container">
+    <div class="rf-grid-row">
+      <div class="rf-col-12">
+        <h3 class="h-text-center">{{ .Site.Data.vousetes.title }}</h3>
+
+        <div class="rf-grid-row rf-grid-row--gutters">
+          {{ range .Site.Data.vousetes.cards }}
+            <div class="rf-col-12 rf-col-sm-4">
+              <div class="rf-card rf-card--no-arrow">
+                <div class="rf-card__body">
+                  <h4 class="rf-card__title">
+                    <a href="{{- .link_href -}}" class="rf-card__link">{{ .title }}</a>
+                  </h4>
+                  <p class="rf-card__desc">{{ .description }}</p>
+                  <p class=rf-card__action>
+                    {{ $params := dict "title" .link_title "href" .link_href }}
+                    {{ partial "button.html" $params }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

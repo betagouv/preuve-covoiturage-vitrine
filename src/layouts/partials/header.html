@@ -1,0 +1,58 @@
+<header role="banner" class="rf-header">
+  <div class="rf-container">
+      <div class="rf-header__body">
+          <div class="rf-header__brand rf-enlarge-link">
+              <div class="rf-header__logo">
+                  <p class="rf-logo">
+                      Ministère<br>
+                      de la Transition<br>
+                      Écologique
+                  </p>
+              </div>
+              <div class="rf-header__service">
+                <img src="images/logo-rpc.png" alt="{{ .Site.Title }}">
+                  <a href="/" title="Retour à l’accueil">
+                      <p class="rf-header__service-title">
+                        {{ .Site.Title }}
+                      </p>
+                  </a>
+                  <p class="rf-header__service-tagline">{{ .Site.Params.baseline }}</p>
+              </div>
+          </div>
+          <div class="rf-header__navbar">
+              <button class="rf-btn--menu rf-btn" data-rf-opened="false" aria-controls="header-navigation" aria-haspopup="menu" title="Ouvrir le menu">
+                  Ouvrir le menu
+              </button>
+          </div>
+          <div class="rf-header__tools">
+              <div class="rf-shortcuts">
+                  <ul class="rf-shortcuts__list">
+                      <li class="rf-shortcuts__item">
+                          <a class="rf-link rf-fi-lock-line" href="{{ .Site.Data.services.app }}" target="_blank">Connexion</a>
+                      </li>
+                      <li class="rf-shortcuts__item">
+                          <a class="rf-link rf-fi-information-line" href="{{ .Site.Data.services.doc }}" target="_blank">Documentation</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <nav class="rf-nav rf-modal" id="header-navigation" role="navigation" aria-label="Menu principal">
+           <button class="rf-link--close rf-link" aria-controls="header-navigation">Fermer</button>
+           <ul class="rf-nav__list">
+              <li class="rf-nav__item">
+                <a class="rf-nav__link" href="/territoires" target="_self">Territoires</a>
+              </li>
+              <li class="rf-nav__item">
+                <a class="rf-nav__link" href="/operateurs" target="_self">Opérateurs</a>
+              </li>
+              <li class="rf-nav__item">
+                <a class="rf-nav__link" href="/qui-sommes-nous" target="_self">Qui sommes-nous&nbsp;?</a>
+              </li>
+              <li class="rf-nav__item">
+                <a class="rf-nav__link" href="{{ .Site.Data.services.stats }}" target="_blank">Statistiques</a>
+              </li>
+         </ul>
+       </nav>
+  </div>
+</header>

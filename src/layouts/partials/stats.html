@@ -1,0 +1,31 @@
+{{ $title := .Site.Data.stats.title }}
+{{ $cards := .Site.Data.stats.cards }}
+{{ if .IsHome }}
+  {{ $cards = where $cards "pinned" true }}
+{{ end }}
+
+<div class="rf-section rf-section--stats">
+  <div class="rf-container">
+    <div class="rf-grid-row">
+      <div class="rf-col-12">
+        <h2 class="h-text-center">{{ $title }}</h2>
+
+        <div class="rf-grid-row rf-grid-row--gutters">
+          {{ range $cards }}
+            <div class="rf-col-12 rf-col-md-4">
+              <div class="card reverse shadow">
+                <div class="content">
+                  <div class="description">{{ .description | markdownify }}</div>
+                  <p class="link">{{ partial "link.html" (dict "title" .link_title "href" .link_href) }}</p>
+                </div>
+                <div class="image">
+                  <img src="{{- .image -}}">
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

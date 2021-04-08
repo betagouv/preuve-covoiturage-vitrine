@@ -1,0 +1,82 @@
+{{ define "banner" }}
+  {{ partial "banner.html" .Params }}
+{{ end }}
+
+{{ define "main" }}
+  <section class="rf-section rf-section--contactform">
+    <form id="contact-form" action="{{ .Site.Data.contactform.action }}">
+      <div class="rf-container">
+        <div class="rf-grid-row">
+          <div class="rf-col-6 rf-col-offset-3">
+            {{/*  name  */}}
+            <div class="rf-input-group">
+              <label class="rf-label" for="name">Votre nom :</label>
+              <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+            </div>
+
+            {{/*  company  */}}
+            <div class="rf-input-group">
+              <label class="rf-label" for="company">Votre collectivité/entreprise :</label>
+              <input class="rf-input" type="text" id="company" name="company" minlength="1" maxlength="256" />
+            </div>
+
+            {{/*  job  */}}
+            <div class="rf-input-group">
+              <label class="rf-label" for="job">Votre fonction :</label>
+              <input class="rf-input" type="text" id="job" name="job" minlength="1" maxlength="256" />
+            </div>
+
+            {{/*  email  */}}
+            <div class="rf-input-group">
+              <label class="rf-label" for="email">Votre courriel <span class="h-text-error">*</span> :</label>
+              <input class="rf-input" type="text" id="email" name="email" required minlength="1" maxlength="256" />
+            </div>
+
+            {{/*  message  */}}
+            <div class="rf-input-group">
+              <label class="rf-label" for="body">Votre message <span class="h-text-error">*</span> :</label>
+              <textarea class="rf-input" id="body" name="body" required minlength="1" maxlength="4096"></textarea>
+            </div>
+
+            <div class="rf-input-group h-text-right">
+              <input type="submit" value="Envoyer" class="rf-btn" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <script src="js/axios.min.js"></script>
+  <script>
+    var fm = document.forms[0];
+    fm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var fd = new FormData(fm);
+
+      var data = Object.create(null);
+      for (const [key, value] of fd.entries()) {
+        if (value && value.length) data[key] = value;
+      }
+
+      axios({
+        url: fm.getAttribute("action"),
+        method: "POST",
+        data: data,
+        headers: {
+          Accept: "application/json",
+          "Content-type": "application/json",
+        },
+      })
+        .then(function (response) {
+          // TODO: cleanup, success message
+          console.log(response);
+        })
+        .catch(function (error) {
+          // TODO: error message
+          console.error(error);
+        });
+    });
+  </script>
+{{ end }}
