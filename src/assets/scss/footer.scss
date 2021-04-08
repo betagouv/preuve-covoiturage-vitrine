@@ -9,6 +9,9 @@
 .rf-footer__content {
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: $bp-md) {
+    flex-direction: column;
+  }
   & > div {
     flex-basis: 50%;
   }

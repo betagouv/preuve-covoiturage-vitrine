@@ -14,7 +14,7 @@
 
           <div class="rf-grid-row rf-grid-row--gutters">
           {{ range $data.expertise_list }}
-            <div class="rf-col-4">
+            <div class="rf-col-12 rf-col-md-4">
               <div class="card vertical">
                 <div class="content">
                   <h4 class="title">{{- .title -}}</h4>
@@ -37,7 +37,7 @@
   <div class="rf-section rf-section--testimonials">
     <div class="rf-container">
       <div class="rf-grid-row">
-        <div class="rf-col-8 rf-col-offset-2">
+        <div class="rf-col-12 rf-col-md-8 rf-col-offset-md-2">
           <h2 class="h-text-center">{{ .Site.Data.testimonials.title }}</h2>
   
           {{ range .Site.Data.testimonials.cards }}
@@ -92,7 +92,7 @@
     <section class="rf-section rf-section--tools {{ $reverse }}">
       <div class="rf-container">
         <div class="rf-grid-row">
-          <div class="rf-col-8 rf-col-offset-2">
+          <div class="rf-col-12 rf-col-lg-8 rf-col-offset-lg-2">
             
               <div class="card {{ $reverse }}">
                 <div class="content">

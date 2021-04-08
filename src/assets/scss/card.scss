@@ -1,6 +1,15 @@
+@import "variables";
+
 .card {
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: $bp-md) {
+    flex-direction: row;
+  }
+  @media screen and (max-width: $bp-sm) {
+    flex-direction: column-reverse;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
@@ -32,6 +41,12 @@
 
 .card.vertical {
   flex-direction: column-reverse;
+  @media screen and (max-width: $bp-md) {
+    flex-direction: row-reverse;
+  }
+  @media screen and (max-width: $bp-sm) {
+    flex-direction: column-reverse;
+  }
   .image img {
     max-height: 150px;
   }
@@ -39,6 +54,12 @@
 
 .card.reverse {
   flex-direction: row-reverse;
+  @media screen and (max-width: $bp-md) {
+    flex-direction: row-reverse;
+  }
+  @media screen and (max-width: $bp-sm) {
+    flex-direction: column-reverse;
+  }
 }
 
 .card.stand-out {

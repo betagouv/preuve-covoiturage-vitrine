@@ -1,3 +1,4 @@
+@import "variables";
 @import "./helpers.scss";
 @import "./card.scss";
 @import "./testimonials.scss";
@@ -46,6 +47,13 @@ a.rf-link--outline {
   @extend .rf-section--bf500;
   padding-top: 6em;
   padding-bottom: 3em;
+  .actions .rf-btn {
+    margin: 0.5em;
+  }
+  @media screen and (max-width: $bp-md) {
+    padding-top: 2em;
+    padding-bottom: 1em;
+  }
 }
 
 .rf-section--territories-single {
@@ -88,6 +96,9 @@ a.rf-link--outline {
       width: 180%;
       height: 170px;
       color: var(--bf500);
+      @media screen and (max-width: $bp-md) {
+        width: 100%;
+      }
     }
     .link {
       margin: 0.5em 0 0;
@@ -100,17 +111,42 @@ a.rf-link--outline {
         }
       }
     }
+    .image {
+      padding: 0 1em;
+      @media screen and (max-width: $bp-md) and (min-width: $bp-sm) {
+        width: 20%;
+        min-width: 0;
+      }
+      @media screen and (max-width: $bp-sm) {
+        img {
+          width: 40%;
+          margin-top: 2em;
+        }
+      }
+    }
   }
 }
 
 .rf-section--documentation {
-  .card .image {
-    min-width: 50%;
+  .card {
+    .image {
+      min-width: 50%;
+      @media screen and (max-width: $bp-sm) {
+        img {
+          max-width: 33%;
+        }
+      }
+    }
   }
 }
 
 .rf-section--tools {
   background-color: var(--w);
+  @media screen and (max-width: $bp-sm) {
+    .image img {
+      max-width: 33%;
+    }
+  }
 }
 
 .rf-section--tools.reverse {
