@@ -12,7 +12,7 @@
   <meta name="description" content="{{ .Site.Params.Description }}" />
   <meta name="keywords" content="registre, covoiturage, preuve, ministère, écologie" />
   <meta name="robots" content="index, follow" />
-  
+
   <link rel="canonical" href="{{ .Site.BaseURL }}" />
 
   <meta property="og:title" content="{{ .Site.Title }}" />
@@ -28,7 +28,28 @@
   <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#21bf73" />
   <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
 
-  <link rel="stylesheet" href="css/dsfr.min.css">
+  <link rel="stylesheet" href="css/dsfr.min.css" />
   {{ $style := resources.Get "scss/styles.scss" | resources.ToCSS }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
+
+  {{ if and .Site.Data.analytics.id .Site.Data.analytics.url }}
+    <script type="text/javascript">
+      var _paq = window._paq || [];
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      (function () {
+        var u = "https://stats.data.gouv.fr/";
+        _paq.push(["setTrackerUrl", u + "piwik.php"]);
+        _paq.push(["setSiteId", "{{- .Site.Data.analytics.id -}}"]);
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0];
+        g.type = "text/javascript";
+        g.async = true;
+        g.defer = true;
+        g.src = u + "piwik.js";
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
+  {{ end }}
 </head>
