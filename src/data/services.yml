@@ -1,7 +1,7 @@
 app: https://app.covoiturage.beta.gouv.fr
 api: https://api.covoiturage.beta.gouv.fr
 stats: https://app.covoiturage.beta.gouv.fr/stats
-legal: https://doc.covoiturage.beta.gouv.fr/presentation/mentions-legales
+legal: https://doc.covoiturage.beta.gouv.fr/ressources/mentions-legales
 ministry: https://ecologie.gouv.fr
 doc: https://doc.covoiturage.beta.gouv.fr
 tech: https://tech.covoiturage.beta.gouv.fr

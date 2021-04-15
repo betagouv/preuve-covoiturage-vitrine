@@ -7,7 +7,7 @@ subtitle: Construit sous un format de Startup d’État dans la communauté
 actions:
   - style: primary
     title: Contacter l'équipe
-    href: mailto:contact@covoiturage.beta.gouv.fr
+    href: /nous-contacter
   - style: secondary
     title: Documentation
     href: https://doc.covoiturage.beta.gouv.fr
@@ -31,4 +31,4 @@ En rejoignant le Registre de preuve de covoiturage, les AOM ont toutes les clés
 
 Nous développons d’autres services en faveur du covoiturage au quotidien comme le générateur d’attestation sur l’honneur de covoiturage pour faciliter l’obtention du forfaits mobilités durables ou encore un prototype d’Observatoire national au covoiturage s’inscrivant dans le plan France Relance.
 
-{{< button title="Voir les autres outils" link="/" >}}
+{{< button title="Voir les autres outils" href="/#outils" >}}

@@ -10,8 +10,8 @@ section_notlinked_title: Les opérateurs de covoiturage bientôt référencés d
 actions:
   - style: primary
     title: Demander une démo
-    href: mailto:contact@covoiturage.beta.gouv.fr
+    href: /nous-contacter
   - style: secondary
     title: Guide opérateurs
-    href: https://doc.covoiturage.beta.gouv.fr/operateurs/partenaireoperateur
+    href: https://doc.covoiturage.beta.gouv.fr/operateur-de-covoiturage-beneficier-du-registre/devenir-partenaire
 ---

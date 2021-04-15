@@ -6,9 +6,9 @@ subtitle: >
   une politique incitative de covoiturage courte distance efficace.
 actions:
   - title: Demander une démo
-    href: mailto:contact@covoiturage.beta.gouv.fr
+    href: /nous-contacter
   - title: Guide territoires
-    href: https://doc.covoiturage.beta.gouv.fr/territoires/guide-territoires
+    href: https://doc.covoiturage.beta.gouv.fr/territoires-beneficier-du-registre-de-preuve-de-covoiturage/guide-territoires-pour-devenir-partenaire
     style: secondary
 ---
 

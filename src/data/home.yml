@@ -49,7 +49,7 @@ tools:
     title: Observatoire national du covoiturage
     image: images/icons/phare.svg
     link_title: En savoir plus
-    link_href: "#"
+    link_href: https://blog.beta.gouv.fr/general/2021/02/17/covoiturage-beta-gouv-fr-laureat-de-l-appel-a-projets-utilisation-de-la-donnee-pour-co-construire-un-observatoire-national-du-covoiturage-au-quotidien/
   - description: Notre générateur d’attestation de covoiturage sur l’honneur, à
       destination des salariés du privé et du public qui n'utilisent pas une
       application de covoiturage partenaire du Registre, permet de bénéficier du
@@ -66,6 +66,6 @@ tools:
       des acteurs publics qui s’engagent pour le covoiturage sur leur territoire
       et d’échanger sur leurs pratiques.
     link_title: Signer la charte
-    link_href: "#"
+    link_href: https://www.francemobilites.fr/thematiques/mobilite-partagee#charte
     title: Charte d'engagement
     image: images/icons/charte.svg
