@@ -56,7 +56,7 @@
         {{ if .Site.Data.newsletter.enabled }}
           <div class="rf-footer__newsletter">
             <h6>Recevoir les actualités</h6>
-            {{ partial "newsletter.html" . }}
+            <iframe width="100%" src="/newsletter" frameborder="0" scrolling="no" allowfullscreen></iframe>
             <p class="rf-footer__newsletter-desc">
               Le Registre de preuve de covoiturage traite les données recueillies afin d'envoyer des communications
               e-mail aux personnes inscrites.
@@ -89,7 +89,7 @@
           <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.betagouv }}" target="_blank">beta.gouv.fr</a>
         </li>
         <li class="rf-footer__bottom-item">
-          <a class="rf-footer__bottom-link" href="#">Accessibilité: non conforme</a>
+          <a class="rf-footer__bottom-link" href="https://design.numerique.gouv.fr/accessibilite-numerique/cadre-legal/">Accessibilité: non conforme</a>
         </li>
       </ul>
       <div class="rf-footer__bottom-copy">
