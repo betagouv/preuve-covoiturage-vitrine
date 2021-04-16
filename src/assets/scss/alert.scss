@@ -1,0 +1,32 @@
+.rf-alert {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s ease;
+  margin: 0;
+  padding: 0;
+  > div {
+    padding: 0.5em 1em;
+    color: var(--bf500);
+    border: 2px solid currentColor;
+    border-radius: 5px;
+    h6 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3em;
+    }
+    p {
+      margin: 0;
+    }
+  }
+
+  &.shown {
+    max-height: 100px;
+  }
+}
+
+.rf-alert--error > div {
+  color: var(--error);
+}
+
+.rf-alert--success > div {
+  color: var(--success);
+}
