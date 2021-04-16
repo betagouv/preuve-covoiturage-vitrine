@@ -39,8 +39,17 @@
             </div>
 
             <div class="rf-input-group h-text-right">
+              <input type="reset" value="Annuler" class="rf-btn rf-btn--reset" />
               <input type="submit" value="Envoyer" class="rf-btn" />
             </div>
+
+            <div id="form-feedback" class="rf-alert rf-alert--success">
+              <div>
+                <h6 id="form-feedback-title">Erreur</h6>
+                <p id="form-feedback-message">Une erreur s'est produite.</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -60,6 +69,23 @@
         if (value && value.length) data[key] = value;
       }
 
+      var delay = 5000;
+      var timer = null;
+      var el = document.getElementById('form-feedback');
+
+      function show(title, message, type) {
+        clearTimeout(timer);
+        document.getElementById('form-feedback-title').innerText = title;
+        document.getElementById('form-feedback-message').innerText = message;
+        el.className = 'rf-alert rf-alert--' + type + ' shown';
+        setTimeout(function () { hide() }, delay);
+      }
+
+      function hide() {
+        clearTimeout(timer);
+        el.classList.remove('shown');
+      }
+
       axios({
         url: fm.getAttribute("action"),
         method: "POST",
@@ -70,12 +96,12 @@
         },
       })
         .then(function (response) {
-          // TODO: cleanup, success message
-          console.log(response);
+          document.forms[0].reset();
+          show('Merci !', 'Votre message a bien été envoyé', 'success');
         })
         .catch(function (error) {
-          // TODO: error message
           console.error(error);
+          show('Erreur', error.message, 'error');
         });
     });
   </script>

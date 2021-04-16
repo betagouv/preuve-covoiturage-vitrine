@@ -5,6 +5,7 @@
 @import "./header.scss";
 @import "./partners.scss";
 @import "./footer.scss";
+@import "./alert.scss";
 
 .rf-section {
   padding-top: 2em;
@@ -14,6 +15,7 @@
 .rf-btn {
   border-radius: 20px;
   box-shadow: none;
+  padding: 0.3rem 1.5rem 0.5rem;
 }
 
 // remove 'external-link' icon from buttons
@@ -161,5 +163,12 @@ a.rf-link--outline {
   textarea {
     resize: vertical;
     min-height: 229px;
+  }
+  .rf-btn--reset {
+    appearance: none;
+    font-family: inherit;
+    border: none;
+    color: var(--g700);
+    background-color: transparent;
   }
 }
