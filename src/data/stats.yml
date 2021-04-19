@@ -15,12 +15,3 @@ cards:
     link_title: Voir toutes les données
     link_href: https://app.covoiturage.beta.gouv.fr/stats
     pinned: true
-  - description: 154 territoires sensibilisés
-    image: images/stats/aom.svg
-    pinned: false
-  - description: 13 132 tonnes de CO₂ économisés
-    image: images/stats/co2.png
-    pinned: false
-  - description: 3 classes de preuve de covoiturage définies
-    image: images/stats/check.svg
-    pinned: false

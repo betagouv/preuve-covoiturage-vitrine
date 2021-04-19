@@ -1,26 +1,23 @@
 {{ $file := .Get 0 }}
+{{ $section := .Get 1 }}
 {{ if (not (strings.HasSuffix $file ".html")) }}
     {{ $file = printf "%s.html" $file }}
 {{ end }}
 
+{{ if $section }}
 {{/*  close previous section  */}}
             </div>
         </div>
     </div>
 </section>
+{{ end }}
 
-<section class="rf-section rf-section--territories-single">
-    <div class="rf-container">
-        <div class="rf-grid-row">
-            <div class="rf-col-12">
-                {{ partial $file $.Page }}
-            </div>
-        </div>
-    </div>
-</section>
+{{ partial $file $.Page }}
 
 {{/*  open previous section  */}}
-<section class="rf-section rf-section--territories-single">
+{{ if $section }}
+<section class="rf-section rf-section--{{- $section -}}">
     <div class="rf-container">
       <div class="rf-grid-row">
         <div class="rf-col-8 rf-col-offset-2">
+{{ end }}

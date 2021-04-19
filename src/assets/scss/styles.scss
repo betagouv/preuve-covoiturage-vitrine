@@ -85,6 +85,13 @@ a.rf-link--outline {
   }
 }
 
+.rf-section--whoweare {
+  // tweak the stats section within whoweare
+  & ~ .rf-section--stats {
+    padding-top: 0;
+  }
+}
+
 .rf-section--vousetes {
   .rf-card__desc {
     flex-grow: 1;
