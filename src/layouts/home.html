@@ -1,4 +1,4 @@
-{{ define "banner" }}  
+{{ define "banner" }}
   {{ partial "banner.html" .Site.Data.home }}
 {{ end }}
 
@@ -13,23 +13,23 @@
           <h2 class="title h-text-center">{{ $data.expertise_title }}</h2>
 
           <div class="rf-grid-row rf-grid-row--gutters">
-          {{ range $data.expertise_list }}
-            <div class="rf-col-12 rf-col-md-4">
-              <div class="card vertical">
-                <div class="content">
-                  <h4 class="title">{{- .title -}}</h4>
-                  <div class="description">{{ .description | markdownify }}</div>
+            {{ range $data.expertise_list }}
+              <div class="rf-col-12 rf-col-md-4">
+                <div class="card vertical">
+                  <div class="content">
+                    <h4 class="title">{{- .title -}}</h4>
+                    <div class="description">{{ .description | markdownify }}</div>
+                  </div>
+                  <div class="image"><img src="{{- .image -}}" alt="{{- .title -}}" /></div>
                 </div>
-                <div class="image"><img src="{{- .image -}}" alt="{{- .title -}}"></div>
               </div>
-            </div> 
-          {{ end }}
-        </div>
+            {{ end }}
+          </div>
         </div>
       </div>
     </div>
   </section>
- 
+
   {{/*  stats  */}}
   {{ partial "stats.html" . }}
 
@@ -39,15 +39,15 @@
       <div class="rf-grid-row">
         <div class="rf-col-12 rf-col-md-8 rf-col-offset-md-2">
           <h2 class="h-text-center">{{ .Site.Data.testimonials.title }}</h2>
-  
+
           {{ range .Site.Data.testimonials.cards }}
             <div class="testimonial">
               <div class="content">
                 <div class="description">{{ .description }}</div>
                 <div class="author">
                   <p class="name">{{- .title -}}</p>
-                  {{ if .logo }}<img class="logo" src="{{- .logo -}}" alt="{{- .title -}}">{{ end }}
-              </div>
+                  {{ if .logo }}<img class="logo" src="{{- .logo -}}" alt="{{- .title -}}" />{{ end }}
+                </div>
               </div>
             </div>
           {{ end }}
@@ -55,21 +55,20 @@
       </div>
     </div>
   </div>
-  
+
   {{/*  Documentation  */}}
   <a name="outils"></a>
   <section class="rf-section rf-section--bf500 rf-section--documentation">
     <div class="rf-container">
       <div class="rf-grid-row">
         <div class="rf-col-12">
-
           <div class="card reverse">
             <div class="content">
               <h3 class="title">{{- $data.doc_title -}}</h3>
               <p class="description">{{- $data.doc_description | markdownify -}}</p>
               <p>{{ partial "button.html" (dict "title" $data.doc_link_title "href" $data.doc_link_href) }}</p>
             </div>
-            <div class="image"><img src="{{- $data.doc_image -}}" alt="{{- $data.doc_title -}}"></div>
+            <div class="image"><img src="{{- $data.doc_image -}}" alt="{{- $data.doc_title -}}" /></div>
           </div>
         </div>
       </div>
@@ -88,24 +87,22 @@
   </section>
 
   {{ range $index, $val := $data.tools }}
-  {{ $reverse := "" }}
-  {{ if eq (mod $index 2) 0 }}{{ $reverse = "reverse" }}{{ end }}
+    {{ $reverse := "" }}
+    {{ if eq (mod $index 2) 1 }}{{ $reverse = "reverse" }}{{ end }}
     <section class="rf-section rf-section--tools {{ $reverse }}">
       <div class="rf-container">
         <div class="rf-grid-row">
           <div class="rf-col-12 rf-col-lg-8 rf-col-offset-lg-2">
-            
-              <div class="card {{ $reverse }}">
-                <div class="content">
-                  <h4 class="title">{{- $val.title -}}</h4>
-                  <p class="description">{{- $val.description | markdownify -}}</p>
-                  <p>{{ partial "button.html" (dict "title" $val.link_title "href" $val.link_href) }}</p>
-                </div>
-                <div class="image">
-                  <img src="{{- $val.image -}}" alt="{{- $val.title -}}">
-                </div>
+            <div class="card {{ $reverse }}">
+              <div class="content">
+                <h4 class="title">{{- $val.title -}}</h4>
+                <p class="description">{{- $val.description | markdownify -}}</p>
+                <p>{{ partial "button.html" (dict "title" $val.link_title "href" $val.link_href) }}</p>
               </div>
-
+              <div class="image">
+                <img src="{{- $val.image -}}" alt="{{- $val.title -}}" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

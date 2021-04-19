@@ -1,4 +1,4 @@
-{{ define "banner" }}  
+{{ define "banner" }}
   {{ partial "banner.html" .Params }}
 {{ end }}
 
@@ -10,7 +10,9 @@
         <div class="rf-col-12">
           <h2>{{- .Params.section_linked_title -}}</h2>
           <div class="rf-grid-row partner-logo">
-            {{ range where .Pages "Params.linked" true }} {{ partial "listlogo.html" . }} {{ end }}
+            {{ range sort (where .Pages "Params.linked" true) "Params.title" }}
+              {{ partial "listlogo.html" . }}
+            {{ end }}
           </div>
         </div>
       </div>
@@ -24,7 +26,9 @@
         <div class="rf-col-12">
           <h2>{{- .Params.section_notlinked_title -}}</h2>
           <div class="rf-grid-row partner-logo">
-            {{ range where .Pages "Params.linked" false }} {{ partial "listlogo.html" . }} {{ end }}
+            {{ range sort (where .Pages "Params.linked" false) "Params.title" }}
+              {{ partial "listlogo.html" . }}
+            {{ end }}
           </div>
         </div>
       </div>
