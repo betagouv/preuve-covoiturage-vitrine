@@ -23,7 +23,7 @@ C’est une question d’intérêt général que cette mobilité durable se dév
 
 Les décrets de la Loi d’orientation des mobilités (LOM) offrent aux autorités organisatrices de la mobilité (AOM) la possibilité de distribuer directement ou indirectement des incitations financières aux covoitureurs pour encourager la pratique du covoiturage au quotidien. Le Registre de preuve de covoiturage a été créé afin de faciliter la distribution de ces incitations, notamment financières, à travers une certification des trajets, à l'aide de [classes de preuve de covoiturage](https://doc.covoiturage.beta.gouv.fr/territoires-beneficier-du-registre-de-preuve-de-covoiturage/classes-de-preuve-de-covoiturage).
 
-En rejoignant le Registre de preuve de covoiturage, les AOM ont toutes les clés en main pour mettre en place une politique incitative de covoiturage courte distance efficace. Concrètement, elles accèdent gratuitement à des données spécifiques dans leurs territoires, envoyées par les services de covoiturage partenaires (nombre de trajets, kilomètres parcourus, CO2 économisés...) ainsi qu’ à la préfiguration et à la visualisation de sa campagne d’incitations.
+En rejoignant le Registre de preuve de covoiturage, les AOM ont toutes les clés en main pour mettre en place une politique incitative de covoiturage courte distance efficace. Concrètement, elles accèdent gratuitement à des données spécifiques dans leurs territoires, envoyées par les services de covoiturage partenaires (nombre de trajets, kilomètres parcourus, CO2 économisés...) ainsi qu’à la préfiguration et à la visualisation de sa campagne d’incitations.
 
 {{< section "stats" "whoweare" >}}
 
