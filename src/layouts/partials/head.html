@@ -31,7 +31,12 @@
   <link rel="stylesheet" href="css/dsfr.min.css" />
   {{ $style := resources.Get "scss/styles.scss" | resources.ToCSS }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
-
+  {{ if .Params.css }}
+  <link rel="stylesheet" href="{{ .Params.css }}">
+  {{ end }}
+  {{ if .Params.js }}
+  <script type="text/javascript" src="{{ .Params.js }}"></script>
+  {{ end }}
   {{ if .Site.Data.analytics.id }}
     <script type="text/javascript">
       var _paq = window._paq || [];
@@ -54,4 +59,5 @@
       })();
     </script>
   {{ end }}
+    
 </head>

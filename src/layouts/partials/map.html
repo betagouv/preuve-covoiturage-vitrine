@@ -1,0 +1,172 @@
+<style>
+  .maps_container{display: flex;width: 100%;flex-wrap: wrap;}
+  .maps_container > * {flex: 1 1 50%;}
+  .maps_drom {display: flex; flex-flow: column wrap;min-height: 30em;}
+  .maps_drom .map_drom {height: 49%; width: 50%; border: 2px solid white;}
+  #map_metropole{border: 2px solid white;}
+  .legend {
+    position: absolute;
+    bottom: 40px;
+    right: 5px;
+    font: 16px Marianne,arial,sans-serif;
+    border-radius: 5px;
+    padding: 6px 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 1;
+    background-color:#fff;
+  }
+  .legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: .7;
+  }
+</style>
+<div class="rf-col-8 rf-col-offset-2">
+  <div class="maps_container">
+    <div id="map_metropole">
+      <div class='legend'>
+        <i style="background:green"></i>Territoires utilisant le registre de preuve de covoiturage
+      </div>
+    </div>
+    <div class="maps_drom">
+      <div id="map_antilles" class="map_drom"></div>
+      <div id="map_guyane" class="map_drom"></div>
+      <div id="map_mayotte" class="map_drom"></div>
+      <div id="map_reunion" class="map_drom"></div>
+    </div>
+  </div>
+</div>
+<script>
+  const territories = [
+    {
+      name: "antilles",
+      center: [-61.3367,15.372],
+      zoom: 6
+    },
+    {
+      name: "guyane",
+      center: [-53.097,3.830],
+      zoom: 5
+    },
+    {
+      name: "mayotte",
+      center: [45.1670,-12.8503],
+      zoom: 8
+    },
+    {
+      name: "metropole",
+      center: [2.087,44.670],
+      zoom: 4,
+      controls:true
+    },
+    {
+      name: "reunion",
+      center: [55.5155,-21.0883],
+      zoom: 7
+    }
+  ]
+  for(territory of territories){
+    const map = new mapboxgl.Map({
+      container: 'map_'+territory.name,
+      style: 'https://openmaptiles.geo.data.gouv.fr/styles/osm-bright/style.json',
+      center: territory.center,
+      zoom: territory.zoom,
+      interactive: territory.name === "metropole" || false,
+      attributionControl: territory.name === "metropole" || false
+    });
+    if (territory.controls){
+      map.addControl(new mapboxgl.NavigationControl(), 'top-left')
+    }
+    let popup = new mapboxgl.Popup({
+      closeButton: false,
+      closeOnClick: false
+    });
+    map.on('load', function () {
+      map.addSource('regions', {
+        type: 'geojson',
+        data: window.location.protocol+'//'+window.location.host+'/geojson/regions.geojson'
+      });
+      map.addLayer({
+        id: 'regions',
+        type: 'fill',
+        source: 'regions',
+        paint: {
+          'fill-color': '#008000',
+          'fill-opacity': 0.4
+        }
+      });
+      map.addLayer({
+        id: 'regions_line',
+        type: 'line',
+        source: 'regions',
+        paint: {
+          'line-color': '#008000',
+          'line-opacity': 1,
+          'line-width': 2
+        }
+      });
+      map.addSource('dep', {
+        type: 'geojson',
+        data: window.location.protocol+'//'+window.location.host+'/geojson/dep.geojson'
+      });
+      map.addLayer({
+        id: 'dep',
+        type: 'fill',
+        source: 'dep',
+        paint: {
+          'fill-color': '#008000',
+          'fill-opacity': 0.4
+        }
+      });
+      map.addLayer({
+        id: 'dep_line',
+        type: 'line',
+        source: 'dep',
+        paint: {
+          'line-color': '#008000',
+          'line-opacity': 1,
+          'line-width': 2
+        }
+      });
+      map.addSource('aom', {
+        type: 'geojson',
+        data: window.location.protocol+'//'+window.location.host+'/geojson/aom.geojson'
+      });
+      map.addLayer({
+        id: 'aom',
+        type: 'fill',
+        source: 'aom',
+        paint: {
+          'fill-color': '#008000',
+          'fill-opacity': 0.6
+        }
+      });
+      map.addLayer({
+        id: 'aom_line',
+        type: 'line',
+        source: 'aom',
+        paint: {
+          'line-color': '#008000',
+          'line-opacity': 1,
+          'line-width': 2
+        }
+      }); 
+      map.on('mousemove', e => {
+        const features = map.queryRenderedFeatures(e.point, {
+          layers: ['regions','dep','aom']
+        })
+        map.getCanvas().style.cursor = features.length ? 'pointer' : ''
+        if(features.length >0){
+          popup.setLngLat(e.lngLat)
+          .setHTML('<div id="popup-content">'+features[0].properties.l_aom+'</div>')
+          .addTo(map)
+        }else{
+          popup.remove()
+        }
+      })   
+    });
+  }
+</script>

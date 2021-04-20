@@ -4,6 +4,8 @@ subtitle: >
   En rejoignant le Registre de preuve de covoiturage, les autorités
   organisatrices de la mobilité ont toutes les clés en main pour mettre en place
   une politique incitative de covoiturage courte distance efficace.
+js: https://cdn.maptiler.com/maplibre-gl-js/v1.13.0-rc.4/mapbox-gl.js
+css: https://cdn.maptiler.com/maplibre-gl-js/v1.13.0-rc.4/mapbox-gl.css
 actions:
   - title: Demander une démo
     href: /nous-contacter
