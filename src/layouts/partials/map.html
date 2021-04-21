@@ -68,8 +68,7 @@
     {
       name: "reunion",
       center: [55.5155,-21.0883],
-      zoom: 7,
-      controls:true
+      zoom: 7
     }
   ]
   for(territory of territories){
@@ -78,8 +77,8 @@
       style: 'https://openmaptiles.geo.data.gouv.fr/styles/osm-bright/style.json',
       center: territory.center,
       zoom: territory.zoom,
-      //interactive: territory.name === "metropole" || false,
-      //attributionControl: territory.name === "metropole" || false
+      interactive: territory.name === "metropole" || false,
+      attributionControl: territory.name === "metropole" || false
     });
     if (territory.controls){
       map.addControl(new mapboxgl.NavigationControl(), 'top-left')
