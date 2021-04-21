@@ -1,5 +1,8 @@
 <style>
   .maps_container{display: flex;width: 100%;flex-wrap: wrap;}
+  .maps_container *:focus, .maps_container *:focus-visible {
+    z-index: auto;
+  }
   .maps_container > * {flex: 1 1 50%;}
   .maps_drom {display: flex; flex-flow: column wrap;min-height: 30em;}
   .maps_drom .map_drom {height: 49%; width: 50%; border: 2px solid white;}
@@ -65,7 +68,8 @@
     {
       name: "reunion",
       center: [55.5155,-21.0883],
-      zoom: 7
+      zoom: 7,
+      controls:true
     }
   ]
   for(territory of territories){
@@ -74,8 +78,8 @@
       style: 'https://openmaptiles.geo.data.gouv.fr/styles/osm-bright/style.json',
       center: territory.center,
       zoom: territory.zoom,
-      interactive: territory.name === "metropole" || false,
-      attributionControl: territory.name === "metropole" || false
+      //interactive: territory.name === "metropole" || false,
+      //attributionControl: territory.name === "metropole" || false
     });
     if (territory.controls){
       map.addControl(new mapboxgl.NavigationControl(), 'top-left')
