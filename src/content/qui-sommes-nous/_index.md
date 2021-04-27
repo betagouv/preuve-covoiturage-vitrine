@@ -29,6 +29,6 @@ En rejoignant le Registre de preuve de covoiturage, les AOM ont toutes les clés
 
 ## D’autres outils au service du covoiturage au quotidien
 
-Nous développons d’autres services en faveur du covoiturage au quotidien comme le générateur d’attestation sur l’honneur de covoiturage pour faciliter l’obtention du forfaits mobilités durables ou encore un prototype d’Observatoire national au covoiturage s’inscrivant dans le plan France Relance.
+Nous développons d’autres services en faveur du covoiturage au quotidien comme le générateur d’attestation sur l’honneur de covoiturage pour faciliter l’obtention du forfait mobilités durables ou encore un prototype d’Observatoire national du covoiturage s’inscrivant dans le plan France Relance.
 
 {{< button title="Voir les autres outils" href="/#outils" >}}
