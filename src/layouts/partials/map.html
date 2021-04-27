@@ -1,10 +1,16 @@
 <div class="rf-section">
   <div class="rf-container">
+    <div class="rf-grid-row">
+      <div class="rf-col-12">
+        <h2 class="h-text-center">Découvrir les 65 territoires partenaires</h2>
+      </div>
+    </div>
+
     <div class="rf-grid-row maps_container">
       <div class="rf-col-md-6 rf-col-12">
         <div id="map_metropole">
           <div class="legend">
-            <i style="background:green"></i>Territoires utilisant le registre de preuve de covoiturage
+            <i style="background:green"></i>Territoires utilisant le Registre de preuve de covoiturage
           </div>
         </div>
       </div>
@@ -15,6 +21,14 @@
           <div id="map_mayotte" class="map_drom"></div>
           <div id="map_reunion" class="map_drom"></div>
         </div>
+      </div>
+    </div>
+
+    <div class="rf-grid-row mt-2em">
+      <div class="rf-col-12">
+        <p class="h-text-center">
+          {{ partial "button.html" (dict "title" "Rejoindre le Registre" "href" "/nous-contacter") }}
+        </p>
       </div>
     </div>
   </div>
@@ -60,6 +74,7 @@
     });
     if (territory.controls) {
       map.addControl(new mapboxgl.NavigationControl(), "top-left");
+      map.scrollZoom.disable();
     }
     let popup = new mapboxgl.Popup({
       closeButton: false,
