@@ -1,4 +1,4 @@
-{{ define "banner" }}  
+{{ define "banner" }}
   {{ partial "banner.html" .Params }}
 {{ end }}
 
@@ -12,6 +12,8 @@
       </div>
     </div>
   </section>
+
+  {{ partial "map.html" . }}
 
   {{ partial "vousetes.html" . }}
 {{ end }}
