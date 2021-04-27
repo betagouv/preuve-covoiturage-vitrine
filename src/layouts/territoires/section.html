@@ -1,4 +1,4 @@
-{{ define "banner" }}  
+{{ define "banner" }}
   {{ partial "banner.html" .Params }}
 {{ end }}
 
@@ -6,13 +6,14 @@
   <section class="rf-section rf-section--territories-single">
     <div class="rf-container">
       <div class="rf-grid-row">
-        {{ partial "map.html" . }}
         <div class="rf-col-8 rf-col-offset-2">
           {{ .Content }}
         </div>
       </div>
     </div>
   </section>
+
+  {{ partial "map.html" . }}
 
   {{ partial "vousetes.html" . }}
 {{ end }}
