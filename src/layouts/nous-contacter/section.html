@@ -28,9 +28,19 @@
 
             {{/*  email  */}}
             <div class="rf-input-group">
-              <label class="rf-label" for="email">Votre courriel <span class="h-text-error">*</span> :</label>
-              <input class="rf-input" type="text" id="email" name="email" required minlength="1" maxlength="256" />
+              <label class="rf-label" for="liamenomtseicec">Votre courriel <span class="h-text-error">*</span> :</label>
+              <input
+                class="rf-input"
+                type="text"
+                id="liamenomtseicec"
+                name="liamenomtseicec"
+                minlength="1"
+                maxlength="256"
+              />
             </div>
+
+            <label class="rf-label" for="email">Votre email <span class="h-text-error">*</span> :</label>
+            <input class="rf-input" type="text" id="email" name="email" minlength="1" maxlength="256" />
 
             {{/*  message  */}}
             <div class="rf-input-group">
@@ -49,7 +59,6 @@
                 <p id="form-feedback-message">Une erreur s'est produite.</p>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -62,6 +71,25 @@
     fm.addEventListener("submit", function (e) {
       e.preventDefault();
 
+      var delay = 5000;
+      var timer = null;
+      var el = document.getElementById("form-feedback");
+
+      function show(title, message, type) {
+        clearTimeout(timer);
+        document.getElementById("form-feedback-title").innerText = title;
+        document.getElementById("form-feedback-message").innerText = message;
+        el.className = "rf-alert rf-alert--" + type + " shown";
+        setTimeout(function () {
+          hide();
+        }, delay);
+      }
+
+      function hide() {
+        clearTimeout(timer);
+        el.classList.remove("shown");
+      }
+
       var fd = new FormData(fm);
 
       var data = Object.create(null);
@@ -69,22 +97,22 @@
         if (value && value.length) data[key] = value;
       }
 
-      var delay = 5000;
-      var timer = null;
-      var el = document.getElementById('form-feedback');
-
-      function show(title, message, type) {
-        clearTimeout(timer);
-        document.getElementById('form-feedback-title').innerText = title;
-        document.getElementById('form-feedback-message').innerText = message;
-        el.className = 'rf-alert rf-alert--' + type + ' shown';
-        setTimeout(function () { hide() }, delay);
+      if ("email" in data && data.email !== "") {
+        fm.reset();
+        return;
       }
 
-      function hide() {
-        clearTimeout(timer);
-        el.classList.remove('shown');
+      if (!("liamenomtseicec" in data)) {
+        show(
+          "Courriel requis",
+          "Merci d'indiquer l'adresse email à laquelle vous souhaitez être recontacté·e",
+          "error"
+        );
+        return;
       }
+
+      data.email = data["ceciestmonemail".split("").reverse().join("")];
+      delete data.liamenomtseicec;
 
       axios({
         url: fm.getAttribute("action"),
@@ -97,11 +125,11 @@
       })
         .then(function (response) {
           document.forms[0].reset();
-          show('Merci !', 'Votre message a bien été envoyé', 'success');
+          show("Merci !", "Votre message a bien été envoyé", "success");
         })
         .catch(function (error) {
           console.error(error);
-          show('Erreur', error.message, 'error');
+          show("Erreur", error.message, "error");
         });
     });
   </script>

@@ -179,4 +179,8 @@ a.rf-link--outline {
     color: var(--g700);
     background-color: transparent;
   }
+  [for="email"],
+  [name="email"] {
+    display: none;
+  }
 }
