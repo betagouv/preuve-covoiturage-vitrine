@@ -1,2 +1,2 @@
 enabled: true
-action: https://api.dev.covoiturage.beta.gouv.fr/contactform
+action: https://api.covoiturage.beta.gouv.fr/contactform
