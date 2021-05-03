@@ -29,23 +29,7 @@ link: https://example.com/
 
 ### Ajouter un territoire
 
-> Pour cet exemple, utilisons _Olympus_.
-
-1. Dans le dossier `src/content/territoires`, créer le fichier `olympus.md` avec le contenu suivant :
-
-```markdown
----
-title: "Communauté d'Agglomération des dieux de l'Olympe"
-date: YYYY-MM-DDTHH:mm:ssZ
-showTitle: true
-logo: olympus.png
----
-```
-
-2. Commiter les modifications directement sur la branche `main` (en bas de page).
-3. Uploader le logo `olympus.png` dans `src/static/images/territoires`. Une taille de 480x480 est suffisante.
-4. Commiter les modifications directement sur la branche `main` (en bas de page).
-5. Vérifier le bon déroulement du déploiement dans les [Actions](https://github.com/betagouv/preuve-covoiturage-vitrine/actions)
+> L'ajout des territoires sur la cartographie se fait à partir des comptes utilisateurs activés sur app.covoiturage.beta.gouv.fr.
 
 ###
 
