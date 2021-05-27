@@ -16,39 +16,39 @@
           <h6>Restons connectés</h6>
           <ul class="rf-footer__social-list">
             {{ if .Site.Data.social.twitter }}
-            <li class="rf-footer__social-item twitter">
-              <a href="{{ .Site.Data.social.twitter }}" target="_blank">
-                <img src="images/social/twitter.svg" alt="Twitter" />
-              </a>
-            </li>
+              <li class="rf-footer__social-item twitter">
+                <a href="{{ .Site.Data.social.twitter }}" target="_blank" class="no-icon">
+                  <img src="images/social/twitter.svg" alt="Twitter" />
+                </a>
+              </li>
             {{ end }}
             {{ if .Site.Data.social.youtube }}
-            <li class="rf-footer__social-item youtube">
-              <a href="{{ .Site.Data.social.youtube }}" target="_blank">
-                <img src="images/social/youtube.svg" alt="Youtube" />
-              </a>
-            </li>
+              <li class="rf-footer__social-item youtube">
+                <a href="{{ .Site.Data.social.youtube }}" target="_blank" class="no-icon">
+                  <img src="images/social/youtube.svg" alt="Youtube" />
+                </a>
+              </li>
             {{ end }}
             {{ if .Site.Data.social.linkedin }}
-            <li class="rf-footer__social-item linkedin">
-              <a href="{{ .Site.Data.social.linkedin }}" target="_blank">
-                <img src="images/social/linkedin.svg" alt="Linkedin" />
-              </a>
-            </li>
+              <li class="rf-footer__social-item linkedin">
+                <a href="{{ .Site.Data.social.linkedin }}" target="_blank" class="no-icon">
+                  <img src="images/social/linkedin.svg" alt="Linkedin" />
+                </a>
+              </li>
             {{ end }}
             {{ if .Site.Data.social.github }}
-            <li class="rf-footer__social-item github">
-              <a href="{{ .Site.Data.social.github }}" target="_blank">
-                <img src="images/social/github.svg" alt="Github" />
-              </a>
-            </li>
+              <li class="rf-footer__social-item github">
+                <a href="{{ .Site.Data.social.github }}" target="_blank" class="no-icon">
+                  <img src="images/social/github.svg" alt="Github" />
+                </a>
+              </li>
             {{ end }}
             {{ if .Site.Data.social.rss }}
-            <li class="rf-footer__social-item rss">
-              <a href="{{ .Site.Data.social.rss }}" target="_blank">
-                <img src="images/social/rss.svg" alt="RSS" />
-              </a>
-            </li>
+              <li class="rf-footer__social-item rss">
+                <a href="{{ .Site.Data.social.rss }}" target="_blank" class="no-icon">
+                  <img src="images/social/rss.svg" alt="RSS" />
+                </a>
+              </li>
             {{ end }}
           </ul>
         </div>
@@ -89,7 +89,9 @@
           <a class="rf-footer__bottom-link" href="{{ .Site.Data.services.betagouv }}" target="_blank">beta.gouv.fr</a>
         </li>
         <li class="rf-footer__bottom-item">
-          <a class="rf-footer__bottom-link" href="https://design.numerique.gouv.fr/accessibilite-numerique/cadre-legal/">Accessibilité: non conforme</a>
+          <a class="rf-footer__bottom-link" href="https://design.numerique.gouv.fr/accessibilite-numerique/cadre-legal/"
+            >Accessibilité: non conforme</a
+          >
         </li>
       </ul>
       <div class="rf-footer__bottom-copy">

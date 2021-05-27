@@ -4,14 +4,15 @@
     alt=".Title"
     target="_blank"
     rel="noopener noreferrer"
-    class="partner-logo--img"
+    class="partner-logo--img no-icon"
     style="background-image:url('{{ replace .Params.logo "/static" "" }}')"
+    title="{{ .Title }}"
   >
   </a>
 
   {{ if .Params.showTitle }}
-  <a href="{{ .Params.link }}" alt=".Title" target="_blank" rel="noopener noreferrer" class="partner-logo--title">
-    {{ .Title }}
-  </a>
+    <a href="{{ .Params.link }}" target="_blank" rel="noopener noreferrer" class="partner-logo--title">
+      {{ .Title }}
+    </a>
   {{ end }}
 </div>
