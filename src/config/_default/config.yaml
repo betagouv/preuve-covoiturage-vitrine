@@ -7,3 +7,26 @@ title: Registre de preuve de covoiturage
 params:
   baseline: Développer le covoiturage
   description: le Registre de preuve de covoiturage est une plateforme, un label et une boite à outils pour développer le covoiturage
+
+menu:
+  main:
+    - name: Territoires
+      url: /territoires/
+      weight: 1
+      params:
+        target: _self
+    - name: Opérateurs
+      url: /operateurs/
+      weight: 2
+      params:
+        target: _self
+    - name: Qui sommes-nous ?
+      url: /qui-sommes-nous/
+      weight: 3
+      params:
+        target: _self
+    - name: Statistiques
+      url: https://app.covoiturage.beta.gouv.fr/stats
+      weight: 4
+      params:
+        target: _blank
