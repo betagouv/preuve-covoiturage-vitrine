@@ -1,0 +1,28 @@
+{{ define "main" }}
+  <section class="rf-section rf-section--banner-newsletter h-text-center">
+    <div class="rf-container">
+      <div class="rf-grid-row">
+        <div class="rf-col-12 rf-col-md-8 rf-col-offset-md-2">
+          <h1 class="rf-h1 title">{{ .Params.title }}</h1>
+          <p class="subtitle">{{ .Params.subtitle | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rf-section rf-section--newsletter">
+    <div class="rf-container">
+      <div class="rf-grid-row">
+        <div class="rf-col-12 rf-col-md-6 rf-col-offset-md-3">
+          <iframe
+            src="/newsletter"
+            frameborder="0"
+            scrolling="no"
+            class="newsletter-wrapper"
+            sandbox="allow-forms allow-scripts allow-same-origin"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
