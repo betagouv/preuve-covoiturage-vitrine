@@ -3,7 +3,7 @@ backend:
   name: github
   repo: betagouv/preuve-covoiturage-vitrine
   branch: main
-  base_url: https://covoiturage.beta.gouv.fr # TODO run an auth server
+  base_url: https://ghoauth.osc-fr1.scalingo.io/
 
 media_folder: src/static/images
 public_folder: images
