@@ -5,6 +5,7 @@
 @import "./header.scss";
 @import "./helpers.scss";
 @import "./maps.scss";
+@import "./newsletter.scss";
 @import "./partners.scss";
 @import "./testimonials.scss";
 
@@ -42,6 +43,9 @@ a[name] {
   background-color: var(--bf500);
   &,
   .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4 !important;
     color: var(--w-bf500);
   }
   .rf-btn {
@@ -64,6 +68,16 @@ a[name] {
   @media screen and (max-width: $bp-md) {
     padding-top: 2em;
     padding-bottom: 1em;
+  }
+}
+
+.rf-section--banner-newsletter {
+  @extend .rf-section--banner;
+  color: #000;
+  background-color: var(--w-bf500);
+  padding-bottom: 0;
+  .title {
+    color: var(--bf500);
   }
 }
 
