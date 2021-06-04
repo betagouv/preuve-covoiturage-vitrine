@@ -10,7 +10,7 @@ actions:
   - title: Demander une démo
     href: /nous-contacter
   - title: Guide territoires
-    href: https://doc.covoiturage.beta.gouv.fr/territoires-beneficier-du-registre-de-preuve-de-covoiturage/guide-territoires-pour-devenir-partenaire
+    href: https://doc.covoiturage.beta.gouv.fr/le-registre-de-preuve-de-covoiturage/devenir-partenaire/je-suis-un-territoire
     style: secondary
 ---
 
