@@ -34,27 +34,63 @@
   {{ partial "stats.html" . }}
 
   {{/*  Testimonials  */}}
-  <div class="rf-section rf-section--testimonials">
-    <div class="rf-container">
-      <div class="rf-grid-row">
-        <div class="rf-col-12 rf-col-md-8 rf-col-offset-md-2">
-          <h2 class="h-text-center">{{ .Site.Data.testimonials.title }}</h2>
+  {{ if .Site.Data.testimonials }}
+    <script>
+      var json = JSON.parse({{ .Site.Data.testimonials.cards | jsonify }});
+      document.addEventListener('DOMContentLoaded', function () {
+        var testimonials = Array.isArray(json) ? json.filter(i => i.title && i.description && i.title.length && i.description.length) : [];
+        var desc = document.querySelector('#t-desc');
+        var title = document.querySelector('#t-title');
+        var logo = document.querySelector('#t-logo');
+        var index = 0;
 
-          {{ range .Site.Data.testimonials.cards }}
-            <div class="testimonial">
-              <div class="content">
-                <div class="description">{{ .description }}</div>
-                <div class="author">
-                  <p class="name">{{- .title -}}</p>
-                  {{ if .logo }}<img class="logo" src="{{- .logo -}}" alt="{{- .title -}}" />{{ end }}
+        document.querySelector('#t-prev').addEventListener('click', function (event) {
+          event.preventDefault();
+          t_set(index < testimonials.length -1 ? ++index : 0);
+        });
+
+        document.querySelector('#t-next').addEventListener('click', function (event) {
+          event.preventDefault();
+          t_set(index > 0 ? --index : testimonials.length -1);
+        });
+
+        function t_set(idx) {
+          desc.innerHTML = testimonials[idx].description || '';
+          title.innerHTML = testimonials[idx].title || '';
+          logo.setAttribute('src', testimonials[idx].logo || '');
+          logo.setAttribute('alt', testimonials[idx].title || '');
+          index = idx;
+        }
+      });
+    </script>
+
+    <div class="rf-section rf-section--testimonials">
+      <div class="rf-container">
+        <div class="rf-grid-row">
+          <div class="rf-col-12 rf-col-md-8 rf-col-offset-md-2">
+            <h2 class="h-text-center">{{ .Site.Data.testimonials.title }}</h2>
+
+            <div class="controls">
+              <p id="t-prev"><span class="rf-fi-arrow-left-line" aria-hidden="true"></span></p>
+              <p id="t-next"><span class="rf-fi-arrow-right-line" aria-hidden="true"></span></p>
+            </div>
+
+            {{ range first 1 .Site.Data.testimonials.cards }}
+              <div class="testimonial">
+                <div class="content">
+                  <div class="description" id="t-desc">{{ .description }}</div>
+                  <div class="author">
+                    <p class="name" id="t-title">{{- .title -}}</p>
+                    {{ if .logo }}<img class="logo" src="{{- .logo -}}" alt="{{- .title -}}" id="t-logo" />{{ end }}
+                  </div>
                 </div>
               </div>
-            </div>
-          {{ end }}
+            {{ end }}
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  {{ end }}
 
   {{/*  Documentation  */}}
   <a name="outils"></a>

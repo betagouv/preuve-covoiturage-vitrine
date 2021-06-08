@@ -1,7 +1,24 @@
-.testimonial {
-  @media screen and (max-width: $bp-sm) {
-    display: none;
+.rf-section--testimonials {
+}
+
+.rf-section--testimonials .controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  > p {
+    margin: 0;
+    padding: 0 1em;
+    > span {
+      vertical-align: middle;
+    }
+    &:hover {
+      cursor: pointer;
+      color: var(--bf500);
+    }
   }
+}
+
+.rf-section--testimonials .testimonial {
   margin-bottom: 3em;
   .content {
     display: flex;
@@ -26,6 +43,15 @@
         opacity: 0.08;
         line-height: 1;
       }
+      @media screen and (max-width: $bp-sm) {
+        padding: 1em;
+        line-height: 1.5;
+        font-size: 1em;
+        text-align: left;
+        &::before {
+          content: none;
+        }
+      }
     }
     .author {
       display: flex;
@@ -45,6 +71,16 @@
       .name {
         font-weight: bold;
         margin: 0 0 0 1em;
+      }
+      @media screen and (max-width: $bp-sm) {
+        flex-direction: column-reverse;
+        width: 100%;
+        .logo {
+          margin-bottom: 1em;
+        }
+        .name {
+          line-height: 1.4;
+        }
       }
     }
   }
