@@ -35,7 +35,8 @@
 
   {{/*  Testimonials  */}}
   {{ if .Site.Data.testimonials }}
-    <script>
+    {{ if gt (len .Site.Data.testimonials.cards) 1 }}
+      <script>
       var json = JSON.parse({{ .Site.Data.testimonials.cards | jsonify }});
       document.addEventListener('DOMContentLoaded', function () {
         var testimonials = Array.isArray(json) ? json.filter(i => i.title && i.description && i.title.length && i.description.length) : [];
@@ -63,6 +64,7 @@
         }
       });
     </script>
+    {{ end }}
 
     <div class="rf-section rf-section--testimonials">
       <div class="rf-container">
@@ -70,10 +72,12 @@
           <div class="rf-col-12 rf-col-md-8 rf-col-offset-md-2">
             <h2 class="h-text-center">{{ .Site.Data.testimonials.title }}</h2>
 
-            <div class="controls">
-              <p id="t-prev"><span class="rf-fi-arrow-left-line" aria-hidden="true"></span></p>
-              <p id="t-next"><span class="rf-fi-arrow-right-line" aria-hidden="true"></span></p>
-            </div>
+            {{ if gt (len .Site.Data.testimonials.cards) 1 }}
+              <div class="controls">
+                <p id="t-prev"><span class="rf-fi-arrow-left-line" aria-hidden="true"></span></p>
+                <p id="t-next"><span class="rf-fi-arrow-right-line" aria-hidden="true"></span></p>
+              </div>
+            {{ end }}
 
             {{ range first 1 .Site.Data.testimonials.cards }}
               <div class="testimonial">
