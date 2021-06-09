@@ -1,7 +1,6 @@
 title: Ils en parlent mieux que nous
 cards:
-  - title: Anne Ponchon · Chargée de mission du Pôle métropolitain du Genevois
-      français
+  - title: Anne Ponchon, chargée de mission du Pôle métropolitain du Genevois français
     description: Avec la connaissance des trajets recensés sur le Registre de preuve
       de covoiturage, cela nous permet d’ajuster la communication sur les
       couloirs les plus fréquentés. La présentation des statistiques et le
@@ -13,3 +12,12 @@ cards:
       une campagne d’incitation en toute confiance, adaptée à la singularité de
       notre bassin de déplacements franco-suisse.
     logo: images/genevois-francais.png
+  - description: Il est facile, dans un premier temps, de s’inscrire pour avoir un
+      accès au Registre de Preuve de covoiturage, et dans un second temps, pour
+      utiliser les outils mis à disposition. C’est une source d’information qui
+      permet de créer voire d’affiner la politique incitative de covoiturage de
+      la part d’une AOM grâce aux statistiques qui sont produites par la
+      remontée de données des opérateurs de covoiturage, qui sont par ailleurs
+      vérifiées par le Registre en sa qualité de tiers de confiance.
+    title: Jérémy Salomé, chargé de mission en mobilité innovante
+    logo: images/logo-smtag.png
