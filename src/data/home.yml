@@ -1,7 +1,8 @@
 title: Développer le covoiturage au quotidien dans son territoire en toute confiance
-subtitle: En rejoignant le Registre de preuve de covoiturage, les autorités
-  organisatrices de la mobilité ont toutes les clés en main pour mettre en place
-  une politique incitative de covoiturage courte distance efficace.
+subtitle: En rejoignant le Registre de preuve de covoiturage (RPC), les
+  autorités organisatrices de la mobilité ont toutes les clés en main pour
+  mettre en place une politique incitative de covoiturage courte distance
+  efficace.
 actions:
   - style: primary
     title: Demander une démo
@@ -12,19 +13,19 @@ actions:
 expertise_title: Découvrir le Registre de preuve de covoiturage
 expertise_list:
   - title: Une vue d'ensemble
-    description: "Grâce aux données envoyées dans le Registre par les opérateurs de
+    description: "Grâce aux données envoyées dans le RPC par les opérateurs de
       covoiturage partenaires, les territoires peuvent prendre des décisions
       plus éclairées en faveur du covoiturage. "
     image: images/bulb.svg
   - title: Un tiers de confiance
     description: Les territoires peuvent distribuer des incitations en toute
-      confiance grâce aux trajets certifiés envoyés dans le Registre par les
-      services de covoiturage partenaires.
+      confiance grâce aux trajets certifiés envoyés dans le RPC par les services
+      de covoiturage partenaires.
     image: images/hands.svg
   - title: Une boîte à outils
-    description: Le Registre de preuve de covoiturage propose un panel d’outils pour
-      aider les territoires à inciter le covoiturage courte distance dans leur
-      territoire en toute confiance.
+    description: Le RPC propose un panel d’outils pour aider les territoires à
+      inciter le covoiturage courte distance dans leur territoire en toute
+      confiance.
     image: images/tools.svg
 doc_title: Consulter notre documentation
 doc_description: Notre espace documentation comprend un ensemble d’informations
