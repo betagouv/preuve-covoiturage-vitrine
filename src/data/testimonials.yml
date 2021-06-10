@@ -11,7 +11,6 @@ cards:
       certifier les trajets effectivement covoiturés et donc de pouvoir lancer
       une campagne d’incitation en toute confiance, adaptée à la singularité de
       notre bassin de déplacements franco-suisse.
-    logo: images/genevois-francais.png
   - description: Il est facile, dans un premier temps, de s’inscrire pour avoir un
       accès au Registre de Preuve de covoiturage, et dans un second temps, pour
       utiliser les outils mis à disposition. C’est une source d’information qui
@@ -20,4 +19,3 @@ cards:
       remontée de données des opérateurs de covoiturage, qui sont par ailleurs
       vérifiées par le Registre en sa qualité de tiers de confiance.
     title: Jérémy Salomé, chargé de mission en mobilité innovante
-    logo: images/logo-smtag.png

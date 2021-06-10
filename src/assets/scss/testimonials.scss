@@ -1,6 +1,3 @@
-.rf-section--testimonials {
-}
-
 .rf-section--testimonials .controls {
   display: flex;
   justify-content: center;
@@ -60,24 +57,12 @@
       align-items: center;
       width: 80%;
       padding: 1em;
-      .logo {
-        display: block;
-        max-width: 100%;
-        max-height: 70px;
-        padding: 0.5em;
-        border-radius: 50%;
-        box-shadow: 0 0 7px -2px #0000002e;
-      }
       .name {
         font-weight: bold;
         margin: 0 0 0 1em;
       }
       @media screen and (max-width: $bp-sm) {
-        flex-direction: column-reverse;
         width: 100%;
-        .logo {
-          margin-bottom: 1em;
-        }
         .name {
           line-height: 1.4;
         }
