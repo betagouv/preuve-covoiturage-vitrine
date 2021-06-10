@@ -42,7 +42,6 @@
         var testimonials = Array.isArray(json) ? json.filter(i => i.title && i.description && i.title.length && i.description.length) : [];
         var desc = document.querySelector('#t-desc');
         var title = document.querySelector('#t-title');
-        var logo = document.querySelector('#t-logo');
         var index = 0;
 
         document.querySelector('#t-prev').addEventListener('click', function (event) {
@@ -58,8 +57,6 @@
         function t_set(idx) {
           desc.innerHTML = testimonials[idx].description || '';
           title.innerHTML = testimonials[idx].title || '';
-          logo.setAttribute('src', testimonials[idx].logo || '');
-          logo.setAttribute('alt', testimonials[idx].title || '');
           index = idx;
         }
       });
