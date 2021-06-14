@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:14-alpine
 RUN wget -O /tmp/master.zip https://github.com/vencax/netlify-cms-github-oauth-provider/archive/refs/heads/master.zip
 RUN mkdir -p /code
 RUN unzip /tmp/master.zip -d /code
