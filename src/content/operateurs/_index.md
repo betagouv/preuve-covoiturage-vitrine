@@ -1,5 +1,5 @@
 ---
-title: 19 opérateurs de covoiturage référencés dans le Registre de covoiturage
+title: 25 opérateurs de covoiturage référencés dans le Registre de covoiturage
 subtitle: |
   Les opérateurs de covoiturage partenaires font converger les trajets
   effectués par leurs utilisateurs dans le Registre de preuve de covoiturage.
