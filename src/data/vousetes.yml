@@ -4,7 +4,7 @@ cards:
     description: Je veux un accès au Registre de preuve de covoiturage et voir
       comment fonctionne la plateforme
     link_title: Demander une démo
-    link_href: /nous-contacter
+    link_href: https://app.livestorm.co/dinum-12/demo-hedbo-du-rpc?type=detailed
   - title: Opérateur de covoiturage courte distance
     description: Je veux être référencé dans le Registre afin d’être visible auprès des AOM
     link_title: Devenir partenaire
