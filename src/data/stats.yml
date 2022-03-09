@@ -1,16 +1,18 @@
 title: Le Registre en chiffres
 cards:
-  - description: "**19 opérateurs** de covoiturage référencés dans le Registre de preuve de covoiturage"
+  - description: "**20 opérateurs** de covoiturage référencés dans le Registre de
+      preuve de covoiturage"
     image: images/stats/operateurs.png
     link_title: Voir la liste
     link_href: /operateurs
     pinned: true
-  - description: "**65 territoires** utilisent le Registre de preuve de covoiturage"
+  - description: "**93 territoires** utilisent le Registre de preuve de covoiturage"
     image: images/stats/aom.svg
     link_title: Voir la liste
     link_href: /territoires
     pinned: true
-  - description: "**3 273 432** trajets en covoiturage communiqués et validés dans le Registre"
+  - description: "**3 910 190** trajets en covoiturage communiqués et validés dans
+      le Registre"
     image: images/stats/trajet.png
     link_title: Voir toutes les données
     link_href: https://app.covoiturage.beta.gouv.fr/stats
