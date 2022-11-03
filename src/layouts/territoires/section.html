@@ -13,78 +13,105 @@
 
         <form>
           <ol class="step">
-            <li class="step"><strong>Selectionnez le type de campagne d’incitation privilégié pour votre
+            <li class="step"><strong style="line-height: 50px">Selectionnez le type de campagne d’incitation privilégié pour votre
                 territoire</strong>
 
-              <div class="rf-input-group" style="display: flex">
-                <div class="rf-radio-group" style="margin-top:auto">
-                  <input type="radio" id="radio-error-inline-1" name="radio-error-inline">
-                  <label class="rf-label" for="radio-error-inline-1">
-                    Campagne type 1
-                    <div>
-                      <div>
-                        Trajets éligibles
-                        <ul>
-                          <li> De 2 à 15km: 1,5 euros par trajet par passager </li>
-                          <li> De 15 à 30 km: 0,1 euro par trajet par km par passager </li>
-                        </ul>
-                      </div>
-                      <div>
-                        Restrictions
-                        <ul>
-                          <li> 6 trajets maximum pour le conducteur par jour. </li>
-                          <li> 150 euros maximum pour le conducteur par mois. </li>
-                          <li> Class de preuve B ou C</li>
-                        </ul>
-                      </div>
+                <div class="rf-section">
+                  <div class="rf-input-group" style="display: flex; justify-content: space-between;">
+                    <div class="rf-radio-group" style="margin-top:auto; padding: 10px">
+                      <input type="radio" id="radio-error-inline-1" name="radio-error-inline">
+                      <label class="rf-label hover-background-grey" for="radio-error-inline-1">
+                        <div style="margin-left: 10px; height: 260px;">
+                          <div style="text-align: center; font-weight: bold">Campagne sur 4 mois </div>
+                          <div style="direction: ltr;">
+                            <div>
+                              <div>Trajets éligibles:</div>
+                              <ul>
+                                <li> De 2 à 15km: 1,5 euros par trajet par passager </li>
+                                <li> De 15 à 30 km: 0,1 euro par trajet par km par passager </li>
+                              </ul>
+                            </div>
+                            <div>
+                              <div>Restrictions:</div>
+                              <ul>
+                                <li>6 trajets maximum pour le conducteur par jour</li>
+                                <li>150 euros maximum pour le conducteur par mois</li>
+                                <li>Class de preuve B ou C</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </label>
                     </div>
-                  </label>
-                </div>
-                <div class="rf-radio-group">
-                  <input type="radio" id="radio-error-inline-2" name="radio-error-inline">
-                  <label class="rf-label" for="radio-error-inline-2">Campagne type 1
-                  </label>
-                </div>
-              </div>
+                    <div class="rf-radio-group" style="margin-top:auto; padding: 10px; margin-bottom:0">
+                      <input type="radio" id="radio-error-inline-2" name="radio-error-inline">
+                      <label class="rf-label hover-background-grey" for="radio-error-inline-2">
+                        <div style="margin-left: 10px; height: 260px;">
+                          <div style="text-align: center; font-weight: bold">Campagne sur 8 mois </div>
+                          <div style="direction: ltr;">
+                            <div>
+                              <div>Trajets éligibles:</div>
+                              <ul>
+                                <li> De 2 à 20 km : 2 euros par trajet par passager. </li>
+                                <li> De 20 à 50 km : 0.1 euro par trajet par km par passager. </li>
+                              </ul>
+                            </div>
+                            <div>
+                              <div>Restrictions:</div>
+                              <ul>
+                                <li>6 trajets maximum pour le conducteur par jour</li>
+                                <li>Class de preuve B ou C</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
 
+                </div>
             </li>
 
-            <li class="step"><strong>Saisissez le territoire concerné ainsi que les coordonnées du destinataire</strong>
+            <li class="step"><strong style="line-height: 50px">Saisissez le territoire concerné ainsi que les coordonnées du destinataire</strong>
 
-              <div> Territoire (EPCI, AOM, Région) sur lequel faire la simulation</div>
-              <div>
-                <div class="rf-search-bar rf-search-bar--md" id="search-2" role="search">
-                  <label class="rf-label" for="search-787-input">
-                    Recherche
-                  </label>
-                  <input id="search-territory" class="rf-input" placeholder="Rechercher" type="search"
-                    id="search-787-input" name="search-787-input">
-                  <button class="rf-btn">
-                    Rechercher
-                  </button>
+              <div class="rf-section" style="max-width: 600px; margin: auto;  padding: 10px">
+                <div> Territoire (EPCI, AOM, Région) sur lequel faire la simulation</div>
+                <div>
+                  <div class="rf-search-bar rf-search-bar--md" id="search-2" role="search">
+                    <label class="rf-label" for="search-787-input">
+                      Recherche
+                    </label>
+                    <input id="search-territory" class="rf-input" placeholder="Rechercher" type="search"
+                      id="search-787-input" name="search-787-input">
+                    <button class="rf-btn">
+                      Rechercher
+                    </button>
+                  </div>
+                  <div id="territory-list" class="territory-list display-none">
+                  </div>
                 </div>
-                <div id="territory-list" class="territory-list display-none">
+  
+                <div> Coordonnées du destinataire</div>
+                <div class="rf-input-group">
+                  <label class="rf-label" for="name">Nom</label>
+                  <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
                 </div>
+                <div class="rf-input-group">
+                  <label class="rf-label" for="name">Prénom</label>
+                  <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+                </div>
+                <div class="rf-input-group">
+                  <label class="rf-label" for="name">Poste</label>
+                  <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+                </div>
+                <div class="rf-input-group">
+                  <label class="rf-label" for="name">Email</label>
+                  <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+                </div>
+  
               </div>
-
-              <div> Coordonnées du destinataire</div>
-              <div class="rf-input-group">
-                <label class="rf-label" for="name">Nom</label>
-                <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
-              </div>
-              <div class="rf-input-group">
-                <label class="rf-label" for="name">Prénom</label>
-                <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
-              </div>
-              <div class="rf-input-group">
-                <label class="rf-label" for="name">Poste</label>
-                <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
-              </div>
-              <div class="rf-input-group">
-                <label class="rf-label" for="name">Email</label>
-                <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
-              </div>
-
+              
             </li>
           </ol>
 
@@ -106,7 +133,10 @@
           </div>
         </form>
 
-
+        <h4 style="margin-top: 5em"> Demande de simulation complexe </h4>
+        <div>
+          <a href="/nous-contacter/"> Contactez l'équipe RPC </a>
+        </div>
       </div>
     </div>
   </div>
@@ -210,7 +240,6 @@
         },
       })
       .then(function (response) {
-        console.debug(response)
         var territoryResponse = response.data.result.data
   
         for(let i=0; i<territoryResponse.length; i++) {
@@ -233,8 +262,6 @@
 
   })
 
-
-       
 </script>
 
 {{ partial "vousetes.html" . }}

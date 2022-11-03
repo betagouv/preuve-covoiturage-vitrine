@@ -10,4 +10,4 @@ actions:
     style: secondary
 ---
 
-## Simuler une camapgne d'incitation finanicère sur son territoire
+## Simuler une campagne d'incitation finanicère sur son territoire
