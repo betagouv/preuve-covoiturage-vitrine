@@ -178,46 +178,59 @@
       });
   });
 
+  var isTicking = false;
+  var ticker;
+
   searchInput.addEventListener('input', function (e) {
 
     if (!searchInput.value || (searchInput.value && searchInput.value.length < 4)) {
       return
     }
 
-    <!-- setTimeout(function () {
-      hide();
-    }, 2000); -->
+    if(isTicking){
+      clearTimeout(ticker)
+    }
 
-    axios({
-      url: "http://localhost:8080/geo/search",
-      method: "POST",
-      data: {
-        search: searchInput.value
-      },
-      headers: {
-        Accept: "application/json",
-        "Content-type": "application/json",
-      },
-    })
-    .then(function (response) {
-      console.debug(response)
-      var territoryResponse = response.data.result.data
+    ticker = setTimeout(function () {
+      searchTerritories()
+    }, 500);
 
-      for(let i=0; i<territoryResponse.length; i++) {
-        var htmlElement = document.createElement('div')
-        htmlElement.classList.add('territory-list-element')
-        htmlElement.innerHTML = territoryResponse[i].name + '  (' + territoryResponse[i].type + ')'
-        htmlElement.addEventListener('click', function (e) {
-          searchInput.value = htmlElement.innerText
-          territoriesDiv.classList.add('display-none')
-        });
-        territoriesDiv.appendChild(htmlElement)
-      }
-      territoriesDiv.classList.remove('display-none')
-    })
-    .catch(function (error) {
-      console.error(error)
-    });
+    isTicking = true;
+
+    function searchTerritories() {
+      axios({
+        url: "http://localhost:8080/geo/search",
+        method: "POST",
+        data: {
+          search: searchInput.value
+        },
+        headers: {
+          Accept: "application/json",
+          "Content-type": "application/json",
+        },
+      })
+      .then(function (response) {
+        console.debug(response)
+        var territoryResponse = response.data.result.data
+  
+        for(let i=0; i<territoryResponse.length; i++) {
+          var htmlElement = document.createElement('div')
+          htmlElement.classList.add('territory-list-element')
+          htmlElement.innerHTML = territoryResponse[i].name + '  (' + territoryResponse[i].type + ')'
+          htmlElement.addEventListener('click', function (e) {
+            searchInput.value = htmlElement.innerText
+            territoriesDiv.classList.add('display-none')
+          });
+          territoriesDiv.appendChild(htmlElement)
+        }
+        territoriesDiv.classList.remove('display-none')
+      })
+      .catch(function (error) {
+        console.error(error)
+      });
+    }
+
+
   })
 
 
