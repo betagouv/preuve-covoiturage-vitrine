@@ -8,12 +8,114 @@
       <div class="rf-grid-row">
         <div class="rf-col-8 rf-col-offset-2">
           {{ .Content }}
+
+          <h4> Demande de simulation simple </h4>
+
+          <div class="rf-col-8 rf-col-offset-2">
+              <ol>
+              <li><strong>Selectionnez le type de campagne d’incitation privilégié pour votre territoire</strong>
+
+                <div>
+
+                </div>
+              
+              </li>
+              
+              <li><strong>Saisissez le territoire concerné ainsi que les coordonnées du destinataire</strong></li>
+              </ol>
+          </div>
+
+          <section class="rf-section rf-section--contactform">
+            <form id="territoriy-form" action="{{ .Site.Data.contactform.action }}">
+              <div class="rf-container">
+                <div class="rf-grid-row">
+                  <div class="rf-col-12 rf-col-md-6 rf-col-offset-md-3">
+                    {{/*  name  */}}
+                    <div class="rf-input-group">
+                      <label class="rf-label" for="name">Votre nom :</label>
+                      <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+                    </div>
+        
+              
+                    <div class="rf-input-group h-text-right">
+                      <input type="reset" value="Annuler" class="rf-btn rf-btn--reset" />
+                      <input type="submit" value="Envoyer" class="rf-btn" />
+                    </div>
+        
+                    <div id="form-feedback" class="rf-alert rf-alert--success">
+                      <div>
+                        <h6 id="form-feedback-title">Erreur</h6>
+                        <p id="form-feedback-message">Une erreur s'est produite.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </section>
+
+          
         </div>
       </div>
     </div>
   </section>
 
-  {{ partial "map.html" . }}
+  <script src="js/axios.min.js"></script>
+  <script>
+    var fm = document.forms[0];
+    fm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var delay = 5000;
+      var timer = null;
+      var el = document.getElementById("form-feedback");
+
+      function show(title, message, type) {
+        clearTimeout(timer);
+        document.getElementById("form-feedback-title").innerText = title;
+        document.getElementById("form-feedback-message").innerText = message;
+        el.className = "rf-alert rf-alert--" + type + " shown";
+        setTimeout(function () {
+          hide();
+        }, delay);
+      }
+
+      function hide() {
+        clearTimeout(timer);
+        el.classList.remove("shown");
+      }
+
+      var fd = new FormData(fm);
+
+      var data = Object.create(null);
+      for (const [key, value] of fd.entries()) {
+        if (value && value.length) data[key] = value;
+      }
+
+      if ("name" in data && data.name !== "") {
+        fm.reset();
+        return;
+      }
+
+      axios({
+        url: "https://api.covoiturage.beta.gouv.fr/logout",
+        method: "POST",
+        data: data,
+        headers: {
+          Accept: "application/json",
+          "Content-type": "application/json",
+        },
+      })
+        .then(function (response) {
+          document.forms[0].reset();
+          show("Merci !", "Votre message a bien été envoyé", "success");
+        })
+        .catch(function (error) {
+          console.error(error);
+          show("Erreur", error.message, "error");
+        });
+    });
+  </script>
 
   {{ partial "vousetes.html" . }}
 {{ end }}
