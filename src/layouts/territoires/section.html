@@ -1,121 +1,228 @@
 {{ define "banner" }}
-  {{ partial "banner.html" .Params }}
+{{ partial "banner.html" .Params }}
 {{ end }}
 
 {{ define "main" }}
-  <section class="rf-section rf-section--territories-single">
-    <div class="rf-container">
-      <div class="rf-grid-row">
-        <div class="rf-col-8 rf-col-offset-2">
-          {{ .Content }}
+<section class="rf-section rf-section--territories-single">
+  <div class="rf-container">
+    <div class="rf-grid-row">
+      <div>
+        {{ .Content }}
 
-          <h4> Demande de simulation simple </h4>
+        <h4> Demande de simulation simple </h4>
 
-          <div class="rf-col-8 rf-col-offset-2">
-              <ol>
-              <li><strong>Selectionnez le type de campagne d’incitation privilégié pour votre territoire</strong>
+        <form>
+          <ol class="step">
+            <li class="step"><strong>Selectionnez le type de campagne d’incitation privilégié pour votre
+                territoire</strong>
 
-                <div>
-
-                </div>
-              
-              </li>
-              
-              <li><strong>Saisissez le territoire concerné ainsi que les coordonnées du destinataire</strong></li>
-              </ol>
-          </div>
-
-          <section class="rf-section rf-section--contactform">
-            <form id="territoriy-form" action="{{ .Site.Data.contactform.action }}">
-              <div class="rf-container">
-                <div class="rf-grid-row">
-                  <div class="rf-col-12 rf-col-md-6 rf-col-offset-md-3">
-                    {{/*  name  */}}
-                    <div class="rf-input-group">
-                      <label class="rf-label" for="name">Votre nom :</label>
-                      <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
-                    </div>
-        
-              
-                    <div class="rf-input-group h-text-right">
-                      <input type="reset" value="Annuler" class="rf-btn rf-btn--reset" />
-                      <input type="submit" value="Envoyer" class="rf-btn" />
-                    </div>
-        
-                    <div id="form-feedback" class="rf-alert rf-alert--success">
+              <div class="rf-input-group" style="display: flex">
+                <div class="rf-radio-group" style="margin-top:auto">
+                  <input type="radio" id="radio-error-inline-1" name="radio-error-inline">
+                  <label class="rf-label" for="radio-error-inline-1">
+                    Campagne type 1
+                    <div>
                       <div>
-                        <h6 id="form-feedback-title">Erreur</h6>
-                        <p id="form-feedback-message">Une erreur s'est produite.</p>
+                        Trajets éligibles
+                        <ul>
+                          <li> De 2 à 15km: 1,5 euros par trajet par passager </li>
+                          <li> De 15 à 30 km: 0,1 euro par trajet par km par passager </li>
+                        </ul>
+                      </div>
+                      <div>
+                        Restrictions
+                        <ul>
+                          <li> 6 trajets maximum pour le conducteur par jour. </li>
+                          <li> 150 euros maximum pour le conducteur par mois. </li>
+                          <li> Class de preuve B ou C</li>
+                        </ul>
                       </div>
                     </div>
-                  </div>
+                  </label>
+                </div>
+                <div class="rf-radio-group">
+                  <input type="radio" id="radio-error-inline-2" name="radio-error-inline">
+                  <label class="rf-label" for="radio-error-inline-2">Campagne type 1
+                  </label>
                 </div>
               </div>
-            </form>
-          </section>
 
-          
-        </div>
+            </li>
+
+            <li class="step"><strong>Saisissez le territoire concerné ainsi que les coordonnées du destinataire</strong>
+
+              <div> Territoire (EPCI, AOM, Région) sur lequel faire la simulation</div>
+              <div>
+                <div class="rf-search-bar rf-search-bar--md" id="search-2" role="search">
+                  <label class="rf-label" for="search-787-input">
+                    Recherche
+                  </label>
+                  <input id="search-territory" class="rf-input" placeholder="Rechercher" type="search"
+                    id="search-787-input" name="search-787-input">
+                  <button class="rf-btn">
+                    Rechercher
+                  </button>
+                </div>
+                <div id="territory-list" class="territory-list display-none">
+                </div>
+              </div>
+
+              <div> Coordonnées du destinataire</div>
+              <div class="rf-input-group">
+                <label class="rf-label" for="name">Nom</label>
+                <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+              </div>
+              <div class="rf-input-group">
+                <label class="rf-label" for="name">Prénom</label>
+                <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+              </div>
+              <div class="rf-input-group">
+                <label class="rf-label" for="name">Poste</label>
+                <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+              </div>
+              <div class="rf-input-group">
+                <label class="rf-label" for="name">Email</label>
+                <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+              </div>
+
+            </li>
+          </ol>
+
+          <div class="rf-input-group h-text-center">
+            <button id="submit-form-button" type="submit" class="rf-btn"> Recevoir la simulation</button>
+          </div>
+          <div class="h-text-center">
+            <small> Le récapitulatif va vous être envoyé quasiment instantanément par Email.</small>
+            <br />
+            <small> N'hésitez pas à vérifier dans vos spams si nécéssaire</small>
+          </div>
+
+
+          <div id="form-feedback" class="rf-alert rf-alert--success">
+            <div>
+              <h6 id="form-feedback-title">Erreur</h6>
+              <p id="form-feedback-message">Une erreur s'est produite.</p>
+            </div>
+          </div>
+        </form>
+
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <script src="js/axios.min.js"></script>
-  <script>
-    var fm = document.forms[0];
-    fm.addEventListener("submit", function (e) {
-      e.preventDefault();
+<script src="js/axios.min.js"></script>
+<script>
 
-      var delay = 5000;
-      var timer = null;
-      var el = document.getElementById("form-feedback");
+  var territoriesDiv = document.querySelector('#territory-list')
+  var submitButton = document.querySelector('#submit-form-button')
+  var searchInput = document.querySelector('#search-territory')
 
-      function show(title, message, type) {
-        clearTimeout(timer);
-        document.getElementById("form-feedback-title").innerText = title;
-        document.getElementById("form-feedback-message").innerText = message;
-        el.className = "rf-alert rf-alert--" + type + " shown";
-        setTimeout(function () {
-          hide();
-        }, delay);
-      }
+  document.addEventListener('click', function() {
+    territoriesDiv.classList.add('display-none')
+  })
 
-      function hide() {
-        clearTimeout(timer);
-        el.classList.remove("shown");
-      }
+  submitButton.addEventListener("click", function (e) {
+    e.preventDefault();
 
-      var fd = new FormData(fm);
+    var delay = 5000;
+    var timer = null;
+    var el = document.getElementById("form-feedback");
 
-      var data = Object.create(null);
-      for (const [key, value] of fd.entries()) {
-        if (value && value.length) data[key] = value;
-      }
+    function show(title, message, type) {
+      clearTimeout(timer);
+      document.getElementById("form-feedback-title").innerText = title;
+      document.getElementById("form-feedback-message").innerText = message;
+      el.className = "rf-alert rf-alert--" + type + " shown";
+      setTimeout(function () {
+        hide();
+      }, delay);
+    }
 
-      if ("name" in data && data.name !== "") {
-        fm.reset();
-        return;
-      }
+    function hide() {
+      clearTimeout(timer);
+      el.classList.remove("shown");
+    }
 
-      axios({
-        url: "https://api.covoiturage.beta.gouv.fr/logout",
-        method: "POST",
-        data: data,
-        headers: {
-          Accept: "application/json",
-          "Content-type": "application/json",
-        },
+    var form = document.forms[0];
+    var fd = new FormData(form);
+
+    var data = Object.create(null);
+    for (const [key, value] of fd.entries()) {
+      if (value && value.length) data[key] = value;
+    }
+
+    if ("name" in data && data.name !== "") {
+      form.reset();
+      return;
+    }
+
+    axios({
+      url: "https://api.covoiturage.beta.gouv.fr/logout",
+      method: "POST",
+      data: data,
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json",
+      },
+    })
+      .then(function (response) {
+        document.forms[0].reset();
+        show("Merci !", "Votre message a bien été envoyé", "success");
       })
-        .then(function (response) {
-          document.forms[0].reset();
-          show("Merci !", "Votre message a bien été envoyé", "success");
-        })
-        .catch(function (error) {
-          console.error(error);
-          show("Erreur", error.message, "error");
-        });
-    });
-  </script>
+      .catch(function (error) {
+        console.error(error);
 
-  {{ partial "vousetes.html" . }}
+        show("Erreur", error.message, "error");
+      });
+  });
+
+  searchInput.addEventListener('input', function (e) {
+
+    if (!searchInput.value || (searchInput.value && searchInput.value.length < 4)) {
+      return
+    }
+
+    <!-- setTimeout(function () {
+      hide();
+    }, 2000); -->
+
+    axios({
+      url: "http://localhost:8080/geo/search",
+      method: "POST",
+      data: {
+        search: searchInput.value
+      },
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json",
+      },
+    })
+    .then(function (response) {
+      console.debug(response)
+      var territoryResponse = response.data.result.data
+
+      for(let i=0; i<territoryResponse.length; i++) {
+        var htmlElement = document.createElement('div')
+        htmlElement.classList.add('territory-list-element')
+        htmlElement.innerHTML = territoryResponse[i].name + '  (' + territoryResponse[i].type + ')'
+        htmlElement.addEventListener('click', function (e) {
+          searchInput.value = htmlElement.innerText
+          territoriesDiv.classList.add('display-none')
+        });
+        territoriesDiv.appendChild(htmlElement)
+      }
+      territoriesDiv.classList.remove('display-none')
+    })
+    .catch(function (error) {
+      console.error(error)
+    });
+  })
+
+
+       
+</script>
+
+{{ partial "vousetes.html" . }}
 {{ end }}
