@@ -69,7 +69,6 @@
                       </label>
                     </div>
                   </div>
-
                 </div>
             </li>
 
@@ -78,12 +77,14 @@
               <div class="rf-section" style="max-width: 600px; margin: auto;  padding: 10px">
                 <div> Territoire (EPCI, AOM, Région) sur lequel faire la simulation</div>
                 <div>
-                  <div class="rf-search-bar rf-search-bar--md" id="search-2" role="search">
+                  <div class="rf-search-bar rf-search-bar--md" id="search-2" role="search" style="position: relative">
                     <label class="rf-label" for="search-787-input">
                       Recherche
                     </label>
                     <input id="search-territory" class="rf-input" placeholder="Rechercher" type="search"
                       id="search-787-input" name="search-787-input">
+                      <img id="territories-loader" class="display-none" src="images/icons/loader-3-line.svg" alt="Recherche des territoires" style="position: absolute; top: 6px; right: -33px; z-index: 1000">
+                      
                     <button class="rf-btn">
                       Rechercher
                     </button>
@@ -148,6 +149,7 @@
   var territoriesDiv = document.querySelector('#territory-list')
   var submitButton = document.querySelector('#submit-form-button')
   var searchInput = document.querySelector('#search-territory')
+  var territoryLoader = document.querySelector('#territories-loader')
 
   document.addEventListener('click', function() {
     territoriesDiv.classList.add('display-none')
@@ -222,8 +224,9 @@
     }
 
     ticker = setTimeout(function () {
+      territoryLoader.classList.remove('display-none')
       searchTerritories()
-    }, 500);
+    }, 400);
 
     isTicking = true;
 
@@ -253,6 +256,7 @@
           territoriesDiv.appendChild(htmlElement)
         }
         territoriesDiv.classList.remove('display-none')
+        territoryLoader.classList.add('display-none')
       })
       .catch(function (error) {
         console.error(error)
