@@ -155,12 +155,12 @@
   })
 
   function isFormValid(data) {
-    return 
-    "email" in data && data.email !== "" && 
+    return "email" in data && data.email !== "" && 
     "territory" in data && data.territory !== "" && 
     "name" in data && data.name !== "" && 
     "firstname" in data && data.firstname !== "" && 
     "position" in data && data.position !== ""
+    "radio" in data && data.radio === 'on'
   }
 
   form.addEventListener("input", function (e) {
@@ -170,7 +170,6 @@
     for (const [key, value] of fd.entries()) {
       if (value && value.length) data[key] = value;
     }
-
     submitButton.disabled = !isFormValid(data)
   })
 
@@ -275,8 +274,6 @@
           console.error(error)
         });
     }
-
-
   }
 
   searchInput.addEventListener('input', searchTerritorriesAction)
