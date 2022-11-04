@@ -13,112 +13,109 @@
 
         <form>
           <ol class="step">
-            <li class="step"><strong style="line-height: 50px">Selectionnez le type de campagne d’incitation privilégié pour votre
+            <li class="step"><strong style="line-height: 50px">Selectionnez le type de campagne d’incitation privilégié
+                pour votre
                 territoire</strong>
 
-                <div class="rf-section">
-                  <div class="rf-input-group" style="display: flex; justify-content: space-between; align-items: center">
-                    <div class="rf-radio-group" >
-                      <input type="radio" id="radio-error-inline-1" name="radio-error-inline">
-                      <label class="rf-label hover-background-grey" for="radio-error-inline-1">
-                        <div style="padding: 15px;">
-                          <div style="text-align: center; font-weight: bold">Campagne sur 4 mois </div>
-                          <div style="direction: ltr;">
-                            <div>
-                              <div>Trajets éligibles:</div>
-                              <ul>
-                                <li> De 2 à 15km: 1,5 euros par trajet par passager </li>
-                                <li> De 15 à 30 km: 0,1 euro par trajet par km par passager </li>
-                              </ul>
-                            </div>
-                            <div>
-                              <div>Restrictions:</div>
-                              <ul>
-                                <li>6 trajets maximum pour le conducteur par jour</li>
-                                <li>150 euros maximum pour le conducteur par mois</li>
-                                <li>Class de preuve B ou C</li>
-                              </ul>
-                            </div>
+              <div class="rf-section">
+                <div class="rf-input-group" style="display: flex; justify-content: space-between; align-items: center">
+                  <div class="rf-radio-group">
+                    <input type="radio" id="radio1" name="radio">
+                    <label class="rf-label hover-background-grey" for="radio1">
+                      <div style="padding: 15px;">
+                        <div style="text-align: center; font-weight: bold">Campagne sur 4 mois </div>
+                        <div style="direction: ltr;">
+                          <div>
+                            <div>Trajets éligibles:</div>
+                            <ul>
+                              <li> De 2 à 15km: 1,5 euros par trajet par passager </li>
+                              <li> De 15 à 30 km: 0,1 euro par trajet par km par passager </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <div>Restrictions:</div>
+                            <ul>
+                              <li>6 trajets maximum pour le conducteur par jour</li>
+                              <li>150 euros maximum pour le conducteur par mois</li>
+                              <li>Class de preuve B ou C</li>
+                            </ul>
                           </div>
                         </div>
-                        
-                      </label>
-                    </div>
-                    <div class="rf-radio-group" style="margin-bottom: 0">
-                      <input type="radio" id="radio-error-inline-2" name="radio-error-inline">
-                      <label class="rf-label hover-background-grey" for="radio-error-inline-2">
-                        <div style="padding: 15px;">
-                          <div style="text-align: center; font-weight: bold">Campagne sur 8 mois </div>
-                          <div style="direction: ltr;">
-                            <div>
-                              <div>Trajets éligibles:</div>
-                              <ul>
-                                <li> De 2 à 20 km : 2 euros par trajet par passager. </li>
-                                <li> De 20 à 50 km : 0.1 euro par trajet par km par passager. </li>
-                              </ul>
-                            </div>
-                            <div>
-                              <div>Restrictions:</div>
-                              <ul>
-                                <li>6 trajets maximum pour le conducteur par jour</li>
-                                <li>Class de preuve B ou C</li>
-                              </ul>
-                            </div>
+                      </div>
+
+                    </label>
+                  </div>
+                  <div class="rf-radio-group" style="margin-bottom: 0">
+                    <input type="radio" id="radio2" name="radio">
+                    <label class="rf-label hover-background-grey" for="radio2">
+                      <div style="padding: 15px;">
+                        <div style="text-align: center; font-weight: bold">Campagne sur 8 mois </div>
+                        <div style="direction: ltr;">
+                          <div>
+                            <div>Trajets éligibles:</div>
+                            <ul>
+                              <li> De 2 à 20 km : 2 euros par trajet par passager. </li>
+                              <li> De 20 à 50 km : 0.1 euro par trajet par km par passager. </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <div>Restrictions:</div>
+                            <ul>
+                              <li>6 trajets maximum pour le conducteur par jour</li>
+                              <li>Class de preuve B ou C</li>
+                            </ul>
                           </div>
                         </div>
-                      </label>
-                    </div>
+                      </div>
+                    </label>
                   </div>
                 </div>
+              </div>
             </li>
 
-            <li class="step"><strong style="line-height: 50px">Saisissez le territoire concerné ainsi que les coordonnées du destinataire</strong>
+            <li class="step"><strong style="line-height: 50px">Saisissez le territoire concerné ainsi que les
+                coordonnées du destinataire</strong>
 
               <div class="rf-section" style="max-width: 600px; margin: auto; padding: 10px">
                 <div style="margin-top: 8px">
                   <div style="position: relative">
-                    <label class="rf-label" for="territory-input">
+                    <label class="rf-label" for="territory">
                       Territoire (EPCI, AOM, Région) sur lequel faire la simulation
                     </label>
                     <input id="search-territory" class="rf-input" placeholder="Rechercher" type="text"
-                      id="territory-input" name="territory-input">
-                    <img id="territories-loader" class="display-none" src="images/icons/loader-3-line.svg" alt="Recherche des territoires" style="position: absolute; top: 39px; right: 9px; z-index: 1000">
-  
+                      id="territory-input" name="territory">
+                    <img id="territories-loader" class="display-none" src="images/icons/loader-3-line.svg"
+                      alt="Recherche des territoires" style="position: absolute; top: 39px; right: 9px; z-index: 1000">
                   </div>
                   <div id="territory-list" class="territory-list display-none">
                   </div>
-                </div>  
+                </div>
 
                 <div style="max-width: 350px">
-
-
                   <div class="rf-input-group mt-2em">
                     <label class="rf-label" for="name">Nom</label>
                     <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
                   </div>
                   <div class="rf-input-group">
-                    <label class="rf-label" for="name">Prénom</label>
-                    <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+                    <label class="rf-label" for="firstname">Prénom</label>
+                    <input class="rf-input" type="text" id="firstname" name="firstname" minlength="1" maxlength="256" />
                   </div>
                   <div class="rf-input-group">
-                    <label class="rf-label" for="name">Poste</label>
-                    <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+                    <label class="rf-label" for="position">Poste</label>
+                    <input class="rf-input" type="text" id="position" name="position" minlength="1" maxlength="256" />
                   </div>
                   <div class="rf-input-group">
-                    <label class="rf-label" for="name">Email</label>
-                    <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+                    <label class="rf-label" for="email">Email</label>
+                    <input class="rf-input" type="text" id="email" name="email" minlength="1" maxlength="256" />
                   </div>
-
                 </div>
-
-
               </div>
-              
+
             </li>
           </ol>
 
           <div class="rf-input-group h-text-center">
-            <button id="submit-form-button" type="submit" class="rf-btn"> Recevoir la simulation</button>
+            <button id="submit-form-button" type="submit" class="rf-btn" disabled> Recevoir la simulation</button>
           </div>
           <div class="h-text-center">
             <small> Le récapitulatif va vous être envoyé quasiment instantanément par Email.</small>
@@ -151,9 +148,30 @@
   var submitButton = document.querySelector('#submit-form-button')
   var searchInput = document.querySelector('#search-territory')
   var territoryLoader = document.querySelector('#territories-loader')
+  var form = document.forms[0];
 
-  document.addEventListener('click', function() {
+  document.addEventListener('click', function () {
     territoriesDiv.classList.add('display-none')
+  })
+
+  function isFormValid(data) {
+    return 
+    "email" in data && data.email !== "" && 
+    "territory" in data && data.territory !== "" && 
+    "name" in data && data.name !== "" && 
+    "firstname" in data && data.firstname !== "" && 
+    "position" in data && data.position !== ""
+  }
+
+  form.addEventListener("input", function (e) {
+    var fd = new FormData(form);
+
+    var data = Object.create(null);
+    for (const [key, value] of fd.entries()) {
+      if (value && value.length) data[key] = value;
+    }
+
+    submitButton.disabled = !isFormValid(data)
   })
 
   submitButton.addEventListener("click", function (e) {
@@ -176,19 +194,6 @@
     function hide() {
       clearTimeout(timer);
       el.classList.remove("shown");
-    }
-
-    var form = document.forms[0];
-    var fd = new FormData(form);
-
-    var data = Object.create(null);
-    for (const [key, value] of fd.entries()) {
-      if (value && value.length) data[key] = value;
-    }
-
-    if ("name" in data && data.name !== "") {
-      form.reset();
-      return;
     }
 
     axios({
@@ -220,7 +225,7 @@
       return
     }
 
-    if(isTicking){
+    if (isTicking) {
       clearTimeout(ticker)
     }
 
@@ -233,7 +238,7 @@
     isTicking = true;
 
     function clearTerritoryList() {
-      while(territoriesDiv.firstChild) {
+      while (territoriesDiv.firstChild) {
         territoriesDiv.removeChild(territoriesDiv.lastChild)
       }
     }
@@ -250,30 +255,30 @@
           "Content-type": "application/json",
         },
       })
-      .then(function (response) {
-        var territoryResponse = response.data.result.data
-  
-        for(let i=0; i<territoryResponse.length; i++) {
-          var htmlElement = document.createElement('div')
-          htmlElement.classList.add('territory-list-element')
-          htmlElement.innerHTML = territoryResponse[i].name + '  (' + territoryResponse[i].type + ')'
-          htmlElement.addEventListener('click', function (e) {
-            searchInput.value = htmlElement.innerText
-            territoriesDiv.classList.add('display-none')
-          });
-          territoriesDiv.appendChild(htmlElement)
-        }
-        territoriesDiv.classList.remove('display-none')
-        territoryLoader.classList.add('display-none')
-      })
-      .catch(function (error) {
-        console.error(error)
-      });
+        .then(function (response) {
+          var territoryResponse = response.data.result.data
+
+          for (let i = 0; i < territoryResponse.length; i++) {
+            var htmlElement = document.createElement('div')
+            htmlElement.classList.add('territory-list-element')
+            htmlElement.innerHTML = territoryResponse[i].name + '  (' + territoryResponse[i].type + ')'
+            htmlElement.addEventListener('click', function (e) {
+              searchInput.value = htmlElement.innerText
+              territoriesDiv.classList.add('display-none')
+            });
+            territoriesDiv.appendChild(htmlElement)
+          }
+          territoriesDiv.classList.remove('display-none')
+          territoryLoader.classList.add('display-none')
+        })
+        .catch(function (error) {
+          console.error(error)
+        });
     }
 
 
   }
-  
+
   searchInput.addEventListener('input', searchTerritorriesAction)
 
 </script>
