@@ -17,11 +17,11 @@
                 territoire</strong>
 
                 <div class="rf-section">
-                  <div class="rf-input-group" style="display: flex; justify-content: space-between;">
-                    <div class="rf-radio-group" style="margin-top:auto; padding: 10px">
+                  <div class="rf-input-group" style="display: flex; justify-content: space-between; align-items: center">
+                    <div class="rf-radio-group" >
                       <input type="radio" id="radio-error-inline-1" name="radio-error-inline">
                       <label class="rf-label hover-background-grey" for="radio-error-inline-1">
-                        <div style="margin-left: 10px; height: 260px;">
+                        <div style="padding: 15px;">
                           <div style="text-align: center; font-weight: bold">Campagne sur 4 mois </div>
                           <div style="direction: ltr;">
                             <div>
@@ -44,10 +44,10 @@
                         
                       </label>
                     </div>
-                    <div class="rf-radio-group" style="margin-top:auto; padding: 10px; margin-bottom:0">
+                    <div class="rf-radio-group" style="margin-bottom: 0">
                       <input type="radio" id="radio-error-inline-2" name="radio-error-inline">
                       <label class="rf-label hover-background-grey" for="radio-error-inline-2">
-                        <div style="margin-left: 10px; height: 260px;">
+                        <div style="padding: 15px;">
                           <div style="text-align: center; font-weight: bold">Campagne sur 8 mois </div>
                           <div style="direction: ltr;">
                             <div>
@@ -74,9 +74,9 @@
 
             <li class="step"><strong style="line-height: 50px">Saisissez le territoire concerné ainsi que les coordonnées du destinataire</strong>
 
-              <div class="rf-section" style="max-width: 600px; margin: auto;  padding: 10px">
+              <div class="rf-section" style="max-width: 600px; margin: auto; padding: 10px">
                 <div> Territoire (EPCI, AOM, Région) sur lequel faire la simulation</div>
-                <div>
+                <div style="margin-top: 8px">
                   <div class="rf-search-bar rf-search-bar--md" id="search-2" role="search" style="position: relative">
                     <label class="rf-label" for="search-787-input">
                       Recherche
@@ -91,26 +91,31 @@
                   </div>
                   <div id="territory-list" class="territory-list display-none">
                   </div>
+                </div>  
+
+                <div style="max-width: 350px">
+
+
+                  <div class="rf-input-group mt-2em">
+                    <label class="rf-label" for="name">Nom</label>
+                    <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+                  </div>
+                  <div class="rf-input-group">
+                    <label class="rf-label" for="name">Prénom</label>
+                    <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+                  </div>
+                  <div class="rf-input-group">
+                    <label class="rf-label" for="name">Poste</label>
+                    <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+                  </div>
+                  <div class="rf-input-group">
+                    <label class="rf-label" for="name">Email</label>
+                    <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
+                  </div>
+
                 </div>
-  
-                <div> Coordonnées du destinataire</div>
-                <div class="rf-input-group">
-                  <label class="rf-label" for="name">Nom</label>
-                  <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
-                </div>
-                <div class="rf-input-group">
-                  <label class="rf-label" for="name">Prénom</label>
-                  <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
-                </div>
-                <div class="rf-input-group">
-                  <label class="rf-label" for="name">Poste</label>
-                  <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
-                </div>
-                <div class="rf-input-group">
-                  <label class="rf-label" for="name">Email</label>
-                  <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
-                </div>
-  
+
+
               </div>
               
             </li>
