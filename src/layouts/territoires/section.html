@@ -75,19 +75,15 @@
             <li class="step"><strong style="line-height: 50px">Saisissez le territoire concerné ainsi que les coordonnées du destinataire</strong>
 
               <div class="rf-section" style="max-width: 600px; margin: auto; padding: 10px">
-                <div> Territoire (EPCI, AOM, Région) sur lequel faire la simulation</div>
                 <div style="margin-top: 8px">
-                  <div class="rf-search-bar rf-search-bar--md" id="search-2" role="search" style="position: relative">
-                    <label class="rf-label" for="search-787-input">
-                      Recherche
+                  <div style="position: relative">
+                    <label class="rf-label" for="territory-input">
+                      Territoire (EPCI, AOM, Région) sur lequel faire la simulation
                     </label>
-                    <input id="search-territory" class="rf-input" placeholder="Rechercher" type="search"
-                      id="search-787-input" name="search-787-input">
-                      <img id="territories-loader" class="display-none" src="images/icons/loader-3-line.svg" alt="Recherche des territoires" style="position: absolute; top: 6px; right: -33px; z-index: 1000">
-                      
-                    <button class="rf-btn">
-                      Rechercher
-                    </button>
+                    <input id="search-territory" class="rf-input" placeholder="Rechercher" type="text"
+                      id="territory-input" name="territory-input">
+                    <img id="territories-loader" class="display-none" src="images/icons/loader-3-line.svg" alt="Recherche des territoires" style="position: absolute; top: 39px; right: 9px; z-index: 1000">
+  
                   </div>
                   <div id="territory-list" class="territory-list display-none">
                   </div>
@@ -218,7 +214,7 @@
   var isTicking = false;
   var ticker;
 
-  searchInput.addEventListener('input', function (e) {
+  function searchTerritorriesAction(e) {
 
     if (!searchInput.value || (searchInput.value && searchInput.value.length < 4)) {
       return
@@ -276,7 +272,9 @@
     }
 
 
-  })
+  }
+  
+  searchInput.addEventListener('input', searchTerritorriesAction)
 
 </script>
 
