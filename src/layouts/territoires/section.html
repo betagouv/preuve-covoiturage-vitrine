@@ -224,11 +224,18 @@
     }
 
     ticker = setTimeout(function () {
+      clearTerritoryList()
       territoryLoader.classList.remove('display-none')
       searchTerritories()
     }, 400);
 
     isTicking = true;
+
+    function clearTerritoryList() {
+      while(territoriesDiv.firstChild) {
+        territoriesDiv.removeChild(territoriesDiv.lastChild)
+      }
+    }
 
     function searchTerritories() {
       axios({
