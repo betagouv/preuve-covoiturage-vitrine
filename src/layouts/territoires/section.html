@@ -18,26 +18,27 @@
                 territoire</strong>
 
               <div class="rf-section">
-                <div class="rf-input-group" style="display: flex; justify-content: space-between; align-items: center">
+                <div class="rf-input-group" style="display: flex; justify-content: space-between; align-items: baseline">
                   <div class="rf-radio-group">
                     <input type="radio" id="radio1" name="radio">
-                    <label class="rf-label hover-background-grey" for="radio1">
-                      <div style="padding: 15px;">
-                        <div style="text-align: center; font-weight: bold">Campagne sur 4 mois </div>
-                        <div style="direction: ltr;">
+                    <label class="rf-label hover-background-grey" style="align-items: flex-start;" for="radio1">
+                      <div>
+                        <div style="text-align: left; font-weight: bold">Modèle Ile-de-france Mobilité </div>
+                        <div style="direction: ltr; margin-top: 45px;">
                           <div>
                             <div>Trajets éligibles:</div>
                             <ul>
-                              <li> De 2 à 15km: 1,5 euros par trajet par passager </li>
-                              <li> De 15 à 30 km: 0,1 euro par trajet par km par passager </li>
+                              <li> Trajets avec Origine OU Destination sur le territoire</li>
+                              <li> Trajets de plus de 2km</li>
+                              <li> Multiopérateur</li>
+                              <li> Class de preuve B et C</li>
                             </ul>
                           </div>
                           <div>
-                            <div>Restrictions:</div>
+                            <div>Incitation:</div>
                             <ul>
-                              <li>6 trajets maximum pour le conducteur par jour</li>
-                              <li>150 euros maximum pour le conducteur par mois</li>
-                              <li>Class de preuve B ou C</li>
+                              <li> De 2 à 20: 2 euros par trajet</li>
+                              <li> A partir de 20 km: 0,1 euro par trajet par km</li>
                             </ul>
                           </div>
                         </div>
@@ -45,24 +46,51 @@
 
                     </label>
                   </div>
-                  <div class="rf-radio-group" style="margin-bottom: 0">
+                  <div class="rf-radio-group">
                     <input type="radio" id="radio2" name="radio">
-                    <label class="rf-label hover-background-grey" for="radio2">
-                      <div style="padding: 15px;">
-                        <div style="text-align: center; font-weight: bold">Campagne sur 8 mois </div>
-                        <div style="direction: ltr;">
+                    <label class="rf-label hover-background-grey" style="align-items: flex-start;" for="radio2">
+                      <div>
+                        <div style="text-align: left; font-weight: bold">Modèle Nantes Métropole </div>
+                        <div style="direction: ltr; margin-top: 45px;">
                           <div>
                             <div>Trajets éligibles:</div>
                             <ul>
-                              <li> De 2 à 20 km : 2 euros par trajet par passager. </li>
-                              <li> De 20 à 50 km : 0.1 euro par trajet par km par passager. </li>
+                              <li> Trajets avec Origine ET Destination sur le territoire</li>
+                              <li> Trajets de plus de 2km</li>
+                              <li> Multiopérateur</li>
+                              <li> Class de preuve B et C</li>
                             </ul>
                           </div>
                           <div>
-                            <div>Restrictions:</div>
+                            <div>Incitation:</div>
                             <ul>
-                              <li>6 trajets maximum pour le conducteur par jour</li>
-                              <li>Class de preuve B ou C</li>
+                              <li> De 2 à 15km: 1,5 euros par trajet par passager</li>
+                              <li> De 15 à 30km: 0,1 euro par trajet par km par passager</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="rf-radio-group">
+                    <input type="radio" id="radio3" name="radio">
+                    <label class="rf-label hover-background-grey" style="align-items: flex-start;" for="radio3">
+                      <div>
+                        <div style="text-align: left; font-weight: bold">Modèle Laval </div>
+                        <div style="direction: ltr; margin-top: 45px;">
+                          <div>
+                            <div>Trajets éligibles:</div>
+                            <ul>
+                              <li> Trajets avec Origine ET Destination sur le territoire</li>
+                              <li> Trajets de plus de 2km</li>
+                              <li> Multiopérateur</li>
+                              <li> Class de preuve B et C</li>
+                            </ul>
+                          </div>
+                          <div>
+                            <div>Incitation:</div>
+                            <ul>
+                              <li> A partir de 2km: 0,5 euros par trajet par passager</li>
                             </ul>
                           </div>
                         </div>
@@ -118,7 +146,7 @@
             <button id="submit-form-button" type="submit" class="rf-btn" disabled> Recevoir la simulation</button>
           </div>
           <div class="h-text-center">
-            <small> Le récapitulatif va vous être envoyé quasiment instantanément par Email.</small>
+            <small> Le récapitulatif va vous être envoyé quasiment instantanément par email.</small>
             <br />
             <small> N'hésitez pas à vérifier dans vos spams si nécéssaire</small>
           </div>
@@ -160,16 +188,22 @@
     "name" in data && data.name !== "" && 
     "firstname" in data && data.firstname !== "" && 
     "position" in data && data.position !== ""
-    "radio" in data && data.radio === 'on'
+    "radio" in data && data.radio === 'on' &&
+    searchInput.getAttribute('insee') &&  searchInput.getAttribute('insee') !== ""
   }
 
-  form.addEventListener("input", function (e) {
+  function getFormData() {
     var fd = new FormData(form);
 
     var data = Object.create(null);
     for (const [key, value] of fd.entries()) {
       if (value && value.length) data[key] = value;
     }
+    return data
+  }
+
+  form.addEventListener("input", function (e) {
+    var data = getFormData()
     submitButton.disabled = !isFormValid(data)
   })
 
@@ -195,8 +229,12 @@
       el.classList.remove("shown");
     }
 
+    var data = getFormData()
+    data.territory_insee = searchInput.getAttribute('insee')
+    delete data.radio
+
     axios({
-      url: "https://api.covoiturage.beta.gouv.fr/logout",
+      url: "http://localhost:8080/policy/simulate",
       method: "POST",
       data: data,
       headers: {
@@ -206,11 +244,10 @@
     })
       .then(function (response) {
         document.forms[0].reset();
-        show("Merci !", "Votre message a bien été envoyé", "success");
+        show("Merci !", "Votre demande de simulation a bien été envoyé", "success");
       })
       .catch(function (error) {
         console.error(error);
-
         show("Erreur", error.message, "error");
       });
   });
@@ -263,6 +300,7 @@
             htmlElement.innerHTML = territoryResponse[i].name + '  (' + territoryResponse[i].type + ')'
             htmlElement.addEventListener('click', function (e) {
               searchInput.value = htmlElement.innerText
+              searchInput.setAttribute('insee', territoryResponse[i].insee)
               territoriesDiv.classList.add('display-none')
             });
             territoriesDiv.appendChild(htmlElement)
