@@ -1,13 +1,16 @@
 {
-  "name": "preuve-covoiturage-vitrine",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:betagouv/preuve-covoiturage-vitrine.git",
-  "author": "Jonathan Fallon <jonathan.fallon@beta.gouv.fr>",
-  "license": "Apache-2.0",
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
   "private": true,
-  "devDependencies": {
-    "prettier": "^2.2.1",
-    "prettier-plugin-go-template": "^0.0.10"
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^1.6.12"
   }
 }
