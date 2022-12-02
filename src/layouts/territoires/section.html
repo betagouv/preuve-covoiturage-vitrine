@@ -182,16 +182,6 @@
     territoriesDiv.classList.add('display-none')
   })
 
-  function isFormValid(data) {
-    return "email" in data && data.email !== "" && 
-    "territory" in data && data.territory !== "" && 
-    "name" in data && data.name !== "" && 
-    "firstname" in data && data.firstname !== "" && 
-    "position" in data && data.position !== ""
-    "radio" in data && data.radio === 'on' &&
-    searchInput.getAttribute('insee') &&  searchInput.getAttribute('insee') !== ""
-  }
-
   function getFormData() {
     var fd = new FormData(form);
 
@@ -200,6 +190,16 @@
       if (value && value.length) data[key] = value;
     }
     return data
+  }
+
+  function isFormValid(data) {
+    return "email" in data && data.email !== "" && 
+    "name" in data && data.name !== "" && 
+    "firstname" in data && data.firstname !== "" && 
+    "position" in data && data.position !== "" &&
+    "radio" in data && (data.radio === 'on') &&
+    searchInput.getAttribute('insee') && 
+    searchInput.getAttribute('insee') !== ""
   }
 
   form.addEventListener("input", function (e) {
@@ -229,14 +229,24 @@
       el.classList.remove("shown");
     }
 
-    var data = getFormData()
-    data.territory_insee = searchInput.getAttribute('insee')
-    delete data.radio
+    var formData = getFormData()
+
+    var payload = {
+      name: formData.name,
+      firstname: formData.firstname,
+      job: formData.position,
+      email: formData.email,
+      territory_name: searchInput.getAttribute('name'),
+      simulation: {
+        territory_insee: searchInput.getAttribute('insee'),
+        policy_template_id: document.querySelector('input[name="radio"]:checked').id.slice(5,6)
+      }
+    }
 
     axios({
       url: "http://localhost:8080/policy/simulate",
       method: "POST",
-      data: data,
+      data: payload,
       headers: {
         Accept: "application/json",
         "Content-type": "application/json",
@@ -247,8 +257,8 @@
         show("Merci !", "Votre demande de simulation a bien été envoyé", "success");
       })
       .catch(function (error) {
-        console.error(error);
-        show("Erreur", error.message, "error");
+        console.error(error.response);
+        show("Erreur", "Une erreur est survenue lors de la simulation", "error");
       });
   });
 
@@ -284,7 +294,8 @@
         url: "http://localhost:8080/geo/search",
         method: "POST",
         data: {
-          search: searchInput.value
+          search: searchInput.value,
+          exclude_coms: true
         },
         headers: {
           Accept: "application/json",
@@ -301,6 +312,7 @@
             htmlElement.addEventListener('click', function (e) {
               searchInput.value = htmlElement.innerText
               searchInput.setAttribute('insee', territoryResponse[i].insee)
+              searchInput.setAttribute('name', territoryResponse[i].name)
               territoriesDiv.classList.add('display-none')
             });
             territoriesDiv.appendChild(htmlElement)
