@@ -11,6 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.6.12"
+    "astro": "^1.6.12",
+    "sass": "^1.56.1"
+  },
+  "devDependencies": {
+    "@gouvfr/dsfr": "^1.8.5"
   }
 }

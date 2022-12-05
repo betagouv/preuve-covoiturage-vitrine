@@ -1,35 +1,297 @@
 ---
+import "../assets/styles.scss";
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="fr" data-fr-scheme="system">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="/dsfr/dsfr.min.css" />
+    <link rel="stylesheet" href="/dsfr/utility/utility.min.css" />
+
+    <meta name="theme-color" content="#000091" />
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="/favicon/manifest.webmanifest" crossorigin="use-credentials" />
+    <!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
+    <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- Accès rapide -->
+    <div class="fr-skiplinks">
+      <nav class="fr-container" role="navigation" aria-label="Accès rapide">
+        <ul class="fr-skiplinks__list">
+          <li>
+            <a class="fr-nav__link" href="#contenu">Contenu</a>
+          </li>
+          <li>
+            <a class="fr-nav__link" href="#header-navigation">Menu</a>
+          </li>
+          <li>
+            <a class="fr-nav__link" href="#header-search">Recherche</a>
+          </li>
+          <li>
+            <a class="fr-nav__link" href="#footer">Pied de page</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <header role="banner" class="fr-header">
+      <div class="fr-header__body">
+        <div class="fr-container">
+          <div class="fr-header__body-row">
+            <div class="fr-header__brand fr-enlarge-link">
+              <div class="fr-header__brand-top">
+                <div class="fr-header__logo">
+                  <p class="fr-logo">
+                    Ministère<br />
+                    de la Transition<br />
+                    Écologique
+                  </p>
+                </div>
+                <div class="fr-header__navbar">
+                  <button
+                    class="fr-btn--menu fr-btn"
+                    data-fr-opened="false"
+                    aria-controls="modal-menu"
+                    aria-haspopup="menu"
+                    title="Menu"
+                  >
+                    Menu
+                  </button>
+                </div>
+              </div>
+              <div class="fr-header__service">
+                <a href="/" title="Accueil - Démo du Design System de l'État - version 1.4.0">
+                  <p class="fr-header__service-title">Covoiturage.ecologie.gouv.fr</p>
+                </a>
+                <p class="fr-header__service-tagline">Pour adopter le covoiturage</p>
+              </div>
+            </div>
+
+            <!-- <div class="fr-header__tools">
+              <div class="fr-header__tools-links">
+                <ul class="fr-links-group">
+                  <li>
+                    <a
+                      class="fr-link fr-fi-external-link-line fr-link--icon-right"
+                      href="https://www.systeme-de-design.gouv.fr"
+                      title="documentation officielle - nouvelle fenêtre"
+                      target="_blank"
+                      rel="noopener">Documentation officielle</a
+                    >
+                  </li>
+                  <li>
+                    <button
+                      class="fr-link fr-fi-sun-fill-line fr-link--icon-left"
+                      aria-controls="fr-theme-modal"
+                      data-fr-opened="false">Paramètres d'affichage</button
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO : fix arria-labellby -->
+      <div class="fr-header__menu fr-modal" id="modal-menu" aria-labelledby="button-825">
+        <div class="fr-container">
+          <button class="fr-link--close fr-link" aria-controls="modal-menu">Fermer</button>
+          <div class="fr-header__menu-links"></div>
+
+          <nav class="fr-nav" role="navigation" aria-label="Menu principal" id="header-navigation">
+            <ul class="fr-nav__list">
+              <li class="fr-nav__item">
+                <a class="fr-nav__link" href="/prime-de-100-euros" target="_self">Prime de 100€</a>
+              </li>
+              <li class="fr-nav__item">
+                <a class="fr-nav__link" href="/forfait-mobilites-durables" target="_self">Forfait Mobilités Durables</a>
+              </li>
+              <li class="fr-nav__item">
+                <a class="fr-nav__link" href="/aides-regionales" target="_self">Aides régionales</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main role="main" id="contenu">
+      <slot />
+    </main>
+
+    <!-- Réseaux sociaux -->
+    <div class="fr-follow">
+      <div class="fr-container">
+        <div class="fr-grid-row">
+          <div class="fr-col-12">
+            <div class="fr-follow__social">
+              <p class="fr-h5 fr-mb-3v fr-mb-3v">
+                Suivez beta.gouv.fr
+                <br /> sur les réseaux sociaux
+              </p>
+              <ul class="fr-links-group fr-links-group--lg">
+                <li>
+                  <a
+                    class="fr-link fr-fi-github-fill"
+                    title="Github betagouv - ouvre une nouvelle fenêtre"
+                    href="https://www.github.com/betagouv//"
+                    target="_blank">github</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="fr-link--twitter fr-link"
+                    title="Twitter @betagouv - ouvre une nouvelle fenêtre"
+                    href="https://twitter.com/betagouv?lang=fr"
+                    target="_blank">twitter</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="fr-link--linkedin fr-link"
+                    title="Linkedin betagouv - ouvre une nouvelle fenêtre"
+                    href="https://www.linkedin.com/company/betagouv/mycompany/"
+                    target="_blank">linkedin</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer role="contentinfo" class="fr-footer" id="footer">
+      <div class="fr-container">
+        <div class="fr-footer__body">
+          <div class="fr-footer__brand fr-enlarge-link">
+            <a href="/" title="Retour à l’accueil">
+              <p class="fr-logo">
+                République<br />française
+              </p>
+            </a>
+          </div>
+          <div class="fr-footer__content">
+            <p class="fr-footer__content-desc">Covoiturage.ecologie.gouv.fr - Pour adopter le covoiturage</p>
+            <ul class="fr-footer__content-list">
+              <li class="fr-footer__content-item">
+                <a class="fr-footer__content-link" href="https://ecologie.gouv.fr/"
+                  >Ministère de la Transition Écologique</a
+                >
+              </li>
+              <li class="fr-footer__content-item">
+                <a class="fr-footer__content-link" href="https://beta.gouv.fr/">beta.gouv.fr</a>
+              </li>
+              <li class="fr-footer__content-item">
+                <a class="fr-footer__content-link" href="https://www.gouvernement.fr/">gouvernement.fr</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fr-footer__bottom">
+          <ul class="fr-footer__bottom-list">
+            <li class="fr-footer__bottom-item">
+              <a class="fr-footer__bottom-link" href="">Accessibilité : non conforme</a>
+            </li>
+            <li class="fr-footer__bottom-item">
+              <a class="fr-footer__bottom-link" href="/mentions-legales">Mentions légales</a>
+            </li>
+            <li class="fr-footer__bottom-item">
+              <!-- TODO ajouter un email de support ? -->
+              <a class="fr-footer__bottom-link" href="">Contactez-nous</a>
+            </li>
+            <li class="fr-footer__bottom-item">
+              <button
+                class="fr-footer__bottom-link fr-fi-sun-fill-line fr-link--icon-left"
+                aria-controls="fr-theme-modal"
+                data-fr-opened="false">Paramètres d'affichage</button
+              >
+            </li>
+          </ul>
+          <div class="fr-footer__bottom-copy">
+            <p>
+              Sauf mention contraire, tous les contenus de ce site sont sous <a
+                href="https://github.com/betagouv/preuve-covoiturage-vitrine/blob/main/LICENSE"
+                target="_blank">licence apache-2.0</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- modale -->
+      <dialog id="fr-theme-modal" class="fr-modal" role="dialog" aria-labelledby="fr-theme-modal-title">
+        <div class="fr-container fr-container--fluid fr-container-md">
+          <div class="fr-grid-row fr-grid-row--center">
+            <div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
+              <div class="fr-modal__body">
+                <div class="fr-modal__header">
+                  <button class="fr-link--close fr-link" aria-controls="fr-theme-modal">Fermer</button>
+                </div>
+                <div class="fr-modal__content">
+                  <h1 id="fr-theme-modal-title" class="fr-modal__title">Paramètres d’affichage</h1>
+                  <div id="fr-display" class="fr-form-group fr-display">
+                    <div class="fr-form-group">
+                      <fieldset class="fr-fieldset">
+                        <legend class="fr-fieldset__legend fr-text--regular" id="-legend">
+                          Choisissez un thème pour personnaliser l’apparence du site.
+                        </legend>
+                        <div class="fr-fieldset__content">
+                          <div class="fr-radio-group fr-radio-rich">
+                            <input value="light" type="radio" id="fr-radios-theme-light" name="fr-radios-theme" />
+                            <label class="fr-label" for="fr-radios-theme-light">Thème clair</label>
+                            <div class="fr-radio-rich__img" data-fr-inject-svg>
+                              <img src="/~/@gouvfr/dsfr/dist/artwork/light.svg" alt="" />
+                              <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance -->
+                            </div>
+                          </div>
+                          <div class="fr-radio-group fr-radio-rich">
+                            <input value="dark" type="radio" id="fr-radios-theme-dark" name="fr-radios-theme" />
+                            <label class="fr-label" for="fr-radios-theme-dark">Thème sombre</label>
+                            <div class="fr-radio-rich__img" data-fr-inject-svg>
+                              <img src="/~/@gouvfr/dsfr/dist/artwork/dark.svg" alt="" />
+                              <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance -->
+                            </div>
+                          </div>
+                          <div class="fr-radio-group fr-radio-rich">
+                            <input value="system" type="radio" id="fr-radios-theme-system" name="fr-radios-theme" />
+                            <label class="fr-label" for="fr-radios-theme-system"
+                              >Système
+                              <span class="fr-hint-text">Utilise les paramètres système.</span>
+                            </label>
+                            <div class="fr-radio-rich__img" data-fr-inject-svg>
+                              <img src="/~/@gouvfr/dsfr/dist/artwork/system.svg" alt="" />
+                              <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance -->
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dialog>
+    </footer>
+
+    <!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+    <script type="module" src="/dsfr/dsfr.module.min.js"></script>
+    <script type="text/javascript" nomodule src="/dsfr/dsfr.nomodule.min.js"></script>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
