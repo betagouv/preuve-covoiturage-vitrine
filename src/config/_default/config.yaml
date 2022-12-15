@@ -7,6 +7,7 @@ title: Registre de preuve de covoiturage
 params:
   baseline: Développer le covoiturage
   description: Le service public et tiers de confiance Registre de preuve de covoiturage est une plateforme, un label et une boite à outils pour développer le covoiturage courte distance en France
+  apiURL: http://localhost:8080
 
 menu:
   main:

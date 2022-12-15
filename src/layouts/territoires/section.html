@@ -18,24 +18,24 @@
                 <div class="rf-input-group" style="display: flex; justify-content: space-between; align-items: baseline">
                   <div class="rf-radio-group">
                     <input type="radio" id="radio1" name="radio">
-                    <label class="rf-label hover-background-grey" style="align-items: flex-start;" for="radio1">
+                    <label class="rf-label hover-background-grey campaign-wrapper" style="align-items: flex-start;" for="radio1">
                       <div>
-                        <div style="text-align: left; font-weight: bold">Modèle Île-de-france Mobilités</div>
+                        <div style="text-align: left; font-weight: bold">Modèle Île-de-France Mobilités</div>
                         <div style="direction: ltr; margin-top: 45px;">
                           <div>
                             <div>Trajets éligibles :</div>
-                            <ul>
-                              <li> Trajets avec origine OU destination sur le territoire</li>
-                              <li> Trajets de plus de 2 km</li>
-                              <li> Campagne multi-opérateurs</li>
-                              <li> Classes de preuve B et C</li>
+                            <ul class="campaign-details">
+                              <li>Trajets avec origine OU destination sur le territoire</li>
+                              <li>Trajets de plus de 2 km</li>
+                              <li>Campagne multi-opérateurs</li>
+                              <li>Classes de preuve B et C</li>
                             </ul>
                           </div>
                           <div>
                             <div>Incitation :</div>
-                            <ul>
-                              <li> De 2 à 20 km : 2 euros par trajet</li>
-                              <li> A partir de 20 km: 0,10 euro par trajet par km</li>
+                            <ul class="campaign-details">
+                              <li>De 2 à 20 km : 2 euros par trajet</li>
+                              <li>A partir de 20 km: 0,10 euro par trajet par km</li>
                             </ul>
                           </div>
                         </div>
@@ -45,24 +45,24 @@
                   </div>
                   <div class="rf-radio-group">
                     <input type="radio" id="radio2" name="radio">
-                    <label class="rf-label hover-background-grey" style="align-items: flex-start;" for="radio2">
+                    <label class="rf-label hover-background-grey campaign-wrapper" style="align-items: flex-start;" for="radio2">
                       <div>
                         <div style="text-align: left; font-weight: bold">Modèle Nantes Métropole</div>
                         <div style="direction: ltr; margin-top: 45px;">
                           <div>
                             <div>Trajets éligibles :</div>
-                            <ul>
-                              <li> Trajets avec origine ET destination sur le territoire</li>
-                              <li> Trajets de plus de 2 km</li>
-                              <li> Campagne multi-opérateurs</li>
-                              <li> Classes de preuve B et C</li>
+                            <ul class="campaign-details">
+                              <li>Trajets avec origine ET destination sur le territoire</li>
+                              <li>Trajets de plus de 2 km</li>
+                              <li>Campagne multi-opérateurs</li>
+                              <li>Classes de preuve B et C</li>
                             </ul>
                           </div>
                           <div>
                             <div>Incitation :</div>
-                            <ul>
-                              <li> De 2 à 15 km: 1,50 euros par trajet par passager</li>
-                              <li> De 15 à 30 km: 0,10 euro par trajet par km par passager</li>
+                            <ul class="campaign-details">
+                              <li>De 2 à 15 km: 1,50 euros par trajet par passager</li>
+                              <li>De 15 à 30 km: 0,10 euro par trajet par km par passager</li>
                             </ul>
                           </div>
                         </div>
@@ -71,23 +71,23 @@
                   </div>
                   <div class="rf-radio-group">
                     <input type="radio" id="radio3" name="radio">
-                    <label class="rf-label hover-background-grey" style="align-items: flex-start;" for="radio3">
+                    <label class="rf-label hover-background-grey campaign-wrapper" style="align-items: flex-start;" for="radio3">
                       <div>
                         <div style="text-align: left; font-weight: bold">Modèle Laval</div>
                         <div style="direction: ltr; margin-top: 45px;">
                           <div>
                             <div>Trajets éligibles :</div>
-                            <ul>
-                              <li> Trajets avec origine ET destination sur le territoire</li>
-                              <li> Trajets de plus de 2 km</li>
-                              <li> Campagne multi-opérateurs</li>
-                              <li> Classes de preuve B et C</li>
+                            <ul class="campaign-details">
+                              <li>Trajets avec origine ET destination sur le territoire</li>
+                              <li>Trajets de plus de 2 km</li>
+                              <li>Campagne multi-opérateurs</li>
+                              <li>Classes de preuve B et C</li>
                             </ul>
                           </div>
                           <div>
                             <div>Incitation :</div>
-                            <ul>
-                              <li> A partir de 2 km: 0,50 euros par trajet par passager</li>
+                            <ul class="campaign-details">
+                              <li>A partir de 2 km: 0,50 euros par trajet par passager</li>
                             </ul>
                           </div>
                         </div>
@@ -115,7 +115,7 @@
                   </div>
                 </div>
 
-                <div style="max-width: 350px">
+                <div>
                   <div class="rf-input-group mt-2em">
                     <label class="rf-label" for="name">Nom</label>
                     <input class="rf-input" type="text" id="name" name="name" minlength="1" maxlength="256" />
@@ -134,7 +134,6 @@
                   </div>
                 </div>
               </div>
-
             </li>
           </ol>
 
@@ -142,11 +141,10 @@
             <button id="submit-form-button" type="submit" class="rf-btn" disabled>Recevoir la simulation</button>
           </div>
           <div class="h-text-center">
-            <small> Le récapitulatif va vous sera transmis directement par email.</small>
+            <small>Le récapitulatif va vous sera transmis directement par email.</small>
             <br />
-            <small> Vérifiez vos filtres et vos courriers indésirables si vous ne le recevez pas rapidement.</small>
+            <small>Vérifiez vos filtres et vos courriers indésirables si vous ne le recevez pas rapidement.</small>
           </div>
-
 
           <div id="form-feedback" class="rf-alert rf-alert--success">
             <div>
@@ -156,9 +154,9 @@
           </div>
         </form>
 
-        <h4 style="margin-top: 5em"> Demande de simulation complexe </h4>
+        <h4 style="margin-top: 5em">Demande de simulation complexe</h4>
         <div>
-          <a href="/nous-contacter/"> Contactez l'équipe RPC </a>
+          <a href="/nous-contacter/">Contactez l'équipe RPC</a>
         </div>
       </div>
     </div>
@@ -168,6 +166,7 @@
 <script src="js/axios.min.js"></script>
 <script>
 
+  var apiURL = '{{ .Site.Params.apiURL | safeHTML }}';
   var territoriesDiv = document.querySelector('#territory-list')
   var submitButton = document.querySelector('#submit-form-button')
   var searchInput = document.querySelector('#search-territory')
@@ -240,7 +239,7 @@
     }
 
     axios({
-      url: "http://localhost:8080/policy/simulate",
+      url: apiURL + "/policy/simulate",
       method: "POST",
       data: payload,
       headers: {
@@ -287,7 +286,7 @@
 
     function searchTerritories() {
       axios({
-        url: "http://localhost:8080/geo/search",
+        url: apiURL + "/geo/search",
         method: "POST",
         data: {
           search: searchInput.value,

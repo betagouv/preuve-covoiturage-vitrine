@@ -82,33 +82,29 @@ a[name] {
 }
 
 .rf-section--territories-single {
-
   ol.step {
     li.step {
       position: relative;
       margin-top: 2em;
       margin-bottom: 3em;
 
-      
-        div.territory-list {
-          border: 1px solid #E2E2E2;
-          z-index: 100;
-          position: absolute;
-          border-top: none;
-          text-align: initial;
-          border-bottom: none;
-          background-color: #fff;
-          width: 100%;
-          
-          div.territory-list-element {
-            &:hover{
-              background-color: #E2E2E2;
-              cursor: pointer;
-            }
+      div.territory-list {
+        border: 1px solid #e2e2e2;
+        z-index: 100;
+        position: absolute;
+        border-top: none;
+        text-align: initial;
+        border-bottom: none;
+        background-color: #fff;
+        width: 100%;
+
+        div.territory-list-element {
+          &:hover {
+            background-color: #e2e2e2;
+            cursor: pointer;
           }
-        
+        }
       }
- 
 
       &::before {
         content: counters(list-number, ".");
@@ -126,6 +122,18 @@ a[name] {
         border-radius: 50%;
         color: var(--w-bf500);
         background-color: var(--bf500);
+      }
+    }
+  }
+
+  .campaign-wrapper {
+    margin: 1em;
+    padding: 1em 2em;
+    .campaign-details {
+      li {
+        font-size: 80%;
+        padding: 0;
+        margin-left: 1em;
       }
     }
   }
