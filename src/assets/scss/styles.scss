@@ -89,19 +89,24 @@ a[name] {
       margin-bottom: 3em;
 
       div.territory-list {
-        border: 1px solid #e2e2e2;
         z-index: 100;
         position: absolute;
         border-top: none;
-        text-align: initial;
         border-bottom: none;
         background-color: #fff;
+        border: 1px solid #e2e2e2;
+        text-align: initial;
         width: 100%;
+        max-width: 580px;
 
         div.territory-list-element {
+          overflow: hidden;
+          padding: 0.5em 1em;
+          white-space: nowrap;
+          text-overflow: ellipsis;
           &:hover {
-            background-color: #e2e2e2;
             cursor: pointer;
+            background-color: #e2e2e2;
           }
         }
       }
