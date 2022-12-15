@@ -9,36 +9,33 @@
       <div>
         {{ .Content }}
 
-        <h4> Demande de simulation simple </h4>
+        <h4>Demande de simulation simple</h4>
 
         <form>
           <ol class="step">
-            <li class="step"><strong style="line-height: 50px">Selectionnez le type de campagne d’incitation privilégié
-                pour votre
-                territoire</strong>
-
+            <li class="step"><strong style="line-height: 50px">Sélectionnez le type de campagne d’incitation privilégié pour votre territoire</strong>
               <div class="rf-section">
                 <div class="rf-input-group" style="display: flex; justify-content: space-between; align-items: baseline">
                   <div class="rf-radio-group">
                     <input type="radio" id="radio1" name="radio">
                     <label class="rf-label hover-background-grey" style="align-items: flex-start;" for="radio1">
                       <div>
-                        <div style="text-align: left; font-weight: bold">Modèle Ile-de-france Mobilité </div>
+                        <div style="text-align: left; font-weight: bold">Modèle Île-de-france Mobilités</div>
                         <div style="direction: ltr; margin-top: 45px;">
                           <div>
-                            <div>Trajets éligibles:</div>
+                            <div>Trajets éligibles :</div>
                             <ul>
-                              <li> Trajets avec Origine OU Destination sur le territoire</li>
-                              <li> Trajets de plus de 2km</li>
-                              <li> Multiopérateur</li>
-                              <li> Class de preuve B et C</li>
+                              <li> Trajets avec origine OU destination sur le territoire</li>
+                              <li> Trajets de plus de 2 km</li>
+                              <li> Campagne multi-opérateurs</li>
+                              <li> Classes de preuve B et C</li>
                             </ul>
                           </div>
                           <div>
-                            <div>Incitation:</div>
+                            <div>Incitation :</div>
                             <ul>
-                              <li> De 2 à 20: 2 euros par trajet</li>
-                              <li> A partir de 20 km: 0,1 euro par trajet par km</li>
+                              <li> De 2 à 20 km : 2 euros par trajet</li>
+                              <li> A partir de 20 km: 0,10 euro par trajet par km</li>
                             </ul>
                           </div>
                         </div>
@@ -50,22 +47,22 @@
                     <input type="radio" id="radio2" name="radio">
                     <label class="rf-label hover-background-grey" style="align-items: flex-start;" for="radio2">
                       <div>
-                        <div style="text-align: left; font-weight: bold">Modèle Nantes Métropole </div>
+                        <div style="text-align: left; font-weight: bold">Modèle Nantes Métropole</div>
                         <div style="direction: ltr; margin-top: 45px;">
                           <div>
-                            <div>Trajets éligibles:</div>
+                            <div>Trajets éligibles :</div>
                             <ul>
-                              <li> Trajets avec Origine ET Destination sur le territoire</li>
-                              <li> Trajets de plus de 2km</li>
-                              <li> Multiopérateur</li>
-                              <li> Class de preuve B et C</li>
+                              <li> Trajets avec origine ET destination sur le territoire</li>
+                              <li> Trajets de plus de 2 km</li>
+                              <li> Campagne multi-opérateurs</li>
+                              <li> Classes de preuve B et C</li>
                             </ul>
                           </div>
                           <div>
-                            <div>Incitation:</div>
+                            <div>Incitation :</div>
                             <ul>
-                              <li> De 2 à 15km: 1,5 euros par trajet par passager</li>
-                              <li> De 15 à 30km: 0,1 euro par trajet par km par passager</li>
+                              <li> De 2 à 15 km: 1,50 euros par trajet par passager</li>
+                              <li> De 15 à 30 km: 0,10 euro par trajet par km par passager</li>
                             </ul>
                           </div>
                         </div>
@@ -76,21 +73,21 @@
                     <input type="radio" id="radio3" name="radio">
                     <label class="rf-label hover-background-grey" style="align-items: flex-start;" for="radio3">
                       <div>
-                        <div style="text-align: left; font-weight: bold">Modèle Laval </div>
+                        <div style="text-align: left; font-weight: bold">Modèle Laval</div>
                         <div style="direction: ltr; margin-top: 45px;">
                           <div>
-                            <div>Trajets éligibles:</div>
+                            <div>Trajets éligibles :</div>
                             <ul>
-                              <li> Trajets avec Origine ET Destination sur le territoire</li>
-                              <li> Trajets de plus de 2km</li>
-                              <li> Multiopérateur</li>
-                              <li> Class de preuve B et C</li>
+                              <li> Trajets avec origine ET destination sur le territoire</li>
+                              <li> Trajets de plus de 2 km</li>
+                              <li> Campagne multi-opérateurs</li>
+                              <li> Classes de preuve B et C</li>
                             </ul>
                           </div>
                           <div>
-                            <div>Incitation:</div>
+                            <div>Incitation :</div>
                             <ul>
-                              <li> A partir de 2km: 0,5 euros par trajet par passager</li>
+                              <li> A partir de 2 km: 0,50 euros par trajet par passager</li>
                             </ul>
                           </div>
                         </div>
@@ -101,9 +98,8 @@
               </div>
             </li>
 
-            <li class="step"><strong style="line-height: 50px">Saisissez le territoire concerné ainsi que les
-                coordonnées du destinataire</strong>
-
+            <li class="step">
+              <strong style="line-height: 50px">Saisissez le territoire concerné et les coordonnées du destinataire</strong>
               <div class="rf-section" style="max-width: 600px; margin: auto; padding: 10px">
                 <div style="margin-top: 8px">
                   <div style="position: relative">
@@ -143,12 +139,12 @@
           </ol>
 
           <div class="rf-input-group h-text-center">
-            <button id="submit-form-button" type="submit" class="rf-btn" disabled> Recevoir la simulation</button>
+            <button id="submit-form-button" type="submit" class="rf-btn" disabled>Recevoir la simulation</button>
           </div>
           <div class="h-text-center">
-            <small> Le récapitulatif va vous être envoyé quasiment instantanément par email.</small>
+            <small> Le récapitulatif va vous sera transmis directement par email.</small>
             <br />
-            <small> N'hésitez pas à vérifier dans vos spams si nécéssaire</small>
+            <small> Vérifiez vos filtres et vos courriers indésirables si vous ne le recevez pas rapidement.</small>
           </div>
 
 
