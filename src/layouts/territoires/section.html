@@ -202,8 +202,16 @@
     submitButton.disabled = !isFormValid(data)
   })
 
+  var isSubmitting = false;
+
   submitButton.addEventListener("click", function (e) {
     e.preventDefault();
+
+    if(isSubmitting) {
+      console.debug('ignore submit, currently submiting')
+      return;
+    }
+    isSubmitting = true
 
     var delay = 5000;
     var timer = null;
@@ -250,9 +258,13 @@
       .then(function (response) {
         document.forms[0].reset();
         show("Merci !", "Votre demande de simulation a bien été envoyé", "success");
+        setTimeout(function() {
+          isSubmitting = false;
+        }, 5000)
       })
       .catch(function (error) {
         console.error(error.response);
+        isSubmitting = false;
         show("Erreur", "Une erreur est survenue lors de la simulation", "error");
       });
   });
@@ -262,7 +274,7 @@
 
   function searchTerritorriesAction(e) {
 
-    if (!searchInput.value || (searchInput.value && searchInput.value.length < 4)) {
+    if (!searchInput.value || (searchInput.value && searchInput.value.length < 3)) {
       return
     }
 
