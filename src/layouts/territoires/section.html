@@ -258,6 +258,7 @@
       .then(function (response) {
         document.forms[0].reset();
         show("Merci !", "Votre demande de simulation a bien été envoyé", "success");
+        submitButton.disabled = true
         setTimeout(function() {
           isSubmitting = false;
         }, 5000)
