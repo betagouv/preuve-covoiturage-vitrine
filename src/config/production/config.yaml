@@ -1,1 +1,4 @@
 baseURL: https://covoiturage.beta.gouv.fr
+
+params:
+  apiURL: https://api.covoiturage.beta.gouv.fr
