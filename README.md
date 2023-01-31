@@ -21,6 +21,6 @@ http://localhost:1313/
 
 # License
 
-DINUM, 2020-2021.
+DINUM, 2020-2023.
 
 The source code is published under [Apache license 2.0](https://github.com/betagouv/preuve-covoiturage-vitrine/blob/main/LICENSE).
