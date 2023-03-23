@@ -22,6 +22,7 @@ expertise_list:
       confiance grâce aux trajets certifiés envoyés dans le RPC par les services
       de covoiturage partenaires.
     image: images/hands.svg
+    reassurance: true
   - title: Une boîte à outils
     description: Le RPC propose un panel d’outils pour aider les territoires à
       inciter le covoiturage courte distance dans leur territoire en toute

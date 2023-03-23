@@ -18,7 +18,7 @@
                 <div class="card vertical">
                   <div class="content">
                     <h4 class="title">{{- .title -}}</h4>
-                    <div class="description">{{ .description | markdownify }}</div>
+                    <div class="description">{{ .description | markdownify }} {{ with .reassurance }} <a href="/tiers-de-confiance">En savoir +</a> {{end}}</div>
                   </div>
                   <div class="image"><img src="{{- .image -}}" alt="{{- .title -}}" /></div>
                 </div>
