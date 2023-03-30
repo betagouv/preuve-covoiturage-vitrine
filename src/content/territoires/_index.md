@@ -6,7 +6,7 @@ actions:
   - title: Demander une démo
     href: https://app.livestorm.co/dinum-12/demo-hedbo-du-rpc?type=detailed
   - title: Guide territoires
-    href: https://doc.covoiturage.beta.gouv.fr/vous-etes/je-suis-un-territoire
+    href: https://doc.covoiturage.beta.gouv.fr/vous-etes/je-suis-un-territoire/mes-besoins/construire-mon-projet-de-campagne-dincitation-financiere
     style: secondary
 ---
 
