@@ -11,7 +11,7 @@ actions:
     href: /nous-contacter
   - style: secondary
     title: Guide opérateurs
-    href: https://doc.covoiturage.beta.gouv.fr/le-registre-de-preuve-de-covoiturage/devenir-partenaire/je-suis-un-operateur-de-covoiturage
+    href: https://doc.covoiturage.beta.gouv.fr/vous-etes/je-suis-un-operateur
 section_linked_title: Les opérateurs de covoiturage courte distance référencés
   dans le Registre de preuve de covoiturage
 section_notlinked_title: Les opérateurs de covoiturage bientôt référencés dans le Registre
