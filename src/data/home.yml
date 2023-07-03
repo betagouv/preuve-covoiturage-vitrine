@@ -44,14 +44,13 @@ tools:
     image: images/icons/opendata.svg
     link_title: Voir toutes les statistiques
     link_href: https://www.data.gouv.fr/fr/datasets/trajets-realises-en-covoiturage-registre-de-preuve-de-covoiturage/
-  - description: >-
-      _EN CONSTRUCTION_  
-
-      Cet outil permettra de suivre l’évolution des pratiques du covoiturage courte distance et d'évaluer l'impact des mesures prises afin d’adapter de façon agile les politiques publiques. Son lancement est prévu fin 2021.
+  - description: Cet outil permet de suivre l’évolution des pratiques du covoiturage
+      courte distance et d'évaluer l'impact des mesures prises afin d’adapter de
+      façon agile les politiques publiques.
     title: Observatoire national du covoiturage
     image: images/icons/phare.svg
     link_title: En savoir plus
-    link_href: https://blog.beta.gouv.fr/general/2021/02/17/covoiturage-beta-gouv-fr-laureat-de-l-appel-a-projets-utilisation-de-la-donnee-pour-co-construire-un-observatoire-national-du-covoiturage-au-quotidien/
+    link_href: https://observatoire.covoiturage.beta.gouv.fr/
   - description: Notre générateur d’attestation de covoiturage sur l’honneur, à
       destination des salariés du privé et du public qui n'utilisent pas une
       application de covoiturage partenaire du Registre, permet de bénéficier du
