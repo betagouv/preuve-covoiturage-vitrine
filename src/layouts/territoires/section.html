@@ -235,7 +235,7 @@
       name: formData.name,
       firstname: formData.firstname,
       job: formData.position,
-      email: formData.email,
+      email: formData.email.toLocaleLowerCase().trim(),
       territory_name: searchInput.getAttribute('name'),
       simulation: {
         territory_insee: searchInput.getAttribute('insee'),
